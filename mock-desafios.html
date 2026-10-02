@@ -1,0 +1,1820 @@
+<!doctype html>
+<html lang="es-AR" data-theme="dark" data-skin="gamer" data-role="alumno">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TPI 2026 · Rediseño de páginas reales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Orbitron:wght@700;900&family=Pixelify+Sans:wght@400;600;700&family=Press+Start+2P&family=Rajdhani:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/screens.css" />
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15"/><path d="M15 6v15"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+  <symbol id="i-backpack" viewBox="0 0 24 24"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 10h8"/><path d="M8 18h8"/><path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+  <symbol id="i-survey" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-todo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-half" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/></symbol>
+  <symbol id="i-panel" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="m16 15-3-3 3-3"/></symbol>
+  <symbol id="i-panel-open" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="m14 9 3 3-3 3"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.53 13.53 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><path d="m2 2 20 20"/></symbol>
+  <symbol id="i-cards" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10"/><path d="M15 9.5c-.6-.9-1.7-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.3 0-2.4-.6-3-1.5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+  <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6 12h4"/><path d="M8 10v4"/><path d="M15 13h.01"/><path d="M18 11h.01"/><rect width="20" height="12" x="2" y="6" rx="2"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+  <symbol id="i-filter-off" viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7"/><path d="M4 10V3"/><path d="M12 21v-9"/><path d="M12 8V3"/><path d="M20 21v-5"/><path d="M20 12V3"/><path d="M1 14h6"/><path d="M9 8h6"/><path d="M17 16h6"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+  <symbol id="i-grip" viewBox="0 0 24 24"><path d="M9 5h.01M9 12h.01M9 19h.01M15 5h.01M15 12h.01M15 19h.01" stroke-width="3"/></symbol>
+</svg>
+
+<div class="mockbar" role="region" aria-label="Controles del mock">
+  <b>Mock</b>
+  <span>Rol:</span>
+  <div class="seg" role="group" aria-label="Rol">
+    <button data-role-btn="alumno" aria-pressed="true">Alumno</button>
+    <button data-role-btn="profesor" aria-pressed="false">Profesor</button>
+    <button data-role-btn="admin" aria-pressed="false">Admin</button>
+  </div>
+  <span>Tema:</span>
+  <div class="theme-switch" role="group" aria-label="Tema">
+    <button data-theme-btn="dark" aria-pressed="true"><svg class="icon icon-sm"><use href="#i-moon"/></svg> Oscuro</button>
+    <button data-theme-btn="light" aria-pressed="false"><svg class="icon icon-sm"><use href="#i-sun"/></svg> Claro</button>
+  </div>
+  <span>Estilo:</span>
+  <div class="seg" role="group" aria-label="Estilo">
+    <button data-skin-btn="gamer" aria-pressed="true">🎮 Arcade</button>
+    <button data-skin-btn="sobrio" aria-pressed="false">💼 Normal</button>
+  </div>
+  <span>Paleta Arcade:</span>
+  <div class="palette-dots-group" role="group" aria-label="Paleta Arcade">
+    <button data-palette-btn="electric" aria-pressed="true" title="Cian Eléctrico" class="palette-dot" style="--dot-color:#00e5ff;"></button>
+    <button data-palette-btn="neon" aria-pressed="false" title="Magenta Original" class="palette-dot" style="--dot-color:#f275dc;"></button>
+    <button data-palette-btn="latenight" aria-pressed="false" title="Late Night" class="palette-dot" style="--dot-color:#ff2e88;"></button>
+    <button data-palette-btn="playful" aria-pressed="false" title="Playful Pop" class="palette-dot" style="--dot-color:#ff5bbd;"></button>
+    <button data-palette-btn="cyber" aria-pressed="false" title="Cyber Moody" class="palette-dot" style="--dot-color:#00f5d4;"></button>
+    <button data-palette-btn="energetic" aria-pressed="false" title="Energetic Warm" class="palette-dot" style="--dot-color:#ff9f1c;"></button>
+    <button data-palette-btn="competitive" aria-pressed="false" title="Competitive Intense" class="palette-dot" style="--dot-color:#ef233c;"></button>
+    <button data-palette-btn="scifi" aria-pressed="false" title="Sci-Fi Clean" class="palette-dot" style="--dot-color:#41ead4;"></button>
+    <button data-palette-btn="flashy" aria-pressed="false" title="Flashy Futuristic" class="palette-dot" style="--dot-color:#ff3cac;"></button>
+    <button data-palette-btn="mystical" aria-pressed="false" title="Mystical Balanced" class="palette-dot" style="--dot-color:#ffc857;"></button>
+    <button data-palette-btn="urban" aria-pressed="false" title="Urban Sleek" class="palette-dot" style="--dot-color:#00bbf9;"></button>
+  </div>
+  <span>Barra Lateral:</span>
+  <div class="seg" role="group" aria-label="Barra Lateral">
+    <button data-sidebar-btn="collapsed" aria-pressed="true" title="Icon Dock compacto (64px)">🔘 Iconos</button>
+    <button data-sidebar-btn="pinned" aria-pressed="false" title="Fijar con textos (210px)">📌 Fijada</button>
+  </div>
+  <span>Fuente Títulos/Display:</span>
+  <div class="seg" role="group" aria-label="Fuente Títulos y Logo">
+    <button data-font-btn="pressstart" aria-pressed="true" title="Press Start 2P (Clásico Arcade 80s/90s)">🕹️ Press Start</button>
+    <button data-font-btn="pixelify" aria-pressed="false" title="Pixelify Sans (Pixel art moderno, estético y con peso)">✨ Pixelify Sans</button>
+    <button data-font-btn="chakra" aria-pressed="false" title="Chakra Petch (Arcade Mecha / Capcom)">⚡ Chakra Petch</button>
+    <button data-font-btn="orbitron" aria-pressed="false" title="Orbitron (HUD Sci-Fi / Cyberpunk)">Orbitron</button>
+    <button data-font-btn="silkscreen" aria-pressed="false" title="Silkscreen (La anterior, trazo fino)">Silkscreen</button>
+  </div>
+  <a class="uikit-link" href="font-comparison.html" target="_blank" title="Abrir comparativa lado a lado de tipografías retro" style="color:#a855f7;">🔍 Comparador</a>
+  <label><input type="checkbox" id="sim-error" /> Simular error</label>
+  <a class="uikit-link" href="#uikit" title="Ver catálogo de componentes y tokens de diseño">🎨 UI Kit / Componentes</a>
+</div>
+
+<header class="topbar">
+  <div class="brand-wrap">
+    <div class="brand"><a href="#cursos" style="text-decoration:none; color:inherit;">🕹️ TPI 2026</a></div>
+    <span class="brand-cohort">MSI · 2026</span>
+  </div>
+
+  <!-- Extremo Derecho: HUD del Alumno + Perfil de Usuario -->
+  <div class="topbar-actions">
+    <!-- HUD Gamificado Alumno (Compacto y despejado) -->
+    <div class="hud-bar" id="student-hud" aria-label="Estado del alumno">
+      <span class="hud-item lives" title="3 de 3 vidas disponibles">
+        <svg class="icon icon-sm"><use href="#i-heart"/></svg>
+        <span class="num">3/3</span>
+      </span>
+      <span class="hud-divider"></span>
+      <span class="hud-item coins" title="120 monedas acumuladas">
+        <svg class="icon icon-sm"><use href="#i-coin"/></svg>
+        <span class="num">120</span>
+      </span>
+      <span class="hud-divider"></span>
+      <span class="hud-item streak" title="5 días seguidos de racha de estudio">
+        <svg class="icon icon-sm"><use href="#i-flame"/></svg>
+        <span class="num">5d</span>
+      </span>
+      <span class="hud-divider"></span>
+      <span class="hud-item level" title="Nivel 7 actual">
+        <svg class="icon icon-sm"><use href="#i-star"/></svg>
+        <span>Niv. 7</span>
+      </span>
+    </div>
+
+    <!-- Menú de Cuenta y Preferencias -->
+    <div class="account">
+      <button class="me-chip" id="account-btn" type="button" aria-expanded="false" aria-controls="account-menu" aria-haspopup="true">
+        <span class="initials" aria-hidden="true" data-me-initials>MS</span>
+        <span class="me-name"><span data-me-short>Manuel S.</span><span class="me-level" data-me-level>Nivel 7</span></span>
+        <svg class="icon icon-sm chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+      </button>
+      <div class="account-menu" id="account-menu" hidden>
+        <a class="nav-item" href="#perfil"><svg class="icon"><use href="#i-user"/></svg>Mi perfil</a>
+        <a class="nav-item" href="#personaje" data-alumno-only><svg class="icon"><use href="#i-shirt"/></svg>Mi personaje</a>
+        <a class="nav-item" href="#inventario" data-alumno-only><svg class="icon"><use href="#i-backpack"/></svg>Inventario</a>
+        <hr />
+        <div class="menu-pref-title">Apariencia</div>
+        <div class="menu-pref-row">
+          <div class="seg sm" role="group" aria-label="Estilo">
+            <button data-skin-btn="gamer" aria-pressed="true">Arcade</button>
+            <button data-skin-btn="sobrio" aria-pressed="false">Normal</button>
+          </div>
+          <div class="theme-switch sm" role="group" aria-label="Tema">
+            <button data-theme-btn="dark" aria-pressed="true"><svg class="icon icon-sm"><use href="#i-moon"/></svg> Oscuro</button>
+            <button data-theme-btn="light" aria-pressed="false"><svg class="icon icon-sm"><use href="#i-sun"/></svg> Claro</button>
+          </div>
+        </div>
+        <div class="menu-pref-title">Paleta Arcade</div>
+        <div class="menu-pref-row">
+          <div class="palette-dots-group" role="group" aria-label="Paleta Arcade">
+            <button data-palette-btn="electric" aria-pressed="true" title="Cian Eléctrico" class="palette-dot" style="--dot-color:#00e5ff;"></button>
+            <button data-palette-btn="neon" aria-pressed="false" title="Magenta Original" class="palette-dot" style="--dot-color:#f275dc;"></button>
+            <button data-palette-btn="latenight" aria-pressed="false" title="Late Night" class="palette-dot" style="--dot-color:#ff2e88;"></button>
+            <button data-palette-btn="playful" aria-pressed="false" title="Playful Pop" class="palette-dot" style="--dot-color:#ff5bbd;"></button>
+            <button data-palette-btn="cyber" aria-pressed="false" title="Cyber Moody" class="palette-dot" style="--dot-color:#00f5d4;"></button>
+            <button data-palette-btn="energetic" aria-pressed="false" title="Energetic Warm" class="palette-dot" style="--dot-color:#ff9f1c;"></button>
+            <button data-palette-btn="competitive" aria-pressed="false" title="Competitive Intense" class="palette-dot" style="--dot-color:#ef233c;"></button>
+            <button data-palette-btn="scifi" aria-pressed="false" title="Sci-Fi Clean" class="palette-dot" style="--dot-color:#41ead4;"></button>
+            <button data-palette-btn="flashy" aria-pressed="false" title="Flashy Futuristic" class="palette-dot" style="--dot-color:#ff3cac;"></button>
+            <button data-palette-btn="mystical" aria-pressed="false" title="Mystical Balanced" class="palette-dot" style="--dot-color:#ffc857;"></button>
+            <button data-palette-btn="urban" aria-pressed="false" title="Urban Sleek" class="palette-dot" style="--dot-color:#00bbf9;"></button>
+          </div>
+        </div>
+        <hr />
+        <button class="nav-item danger" type="button"><svg class="icon"><use href="#i-logout"/></svg>Cerrar sesión</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <!-- Rail / Icon Dock Lateral con Pin/Unpin (64px ↔ 210px) -->
+  <nav class="sidebar" id="sidebar" aria-label="Navegación principal">
+    <div class="sidebar-nav" id="sidebar-nav"></div>
+    <div class="sidebar-footer">
+      <button type="button" class="rail-toggle" id="sidebar-toggle" aria-label="Fijar menú abierto" data-tooltip="Fijar menú abierto" aria-expanded="false">
+        <svg class="icon"><use href="#i-panel-open"/></svg>
+        <span class="rail-label">Fijar menú</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+
+    <!-- ================= LOBBY · alumno ================= -->
+    <section class="screen" id="screen-lobby-alumno" aria-labelledby="h-lobby">
+      <div class="page-head">
+        <div>
+          <div class="head-meta">
+            <span><b>MSI</b></span><span>Desafío Práctico</span>
+          </div>
+          <h1 class="display" id="h-lobby">Recursión de Fibonacci</h1>
+          <p>Preparate para resolver este desafío. Tendrás que escribir código que pase todos los tests.</p>
+        </div>
+      </div>
+      <div class="data">
+        <div class="card studs">
+          <div class="section-head"><h2>Condiciones del Desafío</h2></div>
+          <ul class="list" style="margin-bottom: 24px;">
+            <li><strong>Tiempo límite:</strong> 45 minutos (comienza a correr al confirmar).</li>
+            <li><strong>Intentos disponibles:</strong> 3 intentos restantes.</li>
+            <li><strong>Reglas:</strong> Debes resolverlo utilizando recursividad. No se permiten bucles <code>for</code> ni <code>while</code>.</li>
+          </ul>
+          <div class="alert risk" role="status" style="margin-bottom: 24px;">
+            <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+            <div>
+              <div class="alert-title">Importante</div>
+              <div class="alert-body">Una vez que comiences, no podrás pausar el tiempo. Asegúrate de tener conexión estable.</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 16px;">
+            <button class="btn btn-primary" type="button">Comenzar Desafío</button>
+            <button class="btn btn-quiet" type="button">Volver al Roadmap</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HISTORIAL · alumno ================= -->
+    <section class="screen" id="screen-historial-alumno" aria-labelledby="h-historial">
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-historial">Mis Intentos</h1>
+          <p>Revisá el progreso y el estado de todos tus intentos de resolución de desafíos.</p>
+        </div>
+      </div>
+      <div class="data">
+        <div class="table-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>Desafío</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Puntaje</th>
+                <th><span class="sr-only">Acciones</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="cell-title">Recursión de Fibonacci</div><div class="cell-sub">MSI</div></td>
+                <td>01/10/2026</td>
+                <td><span class="badge badge-outline" style="color: var(--accent-blue); border-color: var(--accent-blue);">Resolviendo</span></td>
+                <td>-</td>
+                <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Ir al Workspace</button></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell-title">Árboles Binarios</div><div class="cell-sub">MSI</div></td>
+                <td>28/09/2026</td>
+                <td><span class="badge badge-outline" style="color: var(--urgent); border-color: var(--urgent);">Esperando corrección</span></td>
+                <td>-</td>
+                <td><div class="row-actions"><button class="btn btn-ghost btn-sm" disabled>Ver Detalle</button></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell-title">Pilas y Colas</div><div class="cell-sub">MSI</div></td>
+                <td>25/09/2026</td>
+                <td><span class="badge badge-success">Aprobado</span></td>
+                <td>100/100</td>
+                <td><div class="row-actions"><a class="btn btn-ghost btn-sm" href="#veredicto">Ver Detalle</a></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell-title">Listas Enlazadas</div><div class="cell-sub">MSI</div></td>
+                <td>20/09/2026</td>
+                <td><span class="badge badge-danger" style="color: var(--urgent); border-color: var(--urgent);">Reprobado</span></td>
+                <td>40/100</td>
+                <td><div class="row-actions"><a class="btn btn-ghost btn-sm" href="#veredicto">Ver Detalle</a></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell-title">Grafos - BFS</div><div class="cell-sub">MSI</div></td>
+                <td>15/09/2026</td>
+                <td><span class="badge badge-outline">Vencido</span></td>
+                <td>0/100</td>
+                <td><div class="row-actions"><button class="btn btn-ghost btn-sm" disabled>Ver Detalle</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VEREDICTO · alumno ================= -->
+    <section class="screen" id="screen-veredicto-alumno" aria-labelledby="h-veredicto">
+      <a class="back" href="#historial"><svg class="icon icon-sm"><use href="#i-left"/></svg>Mis Intentos</a>
+      <div class="page-head">
+        <div>
+          <div class="head-meta">
+            <span><b>MSI</b></span><span>Pilas y Colas</span><span>Intento 1</span>
+          </div>
+          <h1 class="display" id="h-veredicto">Devolución del Desafío</h1>
+          <p>Revisá el feedback del corrector y el veredicto final emitido por el Motor de Desafíos.</p>
+        </div>
+      </div>
+      <div class="data">
+        <div class="two-col">
+          <div class="card studs" style="border: 2px solid var(--good);">
+            <div class="section-head"><h2>Veredicto Final</h2></div>
+            <div style="text-align: center; margin: 24px 0;">
+              <div style="font-size: 48px; font-weight: 700; color: var(--good); font-family: var(--font-display);">Aprobado</div>
+              <div style="font-size: 24px; margin-top: 8px;">Puntaje: <span class="num">100 / 100</span></div>
+            </div>
+            <p style="text-align: center; color: var(--text-muted);">El puntaje supera el umbral de aprobación definido por el profesor (60/100).</p>
+          </div>
+          <div class="stack">
+            <div class="card studs">
+              <div class="section-head"><h2>Feedback del Corrector (Práctico/Teórico)</h2></div>
+              <div style="padding: 16px; background: var(--bg-level2); border-radius: 8px; font-family: var(--font-mono, monospace); font-size: 14px; line-height: 1.5;">
+                &gt; Tests Ejecutados: 5/5 Exitosos.<br>
+                &gt; Rendimiento: Óptimo (O(1) en inserción).<br>
+                &gt; Código limpio y bien estructurado.<br><br>
+                Excelente uso de estructuras auxiliares para resolver el problema de la cola con prioridad.
+              </div>
+            </div>
+            <div class="card studs">
+              <div class="section-head"><h2>Recompensas</h2></div>
+              <div style="display: flex; gap: 24px;">
+                <span class="hud-item coins" style="font-size: 20px;">
+                  <svg class="icon"><use href="#i-coin"/></svg>
+                  <span class="num" style="color: var(--accent-gold);">+50</span>
+                </span>
+                <span class="hud-item streak" style="font-size: 20px;">
+                  <svg class="icon"><use href="#i-flame"/></svg>
+                  <span class="num" style="color: var(--accent-orange);">+1 día</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HISTORIAL VERSIONES · profesor ================= -->
+    <section class="screen" id="screen-historial-versiones-profesor" aria-labelledby="h-versiones">
+      <div class="page-head">
+        <div>
+          <div class="head-meta">
+            <span><b>MSI</b></span><span>Recursión de Fibonacci</span>
+          </div>
+          <h1 class="display" id="h-versiones">Historial de Versiones</h1>
+          <p>Auditoría de cambios en enunciados, umbrales y límites a lo largo del tiempo.</p>
+        </div>
+        <div class="head-tools">
+          <label class="field">Desafío<select class="control"><option>Recursión de Fibonacci</option><option>Árboles Binarios</option></select></label>
+        </div>
+      </div>
+      <div class="data">
+        <div class="table-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>Versión</th>
+                <th>Fecha</th>
+                <th>Autor</th>
+                <th>Cambios Principales</th>
+                <th><span class="sr-only">Acciones</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge badge-primary">v1.2 (Actual)</span></td>
+                <td>01/10/2026</td>
+                <td>Ana Torres</td>
+                <td>Se redujo el tiempo límite de 60m a 45m.</td>
+                <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Ver Detalle</button></div></td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-outline">v1.1</span></td>
+                <td>15/09/2026</td>
+                <td>Luis Gómez</td>
+                <td>Ajuste en el umbral de aprobación (de 70 a 60).</td>
+                <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Ver Detalle</button></div></td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-outline">v1.0</span></td>
+                <td>01/09/2026</td>
+                <td>Ana Torres</td>
+                <td>Creación inicial del desafío.</td>
+                <td><div class="row-actions"><button class="btn btn-ghost btn-sm">Ver Detalle</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEGUIMIENTO · profesor ================= -->
+    <section class="screen" id="screen-seguimiento-profesor" aria-labelledby="h-seguimiento">
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-seguimiento">Dashboard de Seguimiento</h1>
+          <p>Visualizá el estado de los alumnos en un desafío específico y gestioná sus intentos.</p>
+        </div>
+        <div class="head-tools">
+          <label class="field">Desafío<select class="control"><option>Recursión de Fibonacci</option><option>Árboles Binarios</option></select></label>
+        </div>
+      </div>
+      <div class="data">
+        <div class="stat-strip">
+          <div><div class="k">Alumnos Totales</div><div class="v num">28</div></div>
+          <div><div class="k">En curso</div><div class="v num" style="color: var(--accent-blue);">4</div></div>
+          <div><div class="k">Finalizados</div><div class="v num" style="color: var(--good);">15</div></div>
+          <div><div class="k">Sin empezar</div><div class="v num">9</div></div>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>Alumno</th>
+                <th>Estado del Intento</th>
+                <th>Fecha Inicio</th>
+                <th>Puntaje</th>
+                <th>Acciones Manuales</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="cell-title">Manuel Sanchez</div><div class="cell-sub">Legajo: 40510</div></td>
+                <td><span class="badge badge-outline" style="color: var(--accent-blue); border-color: var(--accent-blue);">Resolviendo</span></td>
+                <td>01/10/2026 14:30</td>
+                <td>-</td>
+                <td><button class="btn btn-ghost btn-sm danger" type="button">Anular Intento</button></td>
+              </tr>
+              <tr>
+                <td><div class="cell-title">Carla Ruiz</div><div class="cell-sub">Legajo: 40511</div></td>
+                <td><span class="badge badge-success">Aprobado</span></td>
+                <td>30/09/2026 10:15</td>
+                <td>95/100</td>
+                <td><button class="btn btn-ghost btn-sm danger" type="button" disabled>Anular Intento</button></td>
+              </tr>
+              <tr>
+                <td><div class="cell-title">Diego Fernández</div><div class="cell-sub">Legajo: 40512</div></td>
+                <td><span class="badge badge-outline" style="color: var(--urgent); border-color: var(--urgent);">Esperando corrección</span></td>
+                <td>01/10/2026 13:00</td>
+                <td>-</td>
+                <td><button class="btn btn-ghost btn-sm danger" type="button">Anular Intento</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONFIGURACIÓN DE REGLAS · profesor ================= -->
+    <section class="screen" id="screen-config-reglas-profesor" aria-labelledby="h-config-reglas">
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-config-reglas">Configuración de Umbrales y Reglas</h1>
+          <p>Definí las reglas de negocio del Motor de Desafíos para este ejercicio.</p>
+        </div>
+      </div>
+      <div class="data">
+        <form class="card studs" onsubmit="return false">
+          <div class="section-head"><h2>Reglas del Motor de Desafíos</h2></div>
+          <div class="form-grid">
+            <label class="field full">Sistema de Corrección
+              <select class="control">
+                <option>Evaluador de Código en Sandbox (Práctico)</option>
+                <option>Corrección de Múltiple Opción (Teórico)</option>
+                <option>Evaluación Manual por Docente</option>
+              </select>
+              <span class="hint">Define qué herramienta evalúa la respuesta del alumno cuando entrega el desafío.</span>
+            </label>
+            
+            <label class="field">Tiempo límite (minutos)
+              <input class="control num" type="number" value="45" min="0" />
+              <span class="hint">Dejalo en 0 si los alumnos pueden tomarse el tiempo que necesiten.</span>
+            </label>
+            
+            <label class="field">Plazo máximo (Fecha de cierre)
+              <input class="control" type="datetime-local" value="2026-10-15T23:59" />
+              <span class="hint">Después de esta fecha y hora, ningún alumno podrá comenzar este desafío.</span>
+            </label>
+
+            <label class="field">Umbral de aprobación
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input class="control num" type="number" value="60" min="0" max="100" style="width: 100px;" />
+                <span>/ 100</span>
+              </div>
+              <span class="hint">Puntaje mínimo (sobre 100) que el motor de corrección debe devolver para que el alumno apruebe.</span>
+            </label>
+            
+            <label class="field">Cantidad máxima de intentos
+              <input class="control num" type="number" value="3" min="1" />
+              <span class="hint">Cuántas veces puede un alumno entregar el desafío antes de agotarlo.</span>
+            </label>
+          </div>
+          <div style="margin-top: 24px; display: flex; gap: 12px;">
+            <button class="btn btn-primary" type="button">Guardar Configuración</button>
+            <button class="btn btn-quiet" type="button">Restaurar Valores por Defecto</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= MONITOR DE INTEGRACIÓN · admin ================= -->
+    <section class="screen" id="screen-monitor" aria-labelledby="h-monitor">
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-monitor">Monitor de Errores de Integración</h1>
+          <p>Revisá y gestioná los intentos que fallaron al comunicarse con los motores de corrección.</p>
+        </div>
+      </div>
+      <div class="data">
+        <div class="alert risk" role="status" style="margin-bottom: 24px;">
+          <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+          <div>
+            <div class="alert-title">Hay 2 intentos trabados por errores de sistema</div>
+            <div class="alert-body">Estos intentos no pudieron ser corregidos automáticamente. Podés reintentar enviarlos al corrector o anularlos.</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>ID Evento</th>
+                <th>Timestamp</th>
+                <th>Motor de Corrección</th>
+                <th>Error</th>
+                <th>Intento</th>
+                <th><span class="sr-only">Acciones</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="num">evt_883a9f</td>
+                <td class="num">01/10/2026 15:22:10</td>
+                <td><span class="badge badge-secondary">Sandbox Práctico</span></td>
+                <td>Timeout al recibir callback del contenedor de evaluación.</td>
+                <td><a href="#" class="uikit-link">int_9921b</a></td>
+                <td>
+                  <div class="row-actions">
+                    <button class="btn btn-ghost btn-sm">Reintentar corrección</button>
+                    <button class="btn btn-ghost btn-sm danger">Anular intento</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="num">evt_883a90</td>
+                <td class="num">30/09/2026 09:14:05</td>
+                <td><span class="badge badge-secondary">Motor Teórico</span></td>
+                <td>Error 500: Database connection lost.</td>
+                <td><a href="#" class="uikit-link">int_9918c</a></td>
+                <td>
+                  <div class="row-actions">
+                    <button class="btn btn-ghost btn-sm">Reintentar corrección</button>
+                    <button class="btn btn-ghost btn-sm danger">Anular intento</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="screen" id="screen-pending" aria-labelledby="pending-title">
+      <div class="page-head">
+        <div><h1 class="display" id="pending-title">Página en construcción</h1><p>Esta vista no está incluida en el alcance del mockup o todavía no fue implementada.</p></div>
+      </div>
+      <div class="data">
+        <div class="empty">
+          <svg class="icon" aria-hidden="true"><use href="#i-bot"/></svg>
+          <p>Mockup parcial.</p>
+          <button class="btn btn-primary btn-sm" type="button" onclick="history.back()">Volver atrás</button>
+        </div>
+      </div>
+    </section>
+
+  
+    <!-- ================= CATÁLOGO · profesor ================= -->
+    <section class="screen" id="screen-catalogo-profesor" aria-labelledby="h-catalogo">
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-catalogo">Catálogo de Desafíos</h1>
+          <p>Gestioná los desafíos de tu cátedra, configurá sus reglas y consultá su estado pedagógico.</p>
+        </div>
+        <div class="head-tools">
+          <a class="btn btn-primary" href="#alta-desafio"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Crear desafío</a>
+        </div>
+      </div>
+
+      <div class="data">
+        <!-- Pestañas de estado con contadores numéricos -->
+        <div class="tabs" role="tablist" aria-label="Filtro por estado de desafío" id="catalog-status-tabs">
+          <button class="tab" role="tab" aria-selected="true" data-status-filter="all">Todos <span class="count" id="count-all">5</span></button>
+          <button class="tab" role="tab" aria-selected="false" data-status-filter="PUBLISHED">Publicados <span class="count" id="count-pub">2</span></button>
+          <button class="tab" role="tab" aria-selected="false" data-status-filter="DRAFT">Borradores <span class="count" id="count-draft">2</span></button>
+          <button class="tab" role="tab" aria-selected="false" data-status-filter="ARCHIVED">Archivados <span class="count" id="count-arch">1</span></button>
+        </div>
+
+        <!-- Barra de herramientas y búsqueda rápida -->
+        <div class="catalog-toolbar">
+          <div class="search">
+            <svg class="icon icon-sm"><use href="#i-search"/></svg>
+            <input class="control" id="catalog-search" type="search" placeholder="Buscar desafío por título o descripción..." />
+          </div>
+          <select class="control" id="catalog-type-filter" style="width: auto;">
+            <option value="all">Todos los tipos</option>
+            <option value="Práctico">Prácticos</option>
+            <option value="Teórico">Teóricos</option>
+          </select>
+          <select class="control" id="catalog-material-filter" style="width: auto;">
+            <option value="all">Todos los materiales</option>
+            <option value="with-material">Con material</option>
+            <option value="without-material">Sin material</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data" id="catalog-table">
+            <thead>
+              <tr>
+                <th style="width: 36px;"><span class="sr-only">Desplegar</span></th>
+                <th>Título</th>
+                <th>Tipo</th>
+                <th>Dificultad</th>
+                <th>Carácter</th>
+                <th>Material</th>
+                <th>Estado</th>
+                <th class="r">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 1. Recursión de Fibonacci (PUBLISHED) -->
+              <tr class="tr-expandable" data-status="PUBLISHED" data-type="Práctico" data-material="with-material" data-target="detail-fibonacci" aria-expanded="false" tabindex="0">
+                <td style="text-align: center;">
+                  <span class="expand-caret"><svg class="icon icon-sm"><use href="#i-chevron"/></svg></span>
+                </td>
+                <td>
+                  <div class="cell-title" style="display:flex; align-items:center; gap:8px;">
+                    <span>Recursión de Fibonacci</span>
+                    <span class="badge badge-outline" style="font-size:11px; padding:2px 6px;">v1.2</span>
+                  </div>
+                  <div class="cell-sub">Cohorte MSI · Cátedra Prog. IV</div>
+                </td>
+                <td><span class="badge badge-secondary">Práctico</span></td>
+                <td><span class="badge badge-gold">Intermedio</span></td>
+                <td><span class="badge badge-primary">Obligatorio</span></td>
+                <td>
+                  <span class="badge badge-success" title="Tiene material de lectura vinculado">
+                    <svg class="icon icon-sm"><use href="#i-file"/></svg> Con material
+                  </span>
+                </td>
+                <td><span class="badge badge-success">Publicado</span></td>
+                <td class="r" onclick="event.stopPropagation();">
+                  <div class="row-actions">
+                    <a class="btn btn-ghost btn-sm" href="#seguimiento" title="Ver métricas de alumnos">Seguimiento</a>
+                    <button class="icon-btn sm" aria-label="Editar"><svg class="icon icon-sm"><use href="#i-pencil"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Detalle 1 -->
+              <tr class="tr-detail-row" id="detail-fibonacci" hidden>
+                <td colspan="8">
+                  <div class="detail-drawer">
+                    <div class="detail-drawer-top">
+                      <div class="detail-desc-box">
+                        <div class="detail-desc-label">
+                          <svg class="icon icon-sm"><use href="#i-info"/></svg> Descripción del Desafío
+                        </div>
+                        <p class="detail-desc-text">
+                          Implementación algorítmica de la sucesión de Fibonacci. Se evalúa el cálculo recursivo puro, la optimización mediante memoización top-down y el análisis de complejidad temporal y espacial para evitar stack overflow.
+                        </p>
+                      </div>
+                      <div class="detail-meta-chip">
+                        <svg class="icon icon-sm"><use href="#i-clock"/></svg>
+                        <span>Creado: <strong>14 Mar 2026</strong> por Prof. Manuel Sánchez</span>
+                      </div>
+                    </div>
+
+                    <div class="detail-grid">
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-award"/></svg> Umbral de Aprobación</span>
+                        <span class="detail-card-val">60 / 100 pts <span style="font-size:12px; font-weight:normal; color:var(--text-muted);">(60%)</span></span>
+                        <span class="detail-card-sub">Puntaje mínimo para aprobar</span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-refresh"/></svg> Límite de Reintentos</span>
+                        <span class="detail-card-val">3 intentos permitidos</span>
+                        <span class="detail-card-sub">Envíos automáticos al runner</span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-book"/></svg> Referencia del Material</span>
+                        <span class="detail-card-val" style="color:var(--accent-secondary); word-break:break-all;">
+                          <svg class="icon icon-sm"><use href="#i-file"/></svg> Guía 03 - Recursión y Complejidad.pdf
+                        </span>
+                        <span class="detail-card-sub"><a href="#material" class="linkbtn" onclick="event.stopPropagation();">Ver documento adjunto</a></span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-sliders"/></svg> Reglas y Penalizaciones</span>
+                        <span class="detail-card-val">Penalización activa (-5 pts/reintento)</span>
+                        <span class="detail-card-sub">Configuración de gamificación</span>
+                      </div>
+                    </div>
+
+                    <div class="detail-footer-bar">
+                      <div class="detail-footer-actions">
+                        <a class="btn btn-secondary btn-sm" href="#seguimiento">
+                          <svg class="icon icon-sm"><use href="#i-users"/></svg> Seguimiento de entregas
+                        </a>
+                        <a class="btn btn-ghost btn-sm" href="#historial-versiones">
+                          <svg class="icon icon-sm"><use href="#i-clock"/></svg> Historial de versiones (v1.2)
+                        </a>
+                        <a class="btn btn-ghost btn-sm" href="#config-reglas">
+                          <svg class="icon icon-sm"><use href="#i-sliders"/></svg> Configurar reglas
+                        </a>
+                      </div>
+                      <div class="detail-footer-actions">
+                        <button class="btn btn-ghost btn-sm danger" type="button">
+                          <svg class="icon icon-sm"><use href="#i-eye-off"/></svg> Despublicar / Archivar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- 2. Árboles Binarios de Búsqueda (DRAFT) -->
+              <tr class="tr-expandable" data-status="DRAFT" data-type="Práctico" data-material="without-material" data-target="detail-arboles" aria-expanded="false" tabindex="0">
+                <td style="text-align: center;">
+                  <span class="expand-caret"><svg class="icon icon-sm"><use href="#i-chevron"/></svg></span>
+                </td>
+                <td>
+                  <div class="cell-title" style="display:flex; align-items:center; gap:8px;">
+                    <span>Árboles Binarios de Búsqueda (BST)</span>
+                    <span class="badge badge-outline" style="font-size:11px; padding:2px 6px;">v1.0</span>
+                  </div>
+                  <div class="cell-sub">Cohorte MSI · Cátedra Prog. IV</div>
+                </td>
+                <td><span class="badge badge-secondary">Práctico</span></td>
+                <td><span class="badge badge-danger">Avanzado</span></td>
+                <td><span class="badge badge-primary">Obligatorio</span></td>
+                <td>
+                  <span class="badge badge-outline" style="color:var(--urgent);" title="Falta asociar material teórico">
+                    <svg class="icon icon-sm"><use href="#i-alert"/></svg> Sin material
+                  </span>
+                </td>
+                <td><span class="badge badge-outline">Borrador</span></td>
+                <td class="r" onclick="event.stopPropagation();">
+                  <div class="row-actions">
+                    <button class="btn btn-primary btn-sm" type="button" title="Publicar desafío">Publicar</button>
+                    <button class="icon-btn sm" aria-label="Editar"><svg class="icon icon-sm"><use href="#i-pencil"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Detalle 2 -->
+              <tr class="tr-detail-row" id="detail-arboles" hidden>
+                <td colspan="8">
+                  <div class="detail-drawer">
+                    <div class="detail-drawer-top">
+                      <div class="detail-desc-box">
+                        <div class="detail-desc-label">
+                          <svg class="icon icon-sm"><use href="#i-info"/></svg> Descripción del Desafío
+                        </div>
+                        <p class="detail-desc-text">
+                          Desarrollo completo de las operaciones de inserción, búsqueda por clave y recorridos (InOrder, PreOrder, PostOrder). Incluye suite de tests unitarios que comprueban balanceo y casos borde con árbol vacío y hojas duplicadas.
+                        </p>
+                      </div>
+                      <div class="detail-meta-chip">
+                        <svg class="icon icon-sm"><use href="#i-clock"/></svg>
+                        <span>Creado: <strong>22 Mar 2026</strong> · En edición</span>
+                      </div>
+                    </div>
+
+                    <div class="detail-grid">
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-award"/></svg> Umbral de Aprobación</span>
+                        <span class="detail-card-val">70 / 100 pts <span style="font-size:12px; font-weight:normal; color:var(--text-muted);">(70%)</span></span>
+                        <span class="detail-card-sub">Exigencia avanzada</span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-refresh"/></svg> Límite de Reintentos</span>
+                        <span class="detail-card-val">2 intentos permitidos</span>
+                        <span class="detail-card-sub">Límite estricto de ejecuciones</span>
+                      </div>
+                      <div class="detail-card" style="border-color:color-mix(in srgb, var(--accent-danger) 40%, var(--border-subtle));">
+                        <span class="detail-card-label" style="color:var(--urgent);"><svg class="icon icon-sm"><use href="#i-alert"/></svg> Referencia del Material</span>
+                        <span class="detail-card-val" style="color:var(--text-muted); font-size:13px;">No tiene material asociado aún</span>
+                        <span class="detail-card-sub"><button class="linkbtn" type="button" onclick="event.stopPropagation();">+ Asociar apunte o URL</button></span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-sliders"/></svg> Visibilidad para alumnos</span>
+                        <span class="detail-card-val" style="color:var(--text-muted);">Oculto (Borrador)</span>
+                        <span class="detail-card-sub">No visible en el roadmap</span>
+                      </div>
+                    </div>
+
+                    <div class="detail-footer-bar">
+                      <div class="detail-footer-actions">
+                        <button class="btn btn-primary btn-sm" type="button">
+                          <svg class="icon icon-sm"><use href="#i-check"/></svg> Publicar en cohorte MSI
+                        </button>
+                        <button class="btn btn-ghost btn-sm" type="button">
+                          <svg class="icon icon-sm"><use href="#i-pencil"/></svg> Editar enunciado y tests
+                        </button>
+                        <a class="btn btn-ghost btn-sm" href="#config-reglas">
+                          <svg class="icon icon-sm"><use href="#i-sliders"/></svg> Modificar reglas
+                        </a>
+                      </div>
+                      <div class="detail-footer-actions">
+                        <button class="btn btn-ghost btn-sm danger" type="button">
+                          <svg class="icon icon-sm"><use href="#i-trash"/></svg> Descartar borrador
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- 3. Pilas y Colas (PUBLISHED) -->
+              <tr class="tr-expandable" data-status="PUBLISHED" data-type="Teórico" data-material="with-material" data-target="detail-pilas" aria-expanded="false" tabindex="0">
+                <td style="text-align: center;">
+                  <span class="expand-caret"><svg class="icon icon-sm"><use href="#i-chevron"/></svg></span>
+                </td>
+                <td>
+                  <div class="cell-title" style="display:flex; align-items:center; gap:8px;">
+                    <span>Pilas y Colas: Estructuras Lineales</span>
+                    <span class="badge badge-outline" style="font-size:11px; padding:2px 6px;">v2.0</span>
+                  </div>
+                  <div class="cell-sub">Cohorte MSII · Cátedra Prog. IV</div>
+                </td>
+                <td><span class="badge badge-primary">Teórico</span></td>
+                <td><span class="badge badge-success">Básico</span></td>
+                <td><span class="badge badge-outline">Optativo</span></td>
+                <td>
+                  <span class="badge badge-success" title="Tiene material asociado">
+                    <svg class="icon icon-sm"><use href="#i-file"/></svg> Con material
+                  </span>
+                </td>
+                <td><span class="badge badge-success">Publicado</span></td>
+                <td class="r" onclick="event.stopPropagation();">
+                  <div class="row-actions">
+                    <a class="btn btn-ghost btn-sm" href="#seguimiento" title="Ver métricas">Seguimiento</a>
+                    <button class="icon-btn sm" aria-label="Editar"><svg class="icon icon-sm"><use href="#i-pencil"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Detalle 3 -->
+              <tr class="tr-detail-row" id="detail-pilas" hidden>
+                <td colspan="8">
+                  <div class="detail-drawer">
+                    <div class="detail-drawer-top">
+                      <div class="detail-desc-box">
+                        <div class="detail-desc-label">
+                          <svg class="icon icon-sm"><use href="#i-info"/></svg> Descripción del Desafío
+                        </div>
+                        <p class="detail-desc-text">
+                          Cuestionario conceptual sobre estructuras LIFO y FIFO. Preguntas sobre resolución de llamados en recursión (call stack), colas de prioridad y análisis de complejidad O(1) en inserción y remoción.
+                        </p>
+                      </div>
+                      <div class="detail-meta-chip">
+                        <svg class="icon icon-sm"><use href="#i-clock"/></svg>
+                        <span>Creado: <strong>02 Mar 2026</strong></span>
+                      </div>
+                    </div>
+
+                    <div class="detail-grid">
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-award"/></svg> Umbral de Aprobación</span>
+                        <span class="detail-card-val">50 / 100 pts <span style="font-size:12px; font-weight:normal; color:var(--text-muted);">(50%)</span></span>
+                        <span class="detail-card-sub">Cuestionario formativo</span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-refresh"/></svg> Límite de Reintentos</span>
+                        <span class="detail-card-val">Ilimitado</span>
+                        <span class="detail-card-sub">Los alumnos pueden practicar libremente</span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-book"/></svg> Referencia del Material</span>
+                        <span class="detail-card-val" style="color:var(--accent-secondary); word-break:break-all;">
+                          <svg class="icon icon-sm"><use href="#i-file"/></svg> Apunte Teórico 02 - LIFO y FIFO.pdf
+                        </span>
+                        <span class="detail-card-sub"><a href="#material" class="linkbtn" onclick="event.stopPropagation();">Ver apunte en PDF</a></span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-coin"/></svg> Recompensa</span>
+                        <span class="detail-card-val" style="color:var(--accent-gold);">+50 XP · 15 Monedas</span>
+                        <span class="detail-card-sub">Gamificación optativa</span>
+                      </div>
+                    </div>
+
+                    <div class="detail-footer-bar">
+                      <div class="detail-footer-actions">
+                        <a class="btn btn-secondary btn-sm" href="#seguimiento">
+                          <svg class="icon icon-sm"><use href="#i-users"/></svg> Seguimiento
+                        </a>
+                        <a class="btn btn-ghost btn-sm" href="#historial-versiones">
+                          <svg class="icon icon-sm"><use href="#i-clock"/></svg> Versiones (v2.0)
+                        </a>
+                        <button class="btn btn-ghost btn-sm" type="button">
+                          <svg class="icon icon-sm"><use href="#i-pencil"/></svg> Editar preguntas
+                        </button>
+                      </div>
+                      <div class="detail-footer-actions">
+                        <button class="btn btn-ghost btn-sm danger" type="button">
+                          <svg class="icon icon-sm"><use href="#i-eye-off"/></svg> Archivar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- 4. Complejidad Asintótica y Notación Big-O (DRAFT) -->
+              <tr class="tr-expandable" data-status="DRAFT" data-type="Teórico" data-material="without-material" data-target="detail-bigo" aria-expanded="false" tabindex="0">
+                <td style="text-align: center;">
+                  <span class="expand-caret"><svg class="icon icon-sm"><use href="#i-chevron"/></svg></span>
+                </td>
+                <td>
+                  <div class="cell-title" style="display:flex; align-items:center; gap:8px;">
+                    <span>Complejidad Asintótica y Notación Big-O</span>
+                    <span class="badge badge-outline" style="font-size:11px; padding:2px 6px;">v0.9</span>
+                  </div>
+                  <div class="cell-sub">Cohorte MSI · Cátedra Prog. IV</div>
+                </td>
+                <td><span class="badge badge-primary">Teórico</span></td>
+                <td><span class="badge badge-gold">Intermedio</span></td>
+                <td><span class="badge badge-primary">Obligatorio</span></td>
+                <td>
+                  <span class="badge badge-outline" style="color:var(--urgent);" title="Falta asociar material">
+                    <svg class="icon icon-sm"><use href="#i-alert"/></svg> Sin material
+                  </span>
+                </td>
+                <td><span class="badge badge-outline">Borrador</span></td>
+                <td class="r" onclick="event.stopPropagation();">
+                  <div class="row-actions">
+                    <button class="btn btn-primary btn-sm" type="button" title="Publicar desafío">Publicar</button>
+                    <button class="icon-btn sm" aria-label="Editar"><svg class="icon icon-sm"><use href="#i-pencil"/></svg></button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Detalle 4 -->
+              <tr class="tr-detail-row" id="detail-bigo" hidden>
+                <td colspan="8">
+                  <div class="detail-drawer">
+                    <div class="detail-drawer-top">
+                      <div class="detail-desc-box">
+                        <div class="detail-desc-label">
+                          <svg class="icon icon-sm"><use href="#i-info"/></svg> Descripción del Desafío
+                        </div>
+                        <p class="detail-desc-text">
+                          Evaluación teórica de análisis asintótico de algoritmos iterativos y recursivos mediante el Teorema Maestro (Master Theorem). Selección múltiple y ejercicios prácticos de deducción de cotas superiores O(g(n)).
+                        </p>
+                      </div>
+                      <div class="detail-meta-chip">
+                        <svg class="icon icon-sm"><use href="#i-clock"/></svg>
+                        <span>Creado: <strong>28 Mar 2026</strong></span>
+                      </div>
+                    </div>
+
+                    <div class="detail-grid">
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-award"/></svg> Umbral de Aprobación</span>
+                        <span class="detail-card-val">60 / 100 pts <span style="font-size:12px; font-weight:normal; color:var(--text-muted);">(60%)</span></span>
+                        <span class="detail-card-sub">Criterio estándar</span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-refresh"/></svg> Límite de Reintentos</span>
+                        <span class="detail-card-val">4 intentos permitidos</span>
+                        <span class="detail-card-sub">Reintentos con retroalimentación</span>
+                      </div>
+                      <div class="detail-card" style="border-color:color-mix(in srgb, var(--accent-danger) 40%, var(--border-subtle));">
+                        <span class="detail-card-label" style="color:var(--urgent);"><svg class="icon icon-sm"><use href="#i-alert"/></svg> Referencia del Material</span>
+                        <span class="detail-card-val" style="color:var(--text-muted); font-size:13px;">No asignado aún</span>
+                        <span class="detail-card-sub"><button class="linkbtn" type="button" onclick="event.stopPropagation();">+ Asociar material bibliográfico</button></span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-sliders"/></svg> Estado de revisión</span>
+                        <span class="detail-card-val">Pendiente de validación de casos</span>
+                        <span class="detail-card-sub">Faltan 2 preguntas de desarrollo</span>
+                      </div>
+                    </div>
+
+                    <div class="detail-footer-bar">
+                      <div class="detail-footer-actions">
+                        <button class="btn btn-primary btn-sm" type="button">
+                          <svg class="icon icon-sm"><use href="#i-check"/></svg> Publicar
+                        </button>
+                        <button class="btn btn-ghost btn-sm" type="button">
+                          <svg class="icon icon-sm"><use href="#i-pencil"/></svg> Continuar edición
+                        </button>
+                      </div>
+                      <div class="detail-footer-actions">
+                        <button class="btn btn-ghost btn-sm danger" type="button">
+                          <svg class="icon icon-sm"><use href="#i-trash"/></svg> Eliminar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- 5. Grafos y Algoritmo de Dijkstra (ARCHIVED) -->
+              <tr class="tr-expandable" data-status="ARCHIVED" data-type="Práctico" data-material="with-material" data-target="detail-grafos" aria-expanded="false" tabindex="0">
+                <td style="text-align: center;">
+                  <span class="expand-caret"><svg class="icon icon-sm"><use href="#i-chevron"/></svg></span>
+                </td>
+                <td>
+                  <div class="cell-title" style="display:flex; align-items:center; gap:8px;">
+                    <span style="opacity:0.8;">Grafos y Algoritmo de Dijkstra</span>
+                    <span class="badge badge-outline" style="font-size:11px; padding:2px 6px;">v1.5</span>
+                  </div>
+                  <div class="cell-sub">Cohorte MSI · Ciclo 2025 (Histórico)</div>
+                </td>
+                <td><span class="badge badge-secondary" style="opacity:0.8;">Práctico</span></td>
+                <td><span class="badge badge-danger" style="opacity:0.8;">Avanzado</span></td>
+                <td><span class="badge badge-primary" style="opacity:0.8;">Obligatorio</span></td>
+                <td>
+                  <span class="badge badge-outline" title="Tiene material archivado">
+                    <svg class="icon icon-sm"><use href="#i-file"/></svg> Con material
+                  </span>
+                </td>
+                <td><span class="badge badge-outline" style="opacity:0.75;">Archivado</span></td>
+                <td class="r" onclick="event.stopPropagation();">
+                  <div class="row-actions">
+                    <a class="btn btn-ghost btn-sm" href="#historial-versiones" title="Ver historial de versiones">Versiones</a>
+                  </div>
+                </td>
+              </tr>
+              <!-- Detalle 5 -->
+              <tr class="tr-detail-row" id="detail-grafos" hidden>
+                <td colspan="8">
+                  <div class="detail-drawer">
+                    <div class="detail-drawer-top">
+                      <div class="detail-desc-box">
+                        <div class="detail-desc-label">
+                          <svg class="icon icon-sm"><use href="#i-info"/></svg> Descripción del Desafío (Archivado)
+                        </div>
+                        <p class="detail-desc-text">
+                          Cálculo de caminos más cortos en grafos dirigidos ponderados con pesos positivos. Implementación optimizada con cola de prioridad / min-heap binario. Este desafío fue archivado al finalizar el ciclo lectivo 2025.
+                        </p>
+                      </div>
+                      <div class="detail-meta-chip">
+                        <svg class="icon icon-sm"><use href="#i-clock"/></svg>
+                        <span>Creado: <strong>10 Ago 2025</strong> · Estado terminal (Archivado)</span>
+                      </div>
+                    </div>
+
+                    <div class="detail-grid">
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-award"/></svg> Umbral de Aprobación</span>
+                        <span class="detail-card-val">75 / 100 pts <span style="font-size:12px; font-weight:normal; color:var(--text-muted);">(75%)</span></span>
+                        <span class="detail-card-sub">Criterio 2025</span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-refresh"/></svg> Límite de Reintentos</span>
+                        <span class="detail-card-val">3 intentos permitidos</span>
+                        <span class="detail-card-sub">Configuración original</span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-book"/></svg> Referencia del Material</span>
+                        <span class="detail-card-val" style="word-break:break-all;">
+                          <svg class="icon icon-sm"><use href="#i-file"/></svg> Guía_Grafos_Ciclo2025.pdf
+                        </span>
+                        <span class="detail-card-sub">Material histórico</span>
+                      </div>
+                      <div class="detail-card">
+                        <span class="detail-card-label"><svg class="icon icon-sm"><use href="#i-database"/></svg> Estado de Datos</span>
+                        <span class="detail-card-val">Solo lectura (Terminal)</span>
+                        <span class="detail-card-sub">No editable ni asignable a alumnos</span>
+                      </div>
+                    </div>
+
+                    <div class="detail-footer-bar">
+                      <div class="detail-footer-actions">
+                        <a class="btn btn-secondary btn-sm" href="#historial-versiones">
+                          <svg class="icon icon-sm"><use href="#i-clock"/></svg> Historial de versiones (v1.5)
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ALTA DE DESAFÍO · profesor ================= -->
+    <section class="screen" id="screen-alta-desafio-profesor" aria-labelledby="h-alta-desafio">
+      <a class="back" href="#catalogo"><svg class="icon icon-sm"><use href="#i-left"/></svg>Catálogo</a>
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-alta-desafio">Alta de Desafío</h1>
+          <p>Creá un nuevo desafío para ser publicado en el roadmap de los alumnos.</p>
+        </div>
+      </div>
+      <div class="data">
+        <form class="card studs" onsubmit="return false">
+          <div class="section-head"><h2>Información General</h2></div>
+          <div class="form-grid">
+            <label class="field full">Nombre del Desafío
+              <input class="control" type="text" placeholder="Ej: Ordenamiento de Burbuja" />
+            </label>
+            
+            <label class="field">Tipo de Desafío
+              <select class="control">
+                <option>Práctico (Evaluador de Código)</option>
+                <option>Teórico (Múltiple Opción)</option>
+              </select>
+            </label>
+            
+            <label class="field">Asignatura / Cohorte
+              <select class="control">
+                <option>MSI</option>
+                <option>MSII</option>
+              </select>
+            </label>
+
+            <label class="field">Dificultad base
+              <select class="control">
+                <option>Básico (+40 XP)</option>
+                <option>Intermedio (+60 XP)</option>
+                <option>Avanzado (+100 XP)</option>
+              </select>
+            </label>
+
+            <label class="field">Estado inicial
+              <select class="control">
+                <option>Borrador (No visible)</option>
+                <option>Publicado</option>
+              </select>
+            </label>
+
+            <label class="field full">Enunciado (Markdown)
+              <textarea class="control" rows="4" placeholder="Escribí el problema o la consigna que el alumno debe resolver..."></textarea>
+            </label>
+          </div>
+          
+          <div class="alert risk" role="status" style="margin-top: 24px;">
+            <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
+            <div>
+              <div class="alert-title">Configuración Avanzada</div>
+              <div class="alert-body">Una vez creado, podrás configurar los tiempos límite, umbrales de aprobación y cantidad de intentos desde la pestaña de <b>Configuración de Reglas</b>.</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; display: flex; gap: 12px;">
+            <button class="btn btn-primary" type="button" onclick="location.hash='catalogo'">Crear Desafío</button>
+            <button class="btn btn-quiet" type="button" onclick="location.hash='catalogo'">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  
+    <!-- ================= HUB DE DESAFÍOS · profesor ================= -->
+    <section class="screen" id="screen-hub-profesor" aria-labelledby="h-hub">
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-hub">Hub de Desafíos</h1>
+          <p>Explorá la biblioteca global. Encontrá desafíos compartidos por otros profesores y clonálos a tu catálogo.</p>
+        </div>
+        <div class="head-tools">
+          <label class="search"><span class="sr-only">Buscar desafío</span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-search"/></svg><input class="control" type="search" placeholder="Buscar por tema o etiqueta..." /></label>
+        </div>
+      </div>
+      <div class="data">
+        <div class="tabs" role="tablist" aria-label="Filtros de comunidad">
+          <button class="tab" role="tab" aria-selected="true">Más populares</button>
+          <button class="tab" role="tab" aria-selected="false">Recientes</button>
+          <button class="tab" role="tab" aria-selected="false">Mis compartidos</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>Desafío</th>
+                <th>Autor</th>
+                <th>Etiquetas</th>
+                <th>Clonados</th>
+                <th><span class="sr-only">Acciones</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="cell-title">Ordenamiento Quicksort</div><div class="cell-sub">Dificultad: Avanzado</div></td>
+                <td><span class="badge badge-secondary">Luis Gómez</span></td>
+                <td><span class="badge badge-outline">Algoritmos</span> <span class="badge badge-outline">Arrays</span></td>
+                <td><span class="num">124</span> veces</td>
+                <td>
+                  <div class="row-actions">
+                    <button class="btn btn-primary btn-sm"><svg class="icon icon-sm"><use href="#i-copy"/></svg>Clonar</button>
+                    <a class="btn btn-ghost btn-sm" href="#detalle-hub">Vista Previa</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="cell-title">Búsqueda DFS en Grafos</div><div class="cell-sub">Dificultad: Avanzado</div></td>
+                <td><span class="badge badge-secondary">Ana Torres</span></td>
+                <td><span class="badge badge-outline">Grafos</span> <span class="badge badge-outline">Búsqueda</span></td>
+                <td><span class="num">89</span> veces</td>
+                <td>
+                  <div class="row-actions">
+                    <button class="btn btn-primary btn-sm"><svg class="icon icon-sm"><use href="#i-copy"/></svg>Clonar</button>
+                    <a class="btn btn-ghost btn-sm" href="#detalle-hub">Vista Previa</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="cell-title">Conceptos de POO</div><div class="cell-sub">Dificultad: Básico (Teórico)</div></td>
+                <td><span class="badge badge-secondary">Carlos Ruiz</span></td>
+                <td><span class="badge badge-outline">Objetos</span> <span class="badge badge-outline">Clases</span></td>
+                <td><span class="num">210</span> veces</td>
+                <td>
+                  <div class="row-actions">
+                    <button class="btn btn-primary btn-sm"><svg class="icon icon-sm"><use href="#i-copy"/></svg>Clonar</button>
+                    <a class="btn btn-ghost btn-sm" href="#detalle-hub">Vista Previa</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  
+    <!-- ================= DETALLE HUB (Vista Previa) · profesor ================= -->
+    <section class="screen" id="screen-detalle-hub-profesor" aria-labelledby="h-detalle-hub">
+      <a class="back" href="#hub"><svg class="icon icon-sm"><use href="#i-left"/></svg>Volver al Hub</a>
+      <div class="page-head">
+        <div>
+          <div class="head-meta">
+            <span><b>Luis Gómez</b></span><span>Algoritmos</span><span>124 Clonados</span>
+          </div>
+          <h1 class="display" id="h-detalle-hub">Ordenamiento Quicksort</h1>
+          <p>Vista previa detallada del desafío antes de sumarlo a tu catálogo.</p>
+        </div>
+        <div class="head-tools" style="display: flex; gap: 12px; align-items: center;">
+          <button class="btn btn-secondary" type="button" onclick="alert('Esta vista corresponde al contenido y respuestas. Como no la hacemos nosotros, el enlace queda como placeholder.')"><svg class="icon icon-sm"><use href="#i-eye"/></svg>Ver Contenido / Respuestas</button>
+          <button class="btn btn-primary" type="button" onclick="location.hash='catalogo'"><svg class="icon icon-sm"><use href="#i-copy"/></svg>Clonar a mi Catálogo</button>
+        </div>
+      </div>
+      <div class="data">
+        <div class="two-col">
+          <div class="stack" style="flex: 2;">
+            <div class="card studs">
+              <div class="section-head"><h2>Enunciado</h2></div>
+              <div style="font-family: var(--font-base); line-height: 1.6;">
+                <p>Implementá el algoritmo de ordenamiento <strong>Quicksort</strong> para ordenar un arreglo de números enteros de menor a mayor.</p>
+                <br>
+                <h3>Reglas:</h3>
+                <ul>
+                  <li>No podés usar métodos de ordenamiento nativos del lenguaje (ej: <code>Array.prototype.sort()</code>).</li>
+                  <li>Debés implementar la lógica de pivote in-place para optimizar el uso de memoria.</li>
+                  <li>La complejidad de tiempo promedio debe ser <strong>O(n log n)</strong>.</li>
+                </ul>
+                <br>
+                <pre style="background: var(--bg-level2); padding: 16px; border-radius: 8px; font-family: monospace;">Entrada: [10, 7, 8, 9, 1, 5]
+Salida esperada: [1, 5, 7, 8, 9, 10]</pre>
+              </div>
+            </div>
+          </div>
+          
+          <div class="stack" style="flex: 1;">
+            <div class="card studs">
+              <div class="section-head"><h2>Metadatos</h2></div>
+              <ul class="list">
+                <li><strong>Tipo:</strong> Práctico (Evaluador de Código)</li>
+                <li><strong>Dificultad:</strong> Avanzado (+100 XP)</li>
+                <li><strong>Autor Original:</strong> Luis Gómez</li>
+                <li><strong>Licencia:</strong> Compartido (Comunidad)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ================= Navegación Móvil Inferior (Bottom Bar) ================= -->
+<nav class="bottom-nav" id="bottom-nav" aria-label="Navegación móvil"></nav>
+
+<!-- ================= Drawer: crear desafío ================= -->
+<dialog class="drawer" id="drawer-desafio" aria-labelledby="h-dd">
+  <form method="dialog" style="display:contents" id="form-desafio" novalidate>
+    <div class="drawer-head">
+      <div><h2 id="h-dd" class="display">Crear desafío</h2><p>Definí la consigna y cómo se evalúa.</p></div>
+      <button class="icon-btn sm" value="cancel" aria-label="Cerrar"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="drawer-body">
+      <fieldset class="group"><legend>Consigna</legend>
+        <label class="field"><span class="req">Título</span><input class="control" name="titulo" maxlength="100" placeholder="Por ejemplo: Introducción a algoritmos" aria-describedby="t-hint" /><span class="hint" id="t-hint">Hasta 100 caracteres.</span></label>
+        <label class="field">Descripción <span class="hint">Opcional</span><textarea class="control" name="desc" maxlength="500" placeholder="Consigna inicial del desafío"></textarea></label>
+      </fieldset>
+      <fieldset class="group"><legend>Evaluación</legend>
+        <div class="form-grid">
+          <label class="field"><span class="req">Tipo</span><select class="control" name="tipo"><option>Algoritmo con pruebas automáticas</option><option>Refactorización</option><option>Cuestionario teórico</option></select></label>
+          <label class="field"><span class="req">Dificultad</span><select class="control" name="dif"><option>Básica</option><option>Media</option><option>Avanzada</option></select></label>
+          <label class="field"><span class="req">Reintentos</span><input class="control num" type="number" min="0" max="3" value="2" name="reint" /><span class="hint">De 0 a 3.</span></label>
+          <label class="field"><span class="req">Aprobación</span><input class="control num" type="number" min="0" max="100" value="70" name="aprob" /><span class="hint">Porcentaje mínimo, de 0 a 100.</span></label>
+        </div>
+        <label class="toggle"><input type="checkbox" name="oblig" checked />Obligatorio: cuenta para la regularidad</label>
+      </fieldset>
+      <fieldset class="group"><legend>Publicación</legend>
+        <div class="form-grid">
+          <label class="field"><span class="req">Cohorte</span><select class="control" name="curso"><option>MSI</option><option>MSII</option></select></label>
+          <label class="field">Fecha límite<input class="control" type="date" name="due" /></label>
+          <label class="field"><span class="req">XP</span><input class="control num" type="number" min="0" value="40" name="xp" /></label>
+          <label class="field"><span class="req">Monedas</span><input class="control num" type="number" min="0" value="10" name="coins" /></label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="drawer-foot">
+      <button class="btn btn-quiet" value="cancel">Cancelar</button>
+      <button class="btn btn-primary" id="dd-submit" type="button">Crear desafío</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- ================= Modales Centrados de Demostración ================= -->
+
+<!-- 1. Modal Chico: Confirmación de borrado -->
+<dialog class="modal modal-sm" id="modal-demo-confirm" aria-labelledby="h-modal-confirm">
+  <form method="dialog" style="display:contents">
+    <div class="modal-head">
+      <div>
+        <h2 id="h-modal-confirm" class="display" style="color:var(--urgent);">¿Eliminar cohorte?</h2>
+        <p>Esta acción no se puede deshacer.</p>
+      </div>
+      <button class="icon-btn sm" value="cancel" aria-label="Cerrar"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:14px; line-height:1.5;">Vas a eliminar la cohorte <b>MSI 2026</b> y desvincular a los 34 alumnos inscriptos. Se perderá el registro de entregas y calificaciones parciales.</p>
+      <div class="alert" style="padding:10px 14px; margin:0;">
+        <svg class="icon icon-sm"><use href="#i-alert"/></svg>
+        <div style="font-size:13px;">Los desafíos creados en el banco seguirán guardados.</div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" value="cancel" type="button" onclick="this.closest('dialog').close()">Cancelar</button>
+      <button class="btn btn-danger" type="button" onclick="this.closest('dialog').close()"><svg class="icon icon-sm"><use href="#i-trash"/></svg>Sí, eliminar</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- 2. Modal Mediano: Formulario con scroll contenido -->
+<dialog class="modal modal-md" id="modal-demo-form" aria-labelledby="h-modal-form">
+  <form method="dialog" style="display:contents">
+    <div class="modal-head">
+      <div>
+        <h2 id="h-modal-form" class="display">Crear nuevo curso</h2>
+        <p>Ingresá la información general para habilitar la materia.</p>
+      </div>
+      <button class="icon-btn sm" value="cancel" aria-label="Cerrar"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <label class="field full">
+          <span class="req">Nombre del curso</span>
+          <input class="control" type="text" placeholder="Ej. Algoritmos y Estructuras de Datos" required />
+        </label>
+        <label class="field">
+          <span class="req">Código de cátedra</span>
+          <input class="control" type="text" placeholder="Ej. AED-2026" required />
+        </label>
+        <label class="field">
+          <span class="req">Año lectivo</span>
+          <select class="control">
+            <option>2026</option>
+            <option>2027</option>
+          </select>
+        </label>
+        <label class="field full">
+          <span>Descripción para los alumnos</span>
+          <textarea class="control" placeholder="Contenido analítico, objetivos y modalidad de cursado..."></textarea>
+          <span class="hint">Hasta 500 caracteres.</span>
+        </label>
+        <label class="field">
+          <span>Profesor titular</span>
+          <input class="control" type="text" value="Ing. Manuel Sánchez" />
+        </label>
+        <label class="field">
+          <span>Cupo estimado</span>
+          <input class="control num" type="number" value="45" />
+        </label>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" checked />
+        <span>Habilitar matriculación automática con legajo UTN</span>
+      </label>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" value="cancel" type="button" onclick="this.closest('dialog').close()">Cancelar</button>
+      <button class="btn btn-primary" type="button" onclick="this.closest('dialog').close()"><svg class="icon icon-sm"><use href="#i-check"/></svg>Crear curso</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- 3. Modal Grande: Vista previa y tabla con scroll horizontal contenido -->
+<dialog class="modal modal-lg" id="modal-demo-table" aria-labelledby="h-modal-table">
+  <form method="dialog" style="display:contents">
+    <div class="modal-head">
+      <div>
+        <h2 id="h-modal-table" class="display">Alumnos inscriptos · Cohorte MSI</h2>
+        <p>Listado de regularidad y puntos acumulados en tiempo real.</p>
+      </div>
+      <button class="icon-btn sm" value="cancel" aria-label="Cerrar"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Alumno</th>
+              <th>Legajo</th>
+              <th>Desafíos</th>
+              <th>Puntaje</th>
+              <th>Estado</th>
+              <th class="r">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Lucas Benítez</b></td>
+              <td><code>84920</code></td>
+              <td>12 / 14</td>
+              <td><span style="color:var(--accent-gold); font-weight:700;">850 XP</span></td>
+              <td><span class="badge badge-success">Regular</span></td>
+              <td class="r"><button class="btn btn-ghost btn-sm" type="button">Detalle</button></td>
+            </tr>
+            <tr>
+              <td><b>Camila Morales</b></td>
+              <td><code>85104</code></td>
+              <td>14 / 14</td>
+              <td><span style="color:var(--accent-gold); font-weight:700;">1120 XP</span></td>
+              <td><span class="badge badge-gold">Promoción</span></td>
+              <td class="r"><button class="btn btn-ghost btn-sm" type="button">Detalle</button></td>
+            </tr>
+            <tr>
+              <td><b>Agustín Romero</b></td>
+              <td><code>84319</code></td>
+              <td>6 / 14</td>
+              <td><span style="color:var(--accent-gold); font-weight:700;">320 XP</span></td>
+              <td><span class="badge badge-danger">En riesgo</span></td>
+              <td class="r"><button class="btn btn-ghost btn-sm" type="button">Detalle</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" value="cancel" type="button" onclick="this.closest('dialog').close()">Cerrar</button>
+      <button class="btn btn-primary" type="button" onclick="this.closest('dialog').close()"><svg class="icon icon-sm"><use href="#i-download"/></svg>Exportar reporte CSV</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- ================= Drawer: crear cohorte ================= -->
+<dialog class="drawer" id="drawer-cohorte" aria-labelledby="h-dc">
+  <form method="dialog" style="display:contents" novalidate>
+    <div class="drawer-head">
+      <div><h2 id="h-dc" class="display">Crear cohorte</h2><p>Arranca como borrador hasta que la publiques.</p></div>
+      <button class="icon-btn sm" value="cancel" aria-label="Cerrar"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="drawer-body">
+      <label class="field"><span class="req">Nombre</span><input class="control" placeholder="Por ejemplo: MSIII" /></label>
+      <div class="form-grid">
+        <label class="field"><span class="req">Inicio de inscripción</span><input class="control" type="date" /></label>
+        <label class="field"><span class="req">Fin de inscripción</span><input class="control" type="date" /></label>
+      </div>
+      <label class="field">Asignatura del roadmap<select class="control"><option>MSI</option><option>MSII</option></select></label>
+    </div>
+    <div class="drawer-foot">
+      <button class="btn btn-quiet" value="cancel">Cancelar</button>
+      <button class="btn btn-primary" value="ok">Crear borrador</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const store = { get: k => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+
+const NAV_TABS = {
+  alumno: [
+    ['lobby', 'i-flame', 'Lobby Desafío'],
+    ['historial', 'i-clock', 'Mis Intentos'],
+    ['veredicto', 'i-check', 'Veredicto Final'],
+  ],
+  profesor: [
+    ['catalogo', 'i-book', 'Mi Catálogo'],
+    ['hub', 'i-database', 'Hub de Desafíos'],
+    ['alta-desafio', 'i-plus', 'Alta de Desafío'],
+    ['historial-versiones', 'i-clock', 'Historial Versiones'],
+    ['seguimiento', 'i-users', 'Seguimiento Desafío'],
+    ['config-reglas', 'i-sliders', 'Config. Reglas'],
+  ],
+  admin: [
+    ['monitor', 'i-cpu', 'Monitor DLQ'],
+  ],
+};
+
+const BOTTOM_NAV_ITEMS = {
+  alumno: [
+    ['lobby', 'i-flame', 'Lobby'],
+    ['historial', 'i-clock', 'Intentos'],
+    ['veredicto', 'i-check', 'Veredicto'],
+  ],
+  profesor: [
+    ['catalogo', 'i-book', 'Catálogo'],
+    ['hub', 'i-database', 'Hub'],
+    ['alta-desafio', 'i-plus', 'Alta'],
+  ],
+  admin: [
+    ['monitor', 'i-cpu', 'Monitor'],
+  ],
+};
+
+const FONT_MAP = {
+  pixelify: "'Pixelify Sans', sans-serif",
+  pressstart: "'Press Start 2P', monospace",
+  chakra: "'Chakra Petch', sans-serif",
+  orbitron: "'Orbitron', sans-serif",
+  silkscreen: "'Silkscreen', sans-serif"
+};
+
+let currentRole = 'alumno', currentScreen = 'lobby';
+
+function icon(id, cls = 'icon') {
+  return `<svg class="${cls}" aria-hidden="true"><use href="#${id}"/></svg>`;
+}
+
+function renderNav() {
+  const sidebarNav = $('#sidebar-nav');
+  const bottomNav = $('#bottom-nav');
+  const hud = $('#student-hud');
+
+  if (hud) hud.hidden = (currentRole !== 'alumno');
+
+  if (sidebarNav) {
+    sidebarNav.innerHTML = NAV_TABS[currentRole].map(([id, ic, label]) => {
+      return `<a class="rail-item" href="#${id}" data-screen="${id}" data-tooltip="${label}" aria-label="${label}">
+        ${icon(ic)}
+        <span class="rail-label">${label}</span>
+      </a>`;
+    }).join('');
+  }
+
+  if (bottomNav) {
+    bottomNav.innerHTML = BOTTOM_NAV_ITEMS[currentRole].map(([id, ic, label]) => `
+      <a class="bottom-nav-item" href="#${id}" data-screen="${id}">
+        ${icon(ic)}<span>${label}</span>
+      </a>
+    `).join('');
+  }
+}
+
+function screenEl(id) {
+  // Try with role prefix if applicable, else exact match
+  const rk = currentRole;
+  return $(`#screen-${id}-${rk}`) || $(`#screen-${id}`);
+}
+
+function route() {
+  const hash = location.hash.slice(1);
+  const [id, arg] = (hash || 'lobby').split('/');
+  currentScreen = id;
+
+  // Manual parent mappings for detail views
+  const PARENT = {
+    'detalle-hub': 'hub'
+  };
+  const activeNavId = PARENT[id] || id;
+
+  $$('.rail-item, .bottom-nav-item').forEach(a => {
+    if (a.dataset.screen === activeNavId) {
+      a.setAttribute('aria-current', 'page');
+    } else {
+      a.removeAttribute('aria-current');
+    }
+  });
+
+  $$('.screen').forEach(s => s.hidden = true);
+  let el = screenEl(id);
+  
+  if (!el) {
+    el = $('#screen-pending');
+    const link = $(`.rail-item[data-screen="${id}"]`);
+    if ($('#pending-title')) {
+      $('#pending-title').textContent = link ? (link.getAttribute('data-tooltip') || link.textContent.trim()) : 'Página';
+    }
+  }
+  
+  if (el) {
+    el.hidden = false;
+    el.style.animation = 'none'; el.offsetHeight; el.style.animation = '';
+    window.scrollTo(0, 0);
+  }
+}
+window.addEventListener('hashchange', route);
+
+/* ---- theme / mode / role ---- */
+const root = document.documentElement;
+
+function setTheme(t) {
+  root.dataset.theme = t; store.set('tpi-theme', t);
+  $$('[data-theme-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.themeBtn === t)));
+}
+
+function setSkin(s) {
+  root.dataset.skin = s; store.set('tpi-skin', s);
+  $$('[data-skin-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.skinBtn === s)));
+  if (s === 'sobrio') {
+    root.style.setProperty('--font-display', "'IBM Plex Sans', sans-serif");
+  } else {
+    const f = store.get('tpi-font') || 'pixelify';
+    root.style.setProperty('--font-display', FONT_MAP[f] || FONT_MAP.pixelify);
+  }
+}
+
+function setPalette(p) {
+  root.dataset.palette = p; store.set('tpi-palette', p);
+  $$('[data-palette-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.paletteBtn === p)));
+}
+
+function setSidebarPinned(pinned) {
+  const isPinned = Boolean(pinned);
+  root.dataset.sidebarPinned = String(isPinned);
+  store.set('tpi-sidebar-pinned', String(isPinned));
+  $$('[data-sidebar-btn]').forEach(b => b.setAttribute('aria-pressed', String((b.dataset.sidebarBtn === 'pinned') === isPinned)));
+  const btn = $('#sidebar-toggle');
+  if (btn) {
+    btn.setAttribute('aria-expanded', String(isPinned));
+    btn.setAttribute('data-tooltip', isPinned ? 'Colapsar menú' : 'Fijar menú abierto');
+    btn.setAttribute('aria-label', isPinned ? 'Colapsar menú' : 'Fijar menú abierto');
+    const label = btn.querySelector('.rail-label');
+    if (label) label.textContent = isPinned ? 'Colapsar' : 'Fijar menú';
+    const use = btn.querySelector('use');
+    if (use) use.setAttribute('href', isPinned ? '#i-panel' : '#i-panel-open');
+  }
+}
+
+function setFont(f) {
+  root.dataset.font = f; store.set('tpi-font', f);
+  if (root.dataset.skin !== 'sobrio') {
+    const fontVal = FONT_MAP[f] || FONT_MAP.pixelify;
+    root.style.setProperty('--font-display', fontVal);
+  }
+  $$('[data-font-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.fontBtn === f)));
+}
+
+function setRole(r) {
+  currentRole = r; root.dataset.role = r; store.set('tpi-role', r);
+  $$('[data-role-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.roleBtn === r)));
+  renderNav();
+  
+  const allowed = NAV_TABS[r].map(i => i[0]);
+  if (!allowed.includes(currentScreen)) {
+    location.hash = allowed[0] || 'lobby';
+  } else {
+    route();
+  }
+}
+
+// Bind mockbar events
+$$('[data-theme-btn]').forEach(b => b.addEventListener('click', () => setTheme(b.dataset.themeBtn)));
+$$('[data-skin-btn]').forEach(b => b.addEventListener('click', () => setSkin(b.dataset.skinBtn)));
+$$('[data-palette-btn]').forEach(b => b.addEventListener('click', () => setPalette(b.dataset.paletteBtn)));
+$$('[data-font-btn]').forEach(b => b.addEventListener('click', () => setFont(b.dataset.fontBtn)));
+$$('[data-sidebar-btn]').forEach(b => b.addEventListener('click', () => setSidebarPinned(b.dataset.sidebarBtn === 'pinned')));
+$$('[data-role-btn]').forEach(b => b.addEventListener('click', () => setRole(b.dataset.roleBtn)));
+
+const sbToggle = $('#sidebar-toggle');
+if (sbToggle) {
+  sbToggle.addEventListener('click', () => {
+    const current = root.dataset.sidebarPinned === 'true';
+    setSidebarPinned(!current);
+  });
+}
+
+// Catálogo de Desafíos (Profesor): Filtrado dinámico por estado y expansión de filas
+function initCatalogInteractions() {
+  const tabsContainer = $('#catalog-status-tabs');
+  const searchInput = $('#catalog-search');
+  const typeFilter = $('#catalog-type-filter');
+  const materialFilter = $('#catalog-material-filter');
+  const table = $('#catalog-table');
+  if (!table) return;
+
+  let activeStatus = 'all';
+
+  function applyFilters() {
+    const query = (searchInput?.value || '').toLowerCase().trim();
+    const typeVal = typeFilter?.value || 'all';
+    const matVal = materialFilter?.value || 'all';
+
+    const rows = $$('.tr-expandable', table);
+    rows.forEach(tr => {
+      const st = tr.dataset.status;
+      const type = tr.dataset.type;
+      const mat = tr.dataset.material;
+      const text = tr.textContent.toLowerCase();
+      const targetDetailId = tr.dataset.target;
+      const detailRow = $(`#${targetDetailId}`, table);
+
+      const matchesStatus = (activeStatus === 'all' || st === activeStatus);
+      const matchesType = (typeVal === 'all' || type === typeVal);
+      const matchesMat = (matVal === 'all' || mat === matVal);
+      const matchesQuery = (!query || text.includes(query));
+
+      const isVisible = matchesStatus && matchesType && matchesMat && matchesQuery;
+      tr.style.display = isVisible ? '' : 'none';
+      if (!isVisible && detailRow) {
+        detailRow.hidden = true;
+        tr.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Actualizar contadores en tabs
+    const allRows = $$('.tr-expandable', table);
+    const allCount = allRows.length;
+    const pubCount = allRows.filter(r => r.dataset.status === 'PUBLISHED').length;
+    const draftCount = allRows.filter(r => r.dataset.status === 'DRAFT').length;
+    const archCount = allRows.filter(r => r.dataset.status === 'ARCHIVED').length;
+
+    if ($('#count-all')) $('#count-all').textContent = allCount;
+    if ($('#count-pub')) $('#count-pub').textContent = pubCount;
+    if ($('#count-draft')) $('#count-draft').textContent = draftCount;
+    if ($('#count-arch')) $('#count-arch').textContent = archCount;
+  }
+
+  // Filtrado por pestañas
+  if (tabsContainer) {
+    tabsContainer.addEventListener('click', (e) => {
+      const tab = e.target.closest('.tab');
+      if (!tab) return;
+      $$('.tab', tabsContainer).forEach(t => t.setAttribute('aria-selected', 'false'));
+      tab.setAttribute('aria-selected', 'true');
+      activeStatus = tab.dataset.statusFilter || 'all';
+      applyFilters();
+    });
+  }
+
+  // Buscador y selects
+  if (searchInput) searchInput.addEventListener('input', applyFilters);
+  if (typeFilter) typeFilter.addEventListener('change', applyFilters);
+  if (materialFilter) materialFilter.addEventListener('change', applyFilters);
+
+  // Expansión / colapso de filas al hacer clic
+  table.addEventListener('click', (e) => {
+    const tr = e.target.closest('.tr-expandable');
+    if (!tr) return;
+    if (e.target.closest('a, button')) return; // No colapsar si hizo clic en un botón o link de acción
+
+    toggleRow(tr);
+  });
+
+  table.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const tr = e.target.closest('.tr-expandable');
+      if (tr && document.activeElement === tr) {
+        e.preventDefault();
+        toggleRow(tr);
+      }
+    }
+  });
+
+  function toggleRow(tr) {
+    const targetId = tr.dataset.target;
+    const detailRow = $(`#${targetId}`, table);
+    if (!detailRow) return;
+
+    const isExpanded = tr.getAttribute('aria-expanded') === 'true';
+    tr.setAttribute('aria-expanded', String(!isExpanded));
+    detailRow.hidden = isExpanded;
+  }
+}
+
+// Boot
+setTheme(store.get('tpi-theme') || 'dark');
+setSkin(store.get('tpi-skin') || 'gamer');
+setPalette(store.get('tpi-palette') || 'electric');
+setFont(store.get('tpi-font') || 'pressstart');
+setSidebarPinned(store.get('tpi-sidebar-pinned') === 'true');
+setRole(store.get('tpi-role') || 'alumno');
+initCatalogInteractions();
+</script>
+</body>
+</html>

@@ -1,0 +1,2506 @@
+<!doctype html>
+<html lang="es-AR" data-theme="dark" data-skin="gamer" data-role="alumno">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TPI 2026 · Rediseño de páginas reales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Orbitron:wght@700;900&family=Pixelify+Sans:wght@400;600;700&family=Press+Start+2P&family=Rajdhani:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/tokens.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/screens.css" />
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15"/><path d="M15 6v15"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+  <symbol id="i-backpack" viewBox="0 0 24 24"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 10h8"/><path d="M8 18h8"/><path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+  <symbol id="i-survey" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-todo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="i-half" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/></symbol>
+  <symbol id="i-panel" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="m16 15-3-3 3-3"/></symbol>
+  <symbol id="i-panel-open" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="m14 9 3 3-3 3"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.53 13.53 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><path d="m2 2 20 20"/></symbol>
+  <symbol id="i-cards" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10"/><path d="M15 9.5c-.6-.9-1.7-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.3 0-2.4-.6-3-1.5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+  <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6 12h4"/><path d="M8 10v4"/><path d="M15 13h.01"/><path d="M18 11h.01"/><rect width="20" height="12" x="2" y="6" rx="2"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+  <symbol id="i-filter-off" viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7"/><path d="M4 10V3"/><path d="M12 21v-9"/><path d="M12 8V3"/><path d="M20 21v-5"/><path d="M20 12V3"/><path d="M1 14h6"/><path d="M9 8h6"/><path d="M17 16h6"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+  <symbol id="i-grip" viewBox="0 0 24 24"><path d="M9 5h.01M9 12h.01M9 19h.01M15 5h.01M15 12h.01M15 19h.01" stroke-width="3"/></symbol>
+</svg>
+
+<div class="mockbar" role="region" aria-label="Controles del mock">
+  <b>Mock</b>
+  <span>Rol:</span>
+  <div class="seg" role="group" aria-label="Rol">
+    <button data-role-btn="alumno" aria-pressed="true">Alumno</button>
+    <button data-role-btn="profesor" aria-pressed="false">Profesor</button>
+    <button data-role-btn="admin" aria-pressed="false">Admin</button>
+  </div>
+  <span>Tema:</span>
+  <div class="theme-switch" role="group" aria-label="Tema">
+    <button data-theme-btn="dark" aria-pressed="true"><svg class="icon icon-sm"><use href="#i-moon"/></svg> Oscuro</button>
+    <button data-theme-btn="light" aria-pressed="false"><svg class="icon icon-sm"><use href="#i-sun"/></svg> Claro</button>
+  </div>
+  <span>Estilo:</span>
+  <div class="seg" role="group" aria-label="Estilo">
+    <button data-skin-btn="gamer" aria-pressed="true">🎮 Arcade</button>
+    <button data-skin-btn="sobrio" aria-pressed="false">💼 Normal</button>
+  </div>
+  <span>Paleta Arcade:</span>
+  <div class="palette-dots-group" role="group" aria-label="Paleta Arcade">
+    <button data-palette-btn="electric" aria-pressed="true" title="Cian Eléctrico" class="palette-dot" style="--dot-color:#00e5ff;"></button>
+    <button data-palette-btn="neon" aria-pressed="false" title="Magenta Original" class="palette-dot" style="--dot-color:#f275dc;"></button>
+    <button data-palette-btn="latenight" aria-pressed="false" title="Late Night" class="palette-dot" style="--dot-color:#ff2e88;"></button>
+    <button data-palette-btn="playful" aria-pressed="false" title="Playful Pop" class="palette-dot" style="--dot-color:#ff5bbd;"></button>
+    <button data-palette-btn="cyber" aria-pressed="false" title="Cyber Moody" class="palette-dot" style="--dot-color:#00f5d4;"></button>
+    <button data-palette-btn="energetic" aria-pressed="false" title="Energetic Warm" class="palette-dot" style="--dot-color:#ff9f1c;"></button>
+    <button data-palette-btn="competitive" aria-pressed="false" title="Competitive Intense" class="palette-dot" style="--dot-color:#ef233c;"></button>
+    <button data-palette-btn="scifi" aria-pressed="false" title="Sci-Fi Clean" class="palette-dot" style="--dot-color:#41ead4;"></button>
+    <button data-palette-btn="flashy" aria-pressed="false" title="Flashy Futuristic" class="palette-dot" style="--dot-color:#ff3cac;"></button>
+    <button data-palette-btn="mystical" aria-pressed="false" title="Mystical Balanced" class="palette-dot" style="--dot-color:#ffc857;"></button>
+    <button data-palette-btn="urban" aria-pressed="false" title="Urban Sleek" class="palette-dot" style="--dot-color:#00bbf9;"></button>
+  </div>
+  <span>Barra Lateral:</span>
+  <div class="seg" role="group" aria-label="Barra Lateral">
+    <button data-sidebar-btn="collapsed" aria-pressed="true" title="Icon Dock compacto (64px)">🔘 Iconos</button>
+    <button data-sidebar-btn="pinned" aria-pressed="false" title="Fijar con textos (210px)">📌 Fijada</button>
+  </div>
+  <span>Fuente Títulos/Display:</span>
+  <div class="seg" role="group" aria-label="Fuente Títulos y Logo">
+    <button data-font-btn="pressstart" aria-pressed="true" title="Press Start 2P (Clásico Arcade 80s/90s)">🕹️ Press Start</button>
+    <button data-font-btn="pixelify" aria-pressed="false" title="Pixelify Sans (Pixel art moderno, estético y con peso)">✨ Pixelify Sans</button>
+    <button data-font-btn="chakra" aria-pressed="false" title="Chakra Petch (Arcade Mecha / Capcom)">⚡ Chakra Petch</button>
+    <button data-font-btn="orbitron" aria-pressed="false" title="Orbitron (HUD Sci-Fi / Cyberpunk)">Orbitron</button>
+    <button data-font-btn="silkscreen" aria-pressed="false" title="Silkscreen (La anterior, trazo fino)">Silkscreen</button>
+  </div>
+  <a class="uikit-link" href="font-comparison.html" target="_blank" title="Abrir comparativa lado a lado de tipografías retro" style="color:#a855f7;">🔍 Comparador</a>
+  <label><input type="checkbox" id="sim-error" /> Simular error</label>
+  <a class="uikit-link" href="#uikit" title="Ver catálogo de componentes y tokens de diseño">🎨 UI Kit / Componentes</a>
+</div>
+
+<header class="topbar">
+  <div class="brand-wrap">
+    <div class="brand"><a href="#cursos" style="text-decoration:none; color:inherit;">🕹️ TPI 2026</a></div>
+    <span class="brand-cohort">MSI · 2026</span>
+  </div>
+
+  <!-- Extremo Derecho: HUD del Alumno + Perfil de Usuario -->
+  <div class="topbar-actions">
+    <!-- HUD Gamificado Alumno (Compacto y despejado) -->
+    <div class="hud-bar" id="student-hud" aria-label="Estado del alumno">
+      <span class="hud-item lives" title="3 de 3 vidas disponibles">
+        <svg class="icon icon-sm"><use href="#i-heart"/></svg>
+        <span class="num">3/3</span>
+      </span>
+      <span class="hud-divider"></span>
+      <span class="hud-item coins" title="120 monedas acumuladas">
+        <svg class="icon icon-sm"><use href="#i-coin"/></svg>
+        <span class="num">120</span>
+      </span>
+      <span class="hud-divider"></span>
+      <span class="hud-item streak" title="5 días seguidos de racha de estudio">
+        <svg class="icon icon-sm"><use href="#i-flame"/></svg>
+        <span class="num">5d</span>
+      </span>
+      <span class="hud-divider"></span>
+      <span class="hud-item level" title="Nivel 7 actual">
+        <svg class="icon icon-sm"><use href="#i-star"/></svg>
+        <span>Niv. 7</span>
+      </span>
+    </div>
+
+    <!-- Menú de Cuenta y Preferencias -->
+    <div class="account">
+      <button class="me-chip" id="account-btn" type="button" aria-expanded="false" aria-controls="account-menu" aria-haspopup="true">
+        <span class="initials" aria-hidden="true" data-me-initials>MS</span>
+        <span class="me-name"><span data-me-short>Manuel S.</span><span class="me-level" data-me-level>Nivel 7</span></span>
+        <svg class="icon icon-sm chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+      </button>
+      <div class="account-menu" id="account-menu" hidden>
+        <a class="nav-item" href="#perfil"><svg class="icon"><use href="#i-user"/></svg>Mi perfil</a>
+        <a class="nav-item" href="#personaje" data-alumno-only><svg class="icon"><use href="#i-shirt"/></svg>Mi personaje</a>
+        <a class="nav-item" href="#inventario" data-alumno-only><svg class="icon"><use href="#i-backpack"/></svg>Inventario</a>
+        <hr />
+        <div class="menu-pref-title">Apariencia</div>
+        <div class="menu-pref-row">
+          <div class="seg sm" role="group" aria-label="Estilo">
+            <button data-skin-btn="gamer" aria-pressed="true">Arcade</button>
+            <button data-skin-btn="sobrio" aria-pressed="false">Normal</button>
+          </div>
+          <div class="theme-switch sm" role="group" aria-label="Tema">
+            <button data-theme-btn="dark" aria-pressed="true"><svg class="icon icon-sm"><use href="#i-moon"/></svg> Oscuro</button>
+            <button data-theme-btn="light" aria-pressed="false"><svg class="icon icon-sm"><use href="#i-sun"/></svg> Claro</button>
+          </div>
+        </div>
+        <div class="menu-pref-title">Paleta Arcade</div>
+        <div class="menu-pref-row">
+          <div class="palette-dots-group" role="group" aria-label="Paleta Arcade">
+            <button data-palette-btn="electric" aria-pressed="true" title="Cian Eléctrico" class="palette-dot" style="--dot-color:#00e5ff;"></button>
+            <button data-palette-btn="neon" aria-pressed="false" title="Magenta Original" class="palette-dot" style="--dot-color:#f275dc;"></button>
+            <button data-palette-btn="latenight" aria-pressed="false" title="Late Night" class="palette-dot" style="--dot-color:#ff2e88;"></button>
+            <button data-palette-btn="playful" aria-pressed="false" title="Playful Pop" class="palette-dot" style="--dot-color:#ff5bbd;"></button>
+            <button data-palette-btn="cyber" aria-pressed="false" title="Cyber Moody" class="palette-dot" style="--dot-color:#00f5d4;"></button>
+            <button data-palette-btn="energetic" aria-pressed="false" title="Energetic Warm" class="palette-dot" style="--dot-color:#ff9f1c;"></button>
+            <button data-palette-btn="competitive" aria-pressed="false" title="Competitive Intense" class="palette-dot" style="--dot-color:#ef233c;"></button>
+            <button data-palette-btn="scifi" aria-pressed="false" title="Sci-Fi Clean" class="palette-dot" style="--dot-color:#41ead4;"></button>
+            <button data-palette-btn="flashy" aria-pressed="false" title="Flashy Futuristic" class="palette-dot" style="--dot-color:#ff3cac;"></button>
+            <button data-palette-btn="mystical" aria-pressed="false" title="Mystical Balanced" class="palette-dot" style="--dot-color:#ffc857;"></button>
+            <button data-palette-btn="urban" aria-pressed="false" title="Urban Sleek" class="palette-dot" style="--dot-color:#00bbf9;"></button>
+          </div>
+        </div>
+        <hr />
+        <button class="nav-item danger" type="button"><svg class="icon"><use href="#i-logout"/></svg>Cerrar sesión</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <!-- Rail / Icon Dock Lateral con Pin/Unpin (64px ↔ 210px) -->
+  <nav class="sidebar" id="sidebar" aria-label="Navegación principal">
+    <div class="sidebar-nav" id="sidebar-nav"></div>
+    <div class="sidebar-footer">
+      <button type="button" class="rail-toggle" id="sidebar-toggle" aria-label="Fijar menú abierto" data-tooltip="Fijar menú abierto" aria-expanded="false">
+        <svg class="icon"><use href="#i-panel-open"/></svg>
+        <span class="rail-label">Fijar menú</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+
+    <!-- ================= DESAFÍOS · alumno ================= -->
+    <section class="screen" id="screen-desafios-alumno" aria-labelledby="h-desafios" data-error="No pudimos traer tus desafíos. Probá de nuevo en unos segundos.">
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-desafios">Desafíos</h1>
+          <p>Resolvé desafíos para sumar XP y monedas. Los obligatorios cuentan para tu regularidad.</p>
+        </div>
+      </div>
+      <div class="data">
+        <div class="alert risk" role="status">
+          <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+          <div>
+            <div class="alert-title">Estás en zona de riesgo en MSI</div>
+            <div class="alert-body">Te faltan 2 desafíos obligatorios para mantener la regularidad. El próximo vence el jueves 02/10.</div>
+          </div>
+          <a class="btn btn-secondary" href="#curso/MSI">Ver obligatorios de MSI</a>
+        </div>
+        <div data-challenge-list></div>
+      </div>
+    </section>
+
+    <!-- ================= DESAFÍO TEÓRICO · alumno ================= -->
+    <section class="screen quiz" id="screen-quiz-alumno" aria-labelledby="h-quiz" data-error="El servicio de desafíos teóricos no respondió. Tus respuestas guardadas no se perdieron.">
+      <a class="back" href="#desafios"><svg class="icon icon-sm"><use href="#i-left"/></svg>Desafíos</a>
+      <div class="quiz-head">
+        <div>
+          <h1 class="display" id="h-quiz">Tipado y protocolos</h1>
+          <div class="head-meta">
+            <span><b>MSI</b></span><span>Cuestionario teórico</span><span class="xp-text" style="color:var(--accent-gold)">+50 XP</span><span>Vence el mié 08/10</span>
+          </div>
+        </div>
+        <div class="quiz-progress" aria-live="polite">
+          <span id="quiz-count">0 de 2 respondidas</span> · <span id="quiz-save">Sin cambios</span>
+          <div class="bar"><span id="quiz-bar" style="width:0%"></span></div>
+        </div>
+      </div>
+      <form class="data" id="quiz-form" onsubmit="return false">
+        <fieldset class="question">
+          <legend><span>1. ¿Cuáles de estos lenguajes tienen tipado estático?</span><span class="badge badge-outline num">50 pts</span></legend>
+          <p class="q-hint">Podés marcar más de una.</p>
+          <label class="choice"><input type="checkbox" name="q1" value="java" />Java</label>
+          <label class="choice"><input type="checkbox" name="q1" value="ts" />TypeScript</label>
+          <label class="choice"><input type="checkbox" name="q1" value="py" />Python</label>
+          <label class="choice"><input type="checkbox" name="q1" value="go" />Go</label>
+        </fieldset>
+        <fieldset class="question">
+          <legend><span>2. ¿Qué protocolo de la capa de transporte es orientado a conexión?</span><span class="badge badge-outline num">50 pts</span></legend>
+          <p class="q-hint">Elegí una opción.</p>
+          <label class="choice"><input type="radio" name="q2" value="udp" />UDP</label>
+          <label class="choice"><input type="radio" name="q2" value="tcp" />TCP</label>
+          <label class="choice"><input type="radio" name="q2" value="icmp" />ICMP</label>
+        </fieldset>
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          <button class="btn btn-primary" id="quiz-submit" type="button" disabled>Entregar</button>
+          <span class="muted" style="font-size:13px" id="quiz-hint">Respondé todas las preguntas para poder entregar. Se guarda solo mientras avanzás.</span>
+        </div>
+      </form>
+    </section>
+
+    <!-- ================= CURSOS · alumno ================= -->
+    <section class="screen" id="screen-cursos-alumno" aria-labelledby="h-cursos-a" data-error="No pudimos traer tus cursos.">
+      <div class="page-head">
+        <div><h1 class="display" id="h-cursos-a">Mis cursos</h1><p>Los cursos en los que estás inscripto. Entrá a uno para ver sus desafíos y tu progreso.</p></div>
+      </div>
+      <div class="data">
+        <div class="view-bar"><span data-view-toggle="cursos"></span></div>
+        <div class="course-grid" id="student-courses" data-view-target="cursos"></div>
+      </div>
+    </section>
+
+    <!-- ================= CURSO (detalle) · alumno ================= -->
+    <section class="screen" id="screen-curso-alumno" aria-labelledby="h-curso-a" data-error="No pudimos traer este curso.">
+      <a class="back" href="#cursos"><svg class="icon icon-sm"><use href="#i-left"/></svg>Mis cursos</a>
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-curso-a" data-course-name>MSI</h1>
+          <div class="head-meta" data-course-meta></div>
+        </div>
+        <div class="quick-links">
+          <a class="btn btn-ghost btn-sm" href="#roadmap"><svg class="icon icon-sm"><use href="#i-map"/></svg>Roadmap</a>
+          <a class="btn btn-ghost btn-sm" href="#ranking"><svg class="icon icon-sm"><use href="#i-trophy"/></svg>Ranking</a>
+          <a class="btn btn-ghost btn-sm" href="#inventario"><svg class="icon icon-sm"><use href="#i-backpack"/></svg>Inventario</a>
+        </div>
+      </div>
+      <div class="data">
+        <div class="stat-strip" data-course-stats></div>
+        <div class="section-head"><h2>Desafíos del curso</h2></div>
+        <div data-challenge-list data-locked-course></div>
+      </div>
+    </section>
+
+    <!-- ================= INVENTARIO · alumno ================= -->
+    <section class="screen" id="screen-inventario-alumno" aria-labelledby="h-inv" data-error="No pudimos traer tu inventario.">
+      <div class="page-head">
+        <div><h1 class="display" id="h-inv">Inventario</h1><p>Tus vidas, monedas, nivel e ítems en cada curso.</p></div>
+      </div>
+      <div class="data">
+        <div class="tabs" role="tablist" aria-label="Curso" id="inv-tabs"></div>
+        <div class="stat-strip" id="inv-stats"></div>
+        <div class="inv-layout">
+          <div class="card studs backpack-card">
+            <h2>Mochila</h2>
+            <div id="inv-backpack"></div>
+            <a class="btn btn-ghost btn-sm" href="#personaje"><svg class="icon icon-sm"><use href="#i-shirt"/></svg>Cambiar color</a>
+          </div>
+          <div class="card studs">
+            <div class="section-head" style="margin-bottom:16px"><h2>Ítems equipados</h2><span class="muted" style="font-size:13px">3 ranuras por tipo de desafío</span></div>
+            <div id="inv-slots"></div>
+            <div class="section" style="margin-top:24px">
+              <div class="section-head"><h2>Disponibles</h2></div>
+              <div class="empty">
+                <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+                <p>Todavía no desbloqueaste ítems en este curso.</p>
+                <a class="btn btn-secondary btn-sm" href="#marketplace">Ir al Marketplace</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PERSONAJE · alumno ================= -->
+    <section class="screen" id="screen-personaje-alumno" aria-labelledby="h-pj" data-error="No pudimos traer tu personaje.">
+      <a class="back" href="#roadmap"><svg class="icon icon-sm"><use href="#i-left"/></svg>Volver al mapa</a>
+      <div class="page-head">
+        <div><h1 class="display" id="h-pj">Tu personaje</h1><p>Así aparecés en las islas y en los desafíos. Cada cambio se guarda solo.</p></div>
+      </div>
+      <form class="data avatar-layout" id="avatar-form" onsubmit="return false">
+        <div>
+          <details class="card studs opt-section disclosure" name="pj" open data-sum="cuerpo">
+            <summary><h2><span>Cuerpo</span><span class="disc-sum"></span></h2></summary>
+            <div class="opt-grid">
+              <label class="field">Arquetipo<select class="control" name="arquetipo"><option>Arquetipo A (Caballero)</option><option>Arquetipo B (Exploradora)</option><option>Arquetipo C (Hacker)</option></select></label>
+              <label class="field">Cabeza<select class="control" name="cabeza"><option>Cabeza A (Caballero)</option><option>Cabeza B</option></select></label>
+              <label class="field">Cabello<select class="control" name="cabello"><option>Original / por defecto</option><option>Corto</option><option>Largo</option></select></label>
+              <fieldset class="swatches" data-swatches="hair"><legend>Color de pelo</legend></fieldset>
+              <label class="field">Cosmético de cara<select class="control" name="cosmetico"><option>Ninguno</option><option>Anteojos</option><option>Barba</option></select></label>
+              <fieldset class="swatches" data-swatches="skin"><legend>Color de piel</legend></fieldset>
+            </div>
+          </details>
+          <details class="card studs opt-section disclosure" name="pj" data-sum="ropa">
+            <summary><h2><span>Ropa</span><span class="disc-sum"></span></h2></summary>
+            <div class="opt-grid">
+              <label class="field">Parte superior<select class="control" name="top"><option>Parte superior A (Caballero)</option><option>Buzo UTN</option></select></label>
+              <label class="field">Pantalón<select class="control" name="pantalon"><option>Pantalón A (Caballero)</option><option>Jean</option></select></label>
+              <label class="field">Zapatos<select class="control" name="zapatos"><option>Zapatos A (Caballero)</option><option>Zapatillas</option></select></label>
+              <fieldset class="swatches" data-swatches="shoes"><legend>Color de calzado</legend></fieldset>
+              <label class="field">Espalda<select class="control" name="espalda"><option>Mochila</option><option>Nada</option></select></label>
+              <fieldset class="swatches" data-swatches="pack"><legend>Color de mochila</legend></fieldset>
+            </div>
+          </details>
+          <details class="card studs opt-section disclosure" name="pj" data-sum="acc">
+            <summary><h2><span>Accesorios</span><span class="disc-sum"></span></h2></summary>
+            <div class="opt-grid">
+              <label class="field">Cabeza<select class="control" name="cabezaItem"><option>Auriculares gamer</option><option>Ninguno</option><option>Gorra</option></select></label>
+              <label class="field">Mascota<select class="control" name="mascota"><option>Dron</option><option>Ninguna</option><option>Gato</option></select></label>
+              <label class="field">Mano derecha<select class="control" name="manoDer"><option>Mouse gamer</option><option>Nada</option></select></label>
+              <label class="field">Mano izquierda<select class="control" name="manoIzq"><option>Mate</option><option>Nada</option><option>Café</option></select></label>
+            </div>
+          </details>
+        </div>
+        <aside class="avatar-preview" aria-label="Vista previa">
+          <div class="stage" id="avatar-stage"><span class="stage-note">Arrastrá para rotar · rueda para zoom</span></div>
+          <div class="save-state" id="avatar-save" role="status"><svg class="icon icon-sm"><use href="#i-tick"/></svg>Guardado</div>
+          <p class="muted" style="font-size:12px; margin-top:6px">En la app real acá va el visor 3D existente; el mock dibuja una versión pixel que reacciona a los colores.</p>
+        </aside>
+      </form>
+    </section>
+
+    <!-- ================= RANKING (alumno y profesor) ================= -->
+    <section class="screen" id="screen-ranking" aria-labelledby="h-rank" data-error="No pudimos traer el ranking.">
+      <div class="page-head">
+        <div><h1 class="display" id="h-rank">Ranking</h1><p>Posición por XP dentro de la cohorte. La zona de riesgo depende de los obligatorios pendientes, no solo del XP.</p></div>
+        <div class="head-tools"><label class="field" style="min-width:160px">Cohorte<select class="control" id="rank-course"><option>MSI</option><option>MSII</option></select></label><span data-view-toggle="ranking"></span></div>
+      </div>
+      <div class="data">
+        <div class="card studs alert-card rank-you" id="rank-you"></div>
+        <div class="table-wrap" data-view-target="ranking"><table class="data" id="rank-table"></table></div>
+        <div class="pager" id="rank-pager"></div>
+        <p class="muted" style="font-size:13px; margin-top:10px">Percentil: P92 significa que tu XP supera al 92% de la cohorte. Zona de promoción: P90 o más.</p>
+      </div>
+    </section>
+
+    <!-- ================= PERFIL (todos) ================= -->
+    <section class="screen" id="screen-perfil" aria-labelledby="h-perfil" data-error="No pudimos traer tu perfil.">
+      <div class="page-head"><div><h1 class="display" id="h-perfil">Mi perfil</h1></div></div>
+      <div class="data profile-layout">
+        <aside class="card studs identity">
+          <span class="badge status-corner"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-tick"/></svg>Cuenta activa</span>
+          <div class="identity-head">
+            <span class="initials lg" data-me-initials>MS</span>
+            <h1 data-me-name>Manuel Sanchez</h1>
+            <span class="muted" data-me-email>manuel.sanchez@frc.utn.edu.ar</span>
+          </div>
+          <dl class="identity-list" aria-label="Información de la cuenta">
+            <div><dt>Rol</dt><dd><span class="badge badge-secondary" data-me-role>Alumno</span></dd></div>
+            <div><dt>Email</dt><dd class="ok"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-tick"/></svg>Verificado</dd></div>
+            <div data-legajo-row><dt>Legajo</dt><dd class="num" data-me-legajo>40510</dd></div>
+            <div><dt>Miembro desde</dt><dd class="num" data-me-since>28/09/2026</dd></div>
+            <div><dt>Términos aceptados</dt><dd>Versión 1</dd></div>
+          </dl>
+        </aside>
+        <div>
+          <section class="card studs panel" aria-labelledby="h-access-p" data-admin-only>
+            <h2 id="h-access-p">Accesos a la plataforma</h2>
+            <p>Aprobá solicitudes pendientes y habilitá emails docentes sin esperar su pedido.</p>
+            <div class="link-row">
+              <span class="who"><span class="badge badge-primary num">1</span>solicitud pendiente</span>
+              <a class="btn btn-secondary" href="#accesos"><svg class="icon icon-sm"><use href="#i-key"/></svg>Gestionar accesos</a>
+            </div>
+          </section>
+          <section class="card studs panel" aria-labelledby="h-gh">
+            <h2 id="h-gh">GitHub</h2>
+            <p>Vinculá tu cuenta para las entregas y los repositorios de la cátedra.</p>
+            <div class="link-row">
+              <span class="who"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Sin cuenta vinculada</span>
+              <button class="btn btn-secondary" type="button"><svg class="icon icon-sm"><use href="#i-github"/></svg>Vincular GitHub</button>
+            </div>
+          </section>
+          <section class="card studs panel" aria-labelledby="h-sec">
+            <h2 id="h-sec">Seguridad y sesión</h2>
+            <p>Cambiá tu contraseña o cerrá la sesión en este dispositivo.</p>
+            <div class="link-row">
+              <a class="btn btn-ghost" href="#"><svg class="icon icon-sm"><use href="#i-key"/></svg>Cambiar contraseña</a>
+              <button class="btn btn-ghost danger" type="button"><svg class="icon icon-sm"><use href="#i-logout"/></svg>Cerrar sesión</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CURSOS · profesor ================= -->
+    <section class="screen" id="screen-cursos-profesor" aria-labelledby="h-cursos-p" data-error="No pudimos traer las cohortes.">
+      <div class="page-head">
+        <div><h1 class="display" id="h-cursos-p">Cursos</h1><p>Las cohortes a las que estás asociado. Lo que podés editar depende de tus permisos en cada una.</p></div>
+        <div class="head-tools"><span data-view-toggle="cohortes"></span><button class="btn btn-primary" type="button" data-open="drawer-cohorte"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Crear cohorte</button></div>
+      </div>
+      <div class="data">
+        <div class="tabs" role="tablist" aria-label="Estado de las cohortes" id="cohort-tabs"></div>
+        <div class="course-grid" id="cohort-grid" data-view-target="cohortes"></div>
+      </div>
+    </section>
+
+    <!-- ================= CURSO (detalle) · profesor ================= -->
+    <section class="screen" id="screen-curso-profesor" aria-labelledby="h-curso-p" data-error="No pudimos traer esta cohorte.">
+      <a class="back" href="#cursos"><svg class="icon icon-sm"><use href="#i-left"/></svg>Cursos</a>
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-curso-p" data-course-name>MSII</h1>
+          <div class="head-meta" data-course-meta></div>
+        </div>
+        <div class="invite" role="group" aria-label="Código de invitación">
+          <span class="invite-label">Código de invitación</span>
+          <code class="invite-code" id="invite-code">GSLSFFFUVE</code>
+          <button class="icon-btn sm" type="button" id="invite-copy" aria-label="Copiar código de invitación"><svg class="icon icon-sm"><use href="#i-copy"/></svg></button>
+          <button class="icon-btn sm" type="button" id="invite-regen" aria-label="Regenerar código de invitación"><svg class="icon icon-sm"><use href="#i-refresh"/></svg></button>
+          <span class="invite-status" id="invite-status" role="status"></span>
+        </div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Secciones del curso" data-tabgroup="curso">
+        <button class="tab" role="tab" aria-selected="true" data-subtab="c-resumen">Resumen</button>
+        <button class="tab" role="tab" aria-selected="false" data-subtab="c-contenido">Contenido</button>
+        <button class="tab" role="tab" aria-selected="false" data-subtab="c-alumnos">Alumnos <span class="count num" data-req-count>2</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-subtab="c-config">Configuración</button>
+      </div>
+
+      <div class="data">
+        <!-- Resumen -->
+        <div data-subpanel="c-resumen" data-group="curso">
+          <p class="course-desc">Espacio principal de la cursada: estructura de contenidos, unidades temáticas y actividades evaluativas.</p>
+          <div class="stat-strip">
+            <div><div class="k">Alumnos</div><div class="v num">28</div></div>
+            <div><div class="k">Solicitudes pendientes</div><div class="v num" style="color:var(--urgent)"><button class="linkbtn big" type="button" data-goto="c-alumnos" data-goto-pill="a-solicitudes">2</button></div></div>
+            <div><div class="k">Desafíos publicados</div><div class="v num" data-pub-count>6</div></div>
+            <div><div class="k">Secciones visibles</div><div class="v num" data-sec-visible>2 de 3</div></div>
+          </div>
+          <div class="two-col">
+            <section class="card studs" aria-labelledby="h-team">
+              <div class="section-head"><h2 id="h-team">Equipo docente <span class="muted num" style="font-weight:400">(7)</span></h2><button class="btn btn-ghost btn-sm" type="button"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Asignar profesores</button></div>
+              <ul class="people" id="team-list"></ul>
+            </section>
+            <div class="stack">
+              <section class="card studs" aria-labelledby="h-next">
+                <div class="section-head"><h2 id="h-next">Próximos vencimientos</h2><button class="btn btn-quiet btn-sm" type="button" data-goto="c-contenido" data-goto-pill="k-desafios">Ver desafíos<svg class="icon icon-sm"><use href="#i-right"/></svg></button></div>
+                <ul class="people" id="next-due"></ul>
+              </section>
+              <section class="card studs" aria-labelledby="h-vitrina">
+                <div class="link-row"><div><h2 id="h-vitrina" style="font-size:16px">Vitrina</h2><p class="muted" style="font-size:13px">Cómo se presenta esta cohorte.</p></div><button class="btn btn-ghost btn-sm" type="button">Gestionar vitrina</button></div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenido -->
+        <div data-subpanel="c-contenido" data-group="curso" hidden>
+          <div class="section-head">
+            <div class="pills" role="tablist" aria-label="Contenido" data-tabgroup="contenido">
+              <button class="tab" role="tab" aria-selected="true" data-subtab="k-secciones">Secciones <span class="count num">3</span></button>
+              <button class="tab" role="tab" aria-selected="false" data-subtab="k-desafios">Desafíos <span class="count num" data-course-ch-count>8</span></button>
+            </div>
+            <div class="quick-links" data-subpanel="k-secciones" data-group="contenido-actions">
+              <span data-view-toggle="secciones"></span>
+              <button class="btn btn-ghost btn-sm" type="button" id="reorder-btn" aria-pressed="false"><svg class="icon icon-sm"><use href="#i-grip"/></svg>Ordenar</button>
+              <button class="btn btn-primary btn-sm" type="button"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Nueva sección</button>
+            </div>
+          </div>
+          <div data-subpanel="k-secciones" data-group="contenido">
+            <p class="muted" style="font-size:13px; margin-bottom:10px">Los alumnos ven las secciones visibles en este orden. Las dadas de baja no aparecen.</p>
+            <ol class="sec-list" id="sec-list" data-view-target="secciones"></ol>
+          </div>
+          <div data-subpanel="k-desafios" data-group="contenido" hidden>
+            <div class="section-head"><p>Desafíos de esta cohorte.</p><button class="btn btn-primary btn-sm" type="button" data-open="drawer-desafio"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Crear desafío</button></div>
+            <div data-catalog data-locked-course></div>
+          </div>
+        </div>
+
+        <!-- Alumnos -->
+        <div data-subpanel="c-alumnos" data-group="curso" hidden>
+          <div class="pills" role="tablist" aria-label="Alumnos" data-tabgroup="alumnos" style="margin-bottom:14px">
+            <button class="tab" role="tab" aria-selected="true" data-subtab="a-padron">Padrón <span class="count num">28</span></button>
+            <button class="tab" role="tab" aria-selected="false" data-subtab="a-solicitudes">Solicitudes <span class="count num" data-req-count>2</span></button>
+            <button class="tab" role="tab" aria-selected="false" data-subtab="a-asistencias">Asistencias</button>
+            <button class="tab" role="tab" aria-selected="false" data-subtab="a-calificaciones">Calificaciones</button>
+          </div>
+          <div data-subpanel="a-padron" data-group="alumnos">
+            <div class="filter-top">
+              <label class="search"><span class="sr-only">Buscar alumno</span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-search"/></svg><input class="control" type="search" id="roster-q" placeholder="Buscar por nombre, legajo o email" /></label>
+              <div class="seg" role="group" aria-label="Filtrar por estado" id="roster-filter">
+                <button type="button" aria-pressed="true" data-rf="">Todos</button><button type="button" aria-pressed="false" data-rf="Riesgo">En riesgo</button>
+              </div>
+              <span data-view-toggle="padron"></span>
+            </div>
+            <div class="table-wrap" data-view-target="padron"><table class="data" id="roster-table"></table></div>
+            <div class="pager" id="roster-pager"></div>
+          </div>
+          <div data-subpanel="a-solicitudes" data-group="alumnos" hidden>
+            <p class="muted" style="font-size:13px; margin-bottom:10px">Pedidos de inscripción hechos con el código de invitación.</p>
+            <ul class="list" id="enroll-list"></ul>
+          </div>
+          <div data-subpanel="a-asistencias" data-group="alumnos" hidden>
+            <div class="empty">
+              <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+              <p>Todavía no registraste ninguna clase en esta cohorte.</p>
+              <button class="btn btn-primary btn-sm" type="button"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Registrar la clase de hoy</button>
+            </div>
+          </div>
+          <div data-subpanel="a-calificaciones" data-group="alumnos" hidden>
+            <div class="empty">
+              <svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>
+              <p>Todavía no hay calificaciones cargadas para esta cohorte.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Configuración -->
+        <div data-subpanel="c-config" data-group="curso" hidden>
+          <div class="card studs activation">
+            <div class="link-row" style="align-items:flex-start">
+              <div>
+                <h2 class="act-title"><svg class="icon" aria-hidden="true" style="color:var(--good)"><use href="#i-check"/></svg>Cohorte activa</h2>
+                <p class="muted" style="font-size:14px; margin-top:4px">El código de invitación está habilitado y la cursada está disponible para los alumnos.</p>
+              </div>
+            </div>
+            <details class="act-reqs">
+              <summary>Requisitos de activación <span class="muted">· 3 de 3 cumplidos</span></summary>
+              <ul>
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-tick"/></svg>Estaba en estado Borrador al activarla</li>
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-tick"/></svg>El padrón tiene al menos un estudiante activo</li>
+                <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-tick"/></svg>La calibración está aprobada</li>
+              </ul>
+            </details>
+          </div>
+
+          <form id="cfg-form" onsubmit="return false" novalidate>
+            <fieldset class="cfg-fs" id="cfg-fs">
+              <details class="card studs disclosure" name="cfg" open>
+                <summary><h2><span>Identificación</span><span class="disc-sum">Nombre, descripción y color</span></h2></summary>
+                <div class="form-grid">
+                  <label class="field">Nombre visible<input class="control" name="nombre" value="MSII" /><span class="hint">Si lo dejás vacío se muestra el nombre del curso base (MSII).</span></label>
+                  <label class="field">Color<select class="control" name="color"><option>Sin color</option><option>Terracota</option><option>Petróleo</option><option>Oliva</option></select></label>
+                  <label class="field full">Descripción<textarea class="control" name="desc" rows="2">Espacio principal de la cursada: estructura de contenidos, unidades temáticas y actividades evaluativas.</textarea></label>
+                </div>
+              </details>
+              <details class="card studs disclosure" name="cfg">
+                <summary><h2><span>Cursada</span><span class="disc-sum">Modalidad sin definir · 01/04/2026 – 20/12/2026 · sin horario</span></h2></summary>
+                <div class="form-grid">
+                  <label class="field">Modalidad<select class="control" name="modalidad"><option>Sin definir</option><option>Presencial</option><option>Virtual</option><option>Híbrida</option></select></label>
+                  <label class="field">Aula, espacio o enlace<input class="control" name="aula" placeholder="Aula 304 o https://meet.google.com/…" /></label>
+                  <label class="field">Fecha de inicio<input class="control" type="date" name="inicio" value="2026-04-01" /></label>
+                  <label class="field">Fecha de fin<input class="control" type="date" name="fin" value="2026-12-20" /></label>
+                  <label class="field">Horario desde<input class="control" type="time" name="hdesde" /></label>
+                  <label class="field">Horario hasta<input class="control" type="time" name="hhasta" /></label>
+                </div>
+              </details>
+              <details class="card studs disclosure" name="cfg">
+                <summary><h2><span>Inscripción</span><span class="disc-sum">Abierta mientras la cohorte esté activa · sin cupo</span></h2></summary>
+                <div class="form-grid">
+                  <label class="field">Inscripción desde<input class="control" type="date" name="idesde" /></label>
+                  <label class="field">Fecha límite<input class="control" type="date" name="ihasta" /></label>
+                  <p class="hint full" style="margin-top:-6px">Fuera de este período no se aceptan inscripciones con el código. Si no lo definís, los alumnos pueden inscribirse mientras la cohorte esté activa.</p>
+                  <label class="field">Cupo máximo de alumnos<input class="control num" type="number" name="cupo" min="1" max="350" placeholder="Sin límite" /><span class="hint">Cuenta inscriptos y solicitudes pendientes. Vacío = sin límite (máximo 350).</span></label>
+                </div>
+              </details>
+            </fieldset>
+            <div class="save-bar" id="save-bar" hidden>
+              <span><b>Tenés cambios sin guardar.</b></span>
+              <div class="quick-links"><button class="btn btn-quiet" type="button" id="cfg-discard">Descartar</button><button class="btn btn-primary" type="button" id="cfg-save">Guardar cambios</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DESAFÍOS · profesor ================= -->
+    <section class="screen" id="screen-desafios-profesor" aria-labelledby="h-cat" data-error="Ocurrió un error al consultar los desafíos con el servidor.">
+      <div class="page-head">
+        <div><h1 class="display" id="h-cat">Desafíos</h1><p>El catálogo de todas tus cohortes: desafíos prácticos, cuestionarios teóricos y el banco de preguntas.</p></div>
+        <button class="btn btn-primary" type="button" data-open="drawer-desafio"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Crear desafío</button>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Sección">
+        <button class="tab" role="tab" aria-selected="true" data-subtab="cat-practicos">Catálogo <span class="count num">14</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-subtab="cat-cuestionarios">Cuestionarios teóricos <span class="count num">3</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-subtab="cat-banco">Banco de preguntas <span class="count num">24</span></button>
+      </div>
+      <div class="data">
+        <div data-subpanel="cat-practicos"><div data-catalog></div></div>
+        <div data-subpanel="cat-cuestionarios" hidden>
+          <div class="section-head"><p>Cuestionarios armados con preguntas de tu banco.</p>
+            <div class="quick-links">
+              <a class="btn btn-ghost btn-sm" href="#quiz"><svg class="icon icon-sm"><use href="#i-eye"/></svg>Vista previa como alumno</a>
+              <span data-view-toggle="cuestionarios"></span>
+              <a class="btn btn-primary btn-sm" href="#cuestionario-nuevo"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Armar cuestionario</a>
+            </div>
+          </div>
+          <div class="table-wrap" data-view-target="cuestionarios"><table class="data">
+            <thead><tr><th>Cuestionario</th><th>Cohorte</th><th class="r">Preguntas</th><th class="r">Intentos</th><th>Estado</th><th><span class="sr-only">Acciones</span></th></tr></thead>
+            <tbody>
+              <tr><td><div class="cell-title">Tipado y protocolos</div><div class="cell-sub">Vence mié 08/10</div></td><td>MSI</td><td class="r">2</td><td class="r">14</td><td><span class="badge badge-success">Publicado</span></td><td><div class="row-actions"><button class="icon-btn sm" aria-label="Editar Tipado y protocolos"><svg class="icon icon-sm"><use href="#i-pencil"/></svg></button></div></td></tr>
+              <tr><td><div class="cell-title">Complejidad algorítmica</div><div class="cell-sub">Sin fecha límite</div></td><td>MSII</td><td class="r">8</td><td class="r">0</td><td><span class="badge badge-outline">Borrador</span></td><td><div class="row-actions"><button class="icon-btn sm" aria-label="Editar Complejidad algorítmica"><svg class="icon icon-sm"><use href="#i-pencil"/></svg></button></div></td></tr>
+              <tr><td><div class="cell-title">Estructuras de control</div><div class="cell-sub">Vencido el 20/09</div></td><td>MSI</td><td class="r">10</td><td class="r">31</td><td><span class="badge badge-success">Publicado</span></td><td><div class="row-actions"><button class="icon-btn sm" aria-label="Editar Estructuras de control"><svg class="icon icon-sm"><use href="#i-pencil"/></svg></button></div></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div data-subpanel="cat-banco" hidden>
+          <div class="section-head"><p>Preguntas reutilizables. Se agregan a un cuestionario desde "Armar cuestionario".</p><div class="quick-links"><span data-view-toggle="banco"></span><button class="btn btn-ghost btn-sm" type="button"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Nueva pregunta</button></div></div>
+          <div class="table-wrap" data-view-target="banco"><table class="data">
+            <thead><tr><th>Pregunta</th><th>Tema</th><th>Corrección</th><th class="r">Usada en</th></tr></thead>
+            <tbody>
+              <tr><td class="cell-title">¿Cuáles de estos lenguajes tienen tipado estático?</td><td>Tipado</td><td>Varias correctas</td><td class="r">1</td></tr>
+              <tr><td class="cell-title">¿Qué protocolo de transporte es orientado a conexión?</td><td>Redes</td><td>Una correcta</td><td class="r">1</td></tr>
+              <tr><td class="cell-title">¿Cuál es la complejidad de la búsqueda binaria?</td><td>Complejidad</td><td>Una correcta</td><td class="r">2</td></tr>
+              <tr><td class="cell-title">¿Qué imprime un for que recorre de 0 a n−1 sin break?</td><td>Estructuras de control</td><td>Una correcta</td><td class="r">0</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ARMAR CUESTIONARIO · profesor ================= -->
+    <section class="screen" id="screen-cuestionario-nuevo-profesor" aria-labelledby="h-build" data-error="No pudimos cargar el banco de preguntas.">
+      <a class="back" href="#desafios"><svg class="icon icon-sm"><use href="#i-left"/></svg>Desafíos</a>
+      <div class="page-head">
+        <div><h1 class="display" id="h-build">Armar cuestionario</h1><p>Agregá preguntas nuevas o de tu banco, ordenalas y repartí el puntaje hasta llegar a 100.</p></div>
+      </div>
+      <div class="data builder">
+        <aside>
+          <div class="card studs">
+            <div class="section-head"><h2>Agregar preguntas</h2></div>
+            <button class="btn btn-primary btn-block" type="button" id="add-custom"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Pregunta nueva</button>
+            <div style="border-top:1px solid var(--border-subtle); margin:16px 0; "></div>
+            <div style="display:flex; flex-direction:column; gap:12px">
+              <label class="field">Del banco<select class="control" id="bank-pick"><option value="">Elegí una pregunta…</option><option>¿Cuál es la complejidad de la búsqueda binaria?</option><option>¿Qué imprime un for que recorre de 0 a n−1 sin break?</option></select></label>
+              <button class="btn btn-ghost btn-block" type="button" id="add-bank" disabled><svg class="icon icon-sm"><use href="#i-database"/></svg>Agregar del banco</button>
+            </div>
+          </div>
+          <div class="card studs">
+            <label class="field">Título del cuestionario<input class="control" value="Complejidad y búsqueda" /></label>
+            <label class="field" style="margin-top:12px">Cohorte<select class="control"><option>MSII</option><option>MSI</option></select></label>
+          </div>
+        </aside>
+        <div>
+          <div id="q-list"></div>
+          <div class="sum-bar" id="sum-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ROADMAP · profesor ================= -->
+    <section class="screen" id="screen-roadmap-profesor" aria-labelledby="h-road" data-error="No pudimos traer las asignaturas.">
+      <div class="page-head">
+        <div><h1 class="display" id="h-road">Roadmap</h1><p>Creá una asignatura y construila por unidades y nodos. Los alumnos la recorren como un mapa.</p></div>
+        <a class="btn btn-ghost" href="#insignias"><svg class="icon icon-sm"><use href="#i-award"/></svg>Insignias</a>
+      </div>
+      <div class="data">
+        <form class="card studs inline-create" onsubmit="return false" style="margin-bottom:20px">
+          <label class="field">Nueva asignatura<input class="control" placeholder="Por ejemplo: Programación I" /></label>
+          <button class="btn btn-primary" type="submit"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Crear</button>
+        </form>
+        <div class="view-bar"><span data-view-toggle="asignaturas"></span></div>
+        <div class="table-wrap" data-view-target="asignaturas"><table class="data">
+          <thead><tr><th>Asignatura</th><th class="r">Unidades</th><th class="r">Nodos</th><th><span class="sr-only">Acciones</span></th></tr></thead>
+          <tbody>
+            <tr><td><div class="cell-title">MSII</div><div class="cell-sub">Todavía sin contenido: empezá por la primera unidad.</div></td><td class="r">0</td><td class="r">0</td>
+              <td><div class="row-actions"><a class="btn btn-secondary btn-sm" href="#"><svg class="icon icon-sm"><use href="#i-pencil"/></svg>Editar</a><a class="btn btn-ghost btn-sm" href="#"><svg class="icon icon-sm"><use href="#i-map"/></svg>Mapa</a><button class="icon-btn sm" aria-label="Eliminar MSII" style="color:var(--urgent)"><svg class="icon icon-sm"><use href="#i-trash"/></svg></button></div></td></tr>
+            <tr><td><div class="cell-title">MSI</div><div class="cell-sub">Todavía sin contenido: empezá por la primera unidad.</div></td><td class="r">0</td><td class="r">0</td>
+              <td><div class="row-actions"><a class="btn btn-secondary btn-sm" href="#"><svg class="icon icon-sm"><use href="#i-pencil"/></svg>Editar</a><a class="btn btn-ghost btn-sm" href="#"><svg class="icon icon-sm"><use href="#i-map"/></svg>Mapa</a><button class="icon-btn sm" aria-label="Eliminar MSI" style="color:var(--urgent)"><svg class="icon icon-sm"><use href="#i-trash"/></svg></button></div></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <!-- ================= INSIGNIAS · profesor ================= -->
+    <section class="screen" id="screen-insignias-profesor" aria-labelledby="h-ins" data-error="No pudimos traer el catálogo de insignias.">
+      <a class="back" href="#roadmap"><svg class="icon icon-sm"><use href="#i-left"/></svg>Roadmap</a>
+      <div class="page-head">
+        <div><h1 class="display" id="h-ins">Insignias</h1><p><span class="num">14</span> insignias en el catálogo. Se otorgan solas cuando el alumno cumple el criterio.</p></div>
+        <div class="head-tools"><span data-view-toggle="insignias"></span><button class="btn btn-primary" type="button" id="new-badge-btn" aria-expanded="false" aria-controls="new-badge"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Nueva insignia</button></div>
+      </div>
+      <div class="data">
+        <form class="card studs new-badge" id="new-badge" hidden onsubmit="return false" aria-labelledby="h-newb">
+          <div class="section-head"><h2 id="h-newb">Nueva insignia</h2></div>
+          <div class="form-grid">
+            <label class="field"><span class="req">Nombre</span><input class="control" id="nb-name" maxlength="40" placeholder="Por ejemplo: Racha de 7 días" /></label>
+            <label class="field"><span class="req">Tipo</span><select class="control"><option>Transversal</option><option>De curso</option></select></label>
+            <fieldset class="icon-picker full" id="nb-icons"><legend class="req">Ícono</legend></fieldset>
+            <label class="field full"><span class="req">Criterio</span><select class="control" id="nb-crit"><option value="">Elegí un criterio…</option><option>Completar una sección sin perder vidas</option><option>Superar un nodo sin reintentos</option><option>Alcanzar un umbral de XP</option><option>Entrar en la zona P90</option></select></label>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:18px; align-items:center">
+            <button class="btn btn-primary" id="nb-create" type="submit" disabled>Crear insignia</button>
+            <button class="btn btn-quiet" type="button" id="nb-cancel">Cancelar</button>
+            <span class="muted" style="font-size:13px" id="nb-hint">Completá nombre, ícono y criterio.</span>
+          </div>
+        </form>
+        <div class="badge-grid" id="badge-grid" data-view-target="insignias"></div>
+      </div>
+    </section>
+
+    <!-- ================= BACKOFFICE · admin ================= -->
+    <section class="screen" id="screen-backoffice" aria-labelledby="h-bo" data-error="No se pudieron cargar los datos del backoffice.">
+      <div class="page-head">
+        <div><h1 class="display" id="h-bo">Backoffice</h1><p>Parámetros globales, auditoría de la plataforma y monitoreo de eventos.</p></div>
+      </div>
+      <div class="data">
+        <div class="module-grid">
+          <a class="card studs module" href="#"><span class="ic"><svg class="icon"><use href="#i-users"/></svg></span><div><h2>Usuarios</h2><p>Altas, roles y bajas. <span class="num">412</span> cuentas.</p></div></a>
+          <a class="card studs module" href="#accesos"><span class="ic"><svg class="icon"><use href="#i-key"/></svg></span><div><h2>Accesos <span class="badge badge-primary num">1</span></h2><p>Solicitudes pendientes y emails habilitados.</p></div></a>
+          <a class="card studs module" href="#"><span class="ic"><svg class="icon"><use href="#i-sliders"/></svg></span><div><h2>Parámetros globales</h2><p>XP por dificultad, vidas, umbrales.</p></div></a>
+          <a class="card studs module" href="#"><span class="ic"><svg class="icon"><use href="#i-cpu"/></svg></span><div><h2>Proveedores LLM</h2><p>Modelos del tutor IA y corrección.</p></div></a>
+          <a class="card studs module" href="#"><span class="ic"><svg class="icon"><use href="#i-file"/></svg></span><div><h2>Auditoría</h2><p>Quién cambió qué y cuándo.</p></div></a>
+        </div>
+
+        <section class="section" aria-labelledby="h-audit">
+          <div class="section-head"><h2 id="h-audit">Actividad reciente</h2><div class="quick-links"><span data-view-toggle="auditoria"></span><a class="btn btn-quiet btn-sm" href="#">Ver auditoría<svg class="icon icon-sm"><use href="#i-right"/></svg></a></div></div>
+          <div class="table-wrap" data-view-target="auditoria"><table class="data">
+            <thead><tr><th>Cuándo</th><th>Quién</th><th>Acción</th></tr></thead>
+            <tbody>
+              <tr><td class="num">30/09 14:12</td><td>Ana Torres</td><td>Creó el desafío "Recursión de Fibonacci" en MSI</td></tr>
+              <tr><td class="num">30/09 11:40</td><td>admin@frc.utn.edu.ar</td><td>Cambió "XP por desafío avanzado" de 100 a 120</td></tr>
+              <tr><td class="num">29/09 18:03</td><td>admin@frc.utn.edu.ar</td><td>Aprobó la solicitud de prof.gomez@frc.utn.edu.ar</td></tr>
+              <tr><td class="num">29/09 09:27</td><td>Sistema</td><td>Otorgó 6 insignias "Primeros pasos"</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <details class="section card studs disclosure">
+          <summary><h2><span>Exportar datos</span><span class="disc-sum">Se generan en tu navegador, sin pasar por el servidor.</span></h2></summary>
+          <div class="export-row"><span>Catálogo de parámetros</span><div class="btns"><button class="btn btn-ghost btn-sm"><svg class="icon icon-sm"><use href="#i-download"/></svg>JSON</button><button class="btn btn-ghost btn-sm"><svg class="icon icon-sm"><use href="#i-download"/></svg>CSV</button></div></div>
+          <div class="export-row"><span>Historial de auditoría</span><div class="btns"><button class="btn btn-ghost btn-sm"><svg class="icon icon-sm"><use href="#i-download"/></svg>JSON</button><button class="btn btn-ghost btn-sm"><svg class="icon icon-sm"><use href="#i-download"/></svg>CSV</button></div></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ================= ACCESOS (whitelist) · admin ================= -->
+    <section class="screen" id="screen-accesos" aria-labelledby="h-acc-page" data-error="No pudimos traer las solicitudes ni los emails habilitados.">
+      <a class="back" href="#backoffice"><svg class="icon icon-sm"><use href="#i-left"/></svg>Backoffice</a>
+      <div class="page-head">
+        <div><h1 class="display" id="h-acc-page">Accesos</h1><p>Resolvé los pedidos de habilitación y gestioná qué emails docentes pueden entrar a la plataforma.</p></div>
+      </div>
+      <div class="data">
+        <div class="tabs" role="tablist" aria-label="Accesos">
+          <button class="tab" role="tab" aria-selected="true" data-subtab="acc-pend">Pendientes <span class="count num" data-pend-count>1</span></button>
+          <button class="tab" role="tab" aria-selected="false" data-subtab="acc-ok">Habilitados <span class="count num" data-ok-count>12</span></button>
+        </div>
+
+        <div data-subpanel="acc-pend">
+          <ul class="list" id="req-list"></ul>
+        </div>
+
+        <div data-subpanel="acc-ok" hidden>
+          <form class="card studs add-email" id="add-email" onsubmit="return false" novalidate>
+            <label class="field grow"><span class="req">Habilitar email</span><input class="control" type="email" id="ae-email" placeholder="docente@frc.utn.edu.ar" aria-describedby="ae-hint" /></label>
+            <label class="field">Rol<select class="control" id="ae-role"><option>Profesor</option><option>Gestor</option></select></label>
+            <button class="btn btn-primary" type="submit"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Habilitar</button>
+            <span class="hint full" id="ae-hint">Entra directo, sin esperar a que lo pida.</span>
+          </form>
+          <div class="filter-top" style="margin-top:16px">
+            <label class="search"><span class="sr-only">Buscar email</span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-search"/></svg><input class="control" type="search" id="ok-q" placeholder="Buscar email" /></label>
+            <div class="seg" role="group" aria-label="Filtrar por rol" id="ok-role">
+              <button type="button" aria-pressed="true" data-r="">Todos</button><button type="button" aria-pressed="false" data-r="Profesor">Profesores</button><button type="button" aria-pressed="false" data-r="Gestor">Gestores</button>
+            </div>
+            <span data-view-toggle="habilitados"></span>
+          </div>
+          <div class="table-wrap" data-view-target="habilitados"><table class="data" id="ok-table"></table></div>
+          <div class="pager" id="ok-pager"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= UI KIT / CATÁLOGO DE COMPONENTES ================= -->
+    <section class="screen" id="screen-uikit" hidden aria-labelledby="h-uikit">
+      <div class="page-head">
+        <div>
+          <h1 class="display" id="h-uikit">🎨 Catálogo de Componentes & UI Kit</h1>
+          <p>Muestrario de tokens de diseño, botones, badges, inputs y componentes gamificados. Cambiá de modo (Arcade/Normal) y de tema (Claro/Oscuro) para validar la coherencia visual en tiempo real.</p>
+        </div>
+      </div>
+
+      <!-- Barra de control de pruebas en el UI Kit -->
+      <div class="card studs" style="display:flex; flex-wrap:wrap; gap:20px; align-items:center; margin-bottom:24px; padding:14px 18px; background:var(--bg-surface-alt);">
+        <span style="font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.05em;">Probar variante aquí:</span>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span class="meta" style="font-weight:600;">Tema:</span>
+          <div class="theme-switch" role="group" aria-label="Tema">
+            <button data-theme-btn="dark" aria-pressed="true"><svg class="icon icon-sm"><use href="#i-moon"/></svg> Modo Oscuro</button>
+            <button data-theme-btn="light" aria-pressed="false"><svg class="icon icon-sm"><use href="#i-sun"/></svg> Modo Claro</button>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span class="meta" style="font-weight:600;">Estilo:</span>
+          <div class="seg" role="group" aria-label="Estilo">
+            <button data-skin-btn="gamer" aria-pressed="true">🎮 Arcade (Gamer)</button>
+            <button data-skin-btn="sobrio" aria-pressed="false">💼 Normal (Sobrio)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. Tokens de Color -->
+      <section class="card studs uikit-section">
+        <h3>1. Superficies y Bordes</h3>
+        <div class="token-grid">
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--bg-app)"></div>
+            <div class="token-label">--bg-app</div>
+          </div>
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--bg-surface)"></div>
+            <div class="token-label">--bg-surface</div>
+          </div>
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--bg-surface-alt)"></div>
+            <div class="token-label">--bg-surface-alt</div>
+          </div>
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--border-subtle)"></div>
+            <div class="token-label">--border-subtle</div>
+          </div>
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--border-highlight)"></div>
+            <div class="token-label">--border-highlight</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:20px">2. Acentos y Semántica</h3>
+        <div class="token-grid">
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--accent-primary-fill)"></div>
+            <div class="token-label">--accent-primary</div>
+          </div>
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--accent-secondary-fill)"></div>
+            <div class="token-label">--accent-secondary</div>
+          </div>
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--accent-gold-fill)"></div>
+            <div class="token-label">--accent-gold</div>
+          </div>
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--accent-danger-fill)"></div>
+            <div class="token-label">--accent-danger</div>
+          </div>
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--accent-success-fill)"></div>
+            <div class="token-label">--accent-success</div>
+          </div>
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--urgent)"></div>
+            <div class="token-label">--urgent (WCAG AA)</div>
+          </div>
+          <div class="token-card">
+            <div class="token-swatch" style="background:var(--good)"></div>
+            <div class="token-label">--good (WCAG AA)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Botones -->
+      <section class="card studs uikit-section">
+        <h3>3. Escala y Variantes de Botones (.btn)</h3>
+        <p class="hint" style="margin-bottom:14px;">Escala fija y predecible: <b>.btn-lg (44px)</b> para acciones heroicas o modales principales, <b>.btn (38px)</b> estándar de sistema, y <b>.btn-sm (32px)</b> para tablas y filtros.</p>
+        
+        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); margin-bottom:8px;">Escala de tamaños:</div>
+        <div class="uikit-row" style="align-items:center;">
+          <button class="btn btn-primary btn-lg" type="button"><svg class="icon"><use href="#i-plus"/></svg>Grande (.btn-lg · 44px)</button>
+          <button class="btn btn-primary" type="button"><svg class="icon icon-sm"><use href="#i-check"/></svg>Estándar (.btn · 38px)</button>
+          <button class="btn btn-primary btn-sm" type="button"><svg class="icon icon-sm"><use href="#i-check"/></svg>Pequeño (.btn-sm · 32px)</button>
+          <button class="btn btn-ghost btn-icon btn-lg" type="button" title="Icono 44px"><svg class="icon"><use href="#i-bell"/></svg></button>
+          <button class="btn btn-ghost btn-icon" type="button" title="Icono 38px"><svg class="icon icon-sm"><use href="#i-pencil"/></svg></button>
+          <button class="btn btn-ghost btn-icon btn-sm" type="button" title="Icono 32px"><svg class="icon icon-sm"><use href="#i-trash"/></svg></button>
+        </div>
+
+        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); margin:16px 0 8px;">Variantes semánticas:</div>
+        <div class="uikit-row">
+          <button class="btn btn-primary" type="button">Primario</button>
+          <button class="btn btn-secondary" type="button">Secundario</button>
+          <button class="btn btn-gold" type="button"><svg class="icon icon-sm"><use href="#i-trophy"/></svg>Recompensa</button>
+          <button class="btn btn-danger" type="button"><svg class="icon icon-sm"><use href="#i-trash"/></svg>Peligro</button>
+          <button class="btn btn-ghost" type="button">Fantasma</button>
+          <button class="btn btn-quiet" type="button">Silencioso</button>
+          <button class="linkbtn" type="button">Enlace (.linkbtn)</button>
+        </div>
+
+        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); margin:16px 0 8px;">Estados de carga y bloqueo:</div>
+        <div class="uikit-row">
+          <button class="btn btn-primary is-loading" type="button" aria-disabled="true"><span class="spinner spinner-sm"></span><span class="btn-text">Guardando...</span></button>
+          <button class="btn btn-secondary is-loading" type="button" aria-disabled="true"><span class="spinner spinner-sm"></span><span class="btn-text">Sincronizando</span></button>
+          <button class="btn btn-ghost is-loading" type="button" aria-disabled="true"><span class="spinner spinner-sm"></span><span class="btn-text">Cargando</span></button>
+          <button class="btn btn-primary" type="button" disabled>Deshabilitado</button>
+          <button class="btn btn-ghost danger" type="button" disabled>Borrado bloqueado</button>
+        </div>
+      </section>
+
+      <!-- 3. Badges -->
+      <section class="card studs uikit-section">
+        <h3>4. Badges & Etiquetas (.badge)</h3>
+        <div class="uikit-row">
+          <span class="badge badge-required"><svg class="icon icon-sm"><use href="#i-flame"/></svg>Obligatorio</span>
+          <span class="badge badge-success"><svg class="icon icon-sm"><use href="#i-check"/></svg>Completado</span>
+          <span class="badge badge-gold"><svg class="icon icon-sm"><use href="#i-trophy"/></svg>+150 XP</span>
+          <span class="badge badge-danger">En riesgo</span>
+          <span class="badge badge-secondary">Práctico</span>
+          <span class="badge badge-outline">Borrador</span>
+        </div>
+      </section>
+
+      <!-- 4. Formularios e Inputs -->
+      <section class="card studs uikit-section">
+        <h3>5. Formularios y Controles</h3>
+        <div class="form-grid">
+          <label class="field">
+            <span>Nombre del desafío <span class="req"></span></span>
+            <input class="control" type="text" placeholder="Ej. Introducción a Árboles Binarios" value="Recursión avanzada" />
+            <span class="hint">Identificador visible en el roadmap del alumno.</span>
+          </label>
+
+          <label class="field">
+            <span>Campo con error de validación <span class="req"></span></span>
+            <input class="control" type="text" value="Valor inválido" aria-invalid="true" />
+            <span class="err">Este campo no puede quedar en blanco.</span>
+          </label>
+
+          <label class="field">
+            <span>Tipo de desafío</span>
+            <select class="control">
+              <option>Práctico</option>
+              <option>Teórico</option>
+              <option>Integrador</option>
+            </select>
+          </label>
+
+          <div class="field">
+            <span>Búsqueda con icono</span>
+            <div class="search">
+              <svg class="icon"><use href="#i-search"/></svg>
+              <input class="control" type="search" placeholder="Buscar por título, cohorte..." />
+            </div>
+          </div>
+
+          <label class="toggle full">
+            <input type="checkbox" checked />
+            <span>Desafío obligatorio para regularidad</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 5. Alertas -->
+      <section class="card studs uikit-section">
+        <h3>6. Alertas y Señalética (.alert)</h3>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div class="alert" role="alert">
+            <svg class="icon"><use href="#i-alert"/></svg>
+            <div>
+              <div class="alert-title">3 desafíos obligatorios vencen esta semana</div>
+              <div class="alert-body">Completalos para mantener tu regularidad y no perder vidas en la cohorte MSI.</div>
+            </div>
+            <button class="btn btn-ghost danger btn-sm" type="button">Ver obligatorios</button>
+          </div>
+
+          <div class="alert info" role="status">
+            <svg class="icon"><use href="#i-sparkle"/></svg>
+            <div>
+              <div class="alert-title">Nuevo módulo habilitado</div>
+              <div class="alert-body">El profesor habilitó la Unidad 3: Grafos y Algoritmos Voraces.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Gamificación -->
+      <section class="card studs uikit-section">
+        <h3>7. Elementos de Gamificación</h3>
+        <div class="uikit-row" style="gap:24px;">
+          <div>
+            <span class="meta" style="display:block; margin-bottom:6px;">Dificultades (Pips):</span>
+            <div style="display:flex; gap:16px;">
+              <span class="diff"><span class="pips" data-level="1"><i></i><i></i><i></i></span> Fácil</span>
+              <span class="diff"><span class="pips" data-level="2"><i></i><i></i><i></i></span> Medio</span>
+              <span class="diff"><span class="pips" data-level="3"><i></i><i></i><i></i></span> Difícil</span>
+            </div>
+          </div>
+
+          <div>
+            <span class="meta" style="display:block; margin-bottom:6px;">Vidas restantes:</span>
+            <span class="hearts">
+              <svg class="icon"><use href="#i-heart"/></svg>
+              <svg class="icon"><use href="#i-heart"/></svg>
+              <svg class="icon lost"><use href="#i-heart"/></svg>
+            </span>
+          </div>
+
+          <div>
+            <span class="meta" style="display:block; margin-bottom:6px;">Chips de Usuario:</span>
+            <div style="display:flex; gap:8px;">
+              <span class="initials">RS</span>
+              <span class="initials" style="background:var(--accent-primary-fill); color:var(--on-accent-primary);">UX</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Sistema de Modales Centrados y Control de Scroll -->
+      <section class="card studs uikit-section">
+        <h3>8. Modales Centrados (.modal) y Control de Scroll</h3>
+        <p class="hint" style="margin-bottom:14px;">Diálogos nativos con la API HTML5 <code>&lt;dialog&gt;</code>. Tienen backdrop desenfocado, cierre nativo con tecla <b>Escape</b>, bloqueo automático del scroll de fondo y contención interna en el cuerpo (cabecera y botones siempre fijos).</p>
+        
+        <div class="uikit-row">
+          <button class="btn btn-ghost danger" type="button" data-open="modal-demo-confirm"><svg class="icon icon-sm"><use href="#i-trash"/></svg>Modal Chico (.modal-sm · 400px)</button>
+          <button class="btn btn-primary" type="button" data-open="modal-demo-form"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Modal Mediano (.modal-md · 560px)</button>
+          <button class="btn btn-secondary" type="button" data-open="modal-demo-table"><svg class="icon icon-sm"><use href="#i-list"/></svg>Modal Grande (.modal-lg · 760px)</button>
+        </div>
+      </section>
+
+      <!-- 9. Sistema Universal de Paginado -->
+      <section class="card studs uikit-section">
+        <h3>9. Sistema Universal de Paginación (.pager)</h3>
+        <p class="hint" style="margin-bottom:14px;">Componente único estandarizado con resumen descriptivo en español rioplatense, selector opcional de registros por página y botones de navegación adaptables al estilo activo.</p>
+        
+        <div style="background:var(--bg-surface); padding:16px; border:1px solid var(--border-subtle); border-radius:var(--radius-card);">
+          <div class="pager" style="margin-top:0;">
+            <div class="pager-summary">
+              <span>Mostrando <b>1–10</b> de <b>48</b> registros</span>
+              <span class="muted">·</span>
+              <label class="pager-size">Por página:
+                <select class="control">
+                  <option selected>10</option>
+                  <option>25</option>
+                  <option>50</option>
+                </select>
+              </label>
+            </div>
+            <div class="pager-controls">
+              <nav class="pg" aria-label="Paginación de ejemplo">
+                <button class="pg-btn pg-arrow" type="button" disabled aria-label="Página anterior"><svg class="icon icon-sm"><use href="#i-left"/></svg></button>
+                <button class="pg-btn" type="button" aria-current="page">1</button>
+                <button class="pg-btn" type="button">2</button>
+                <button class="pg-btn" type="button">3</button>
+                <span class="pg-gap">...</span>
+                <button class="pg-btn" type="button">5</button>
+                <button class="pg-btn pg-arrow" type="button" aria-label="Página siguiente"><svg class="icon icon-sm"><use href="#i-right"/></svg></button>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Loadings, Spinners y Skeletons -->
+      <section class="card studs uikit-section">
+        <h3>10. Estados de Carga: Spinners y Skeletons (.spinner · .skeleton)</h3>
+        <p class="hint" style="margin-bottom:14px;">En <b>Modo Arcade</b>, el spinner es un auténtico <b>loader de 16 píxeles rotativos de 8-bit</b> con box-shadows CSS (estilo retro gaming clásico). En <b>Modo Normal</b>, es un círculo de giro continuo fluido y sobrio.</p>
+        
+        <div style="display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:start;">
+          <div>
+            <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); margin-bottom:12px;">Spinners universales:</div>
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <span class="spinner spinner-sm" style="color:var(--accent-primary-fill);"></span>
+                <span class="hint" style="font-size:11px;">14px (sm)</span>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <span class="spinner spinner-md" style="color:var(--accent-secondary-fill);"></span>
+                <span class="hint" style="font-size:11px;">22px (md)</span>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <span class="spinner spinner-lg" style="color:var(--accent-gold);"></span>
+                <span class="hint" style="font-size:11px;">36px (lg)</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); margin-bottom:12px;">Estructuras esqueléticas (Skeletons):</div>
+            <div class="card skeleton-card" style="background:var(--bg-surface-alt);">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div class="skeleton skeleton-avatar"></div>
+                <div style="flex:1;">
+                  <div class="skeleton skeleton-title"></div>
+                  <div class="skeleton skeleton-text" style="width:40%;"></div>
+                </div>
+              </div>
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text" style="width:75%;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ================= placeholder ================= -->
+    <section class="screen" id="screen-pending">
+      <div class="placeholder">
+        <h1 class="display" id="pending-title">Página</h1>
+        <p>Esta página todavía no está rediseñada en el mock.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ================= Navegación Móvil Inferior (Bottom Bar) ================= -->
+<nav class="bottom-nav" id="bottom-nav" aria-label="Navegación móvil"></nav>
+
+<!-- ================= Drawer: crear desafío ================= -->
+<dialog class="drawer" id="drawer-desafio" aria-labelledby="h-dd">
+  <form method="dialog" style="display:contents" id="form-desafio" novalidate>
+    <div class="drawer-head">
+      <div><h2 id="h-dd" class="display">Crear desafío</h2><p>Definí la consigna y cómo se evalúa.</p></div>
+      <button class="icon-btn sm" value="cancel" aria-label="Cerrar"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="drawer-body">
+      <fieldset class="group"><legend>Consigna</legend>
+        <label class="field"><span class="req">Título</span><input class="control" name="titulo" maxlength="100" placeholder="Por ejemplo: Introducción a algoritmos" aria-describedby="t-hint" /><span class="hint" id="t-hint">Hasta 100 caracteres.</span></label>
+        <label class="field">Descripción <span class="hint">Opcional</span><textarea class="control" name="desc" maxlength="500" placeholder="Consigna inicial del desafío"></textarea></label>
+      </fieldset>
+      <fieldset class="group"><legend>Evaluación</legend>
+        <div class="form-grid">
+          <label class="field"><span class="req">Tipo</span><select class="control" name="tipo"><option>Algoritmo con pruebas automáticas</option><option>Refactorización</option><option>Cuestionario teórico</option></select></label>
+          <label class="field"><span class="req">Dificultad</span><select class="control" name="dif"><option>Básica</option><option>Media</option><option>Avanzada</option></select></label>
+          <label class="field"><span class="req">Reintentos</span><input class="control num" type="number" min="0" max="3" value="2" name="reint" /><span class="hint">De 0 a 3.</span></label>
+          <label class="field"><span class="req">Aprobación</span><input class="control num" type="number" min="0" max="100" value="70" name="aprob" /><span class="hint">Porcentaje mínimo, de 0 a 100.</span></label>
+        </div>
+        <label class="toggle"><input type="checkbox" name="oblig" checked />Obligatorio: cuenta para la regularidad</label>
+      </fieldset>
+      <fieldset class="group"><legend>Publicación</legend>
+        <div class="form-grid">
+          <label class="field"><span class="req">Cohorte</span><select class="control" name="curso"><option>MSI</option><option>MSII</option></select></label>
+          <label class="field">Fecha límite<input class="control" type="date" name="due" /></label>
+          <label class="field"><span class="req">XP</span><input class="control num" type="number" min="0" value="40" name="xp" /></label>
+          <label class="field"><span class="req">Monedas</span><input class="control num" type="number" min="0" value="10" name="coins" /></label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="drawer-foot">
+      <button class="btn btn-quiet" value="cancel">Cancelar</button>
+      <button class="btn btn-primary" id="dd-submit" type="button">Crear desafío</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- ================= Modales Centrados de Demostración ================= -->
+
+<!-- 1. Modal Chico: Confirmación de borrado -->
+<dialog class="modal modal-sm" id="modal-demo-confirm" aria-labelledby="h-modal-confirm">
+  <form method="dialog" style="display:contents">
+    <div class="modal-head">
+      <div>
+        <h2 id="h-modal-confirm" class="display" style="color:var(--urgent);">¿Eliminar cohorte?</h2>
+        <p>Esta acción no se puede deshacer.</p>
+      </div>
+      <button class="icon-btn sm" value="cancel" aria-label="Cerrar"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:14px; line-height:1.5;">Vas a eliminar la cohorte <b>MSI 2026</b> y desvincular a los 34 alumnos inscriptos. Se perderá el registro de entregas y calificaciones parciales.</p>
+      <div class="alert" style="padding:10px 14px; margin:0;">
+        <svg class="icon icon-sm"><use href="#i-alert"/></svg>
+        <div style="font-size:13px;">Los desafíos creados en el banco seguirán guardados.</div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" value="cancel" type="button" onclick="this.closest('dialog').close()">Cancelar</button>
+      <button class="btn btn-danger" type="button" onclick="this.closest('dialog').close()"><svg class="icon icon-sm"><use href="#i-trash"/></svg>Sí, eliminar</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- 2. Modal Mediano: Formulario con scroll contenido -->
+<dialog class="modal modal-md" id="modal-demo-form" aria-labelledby="h-modal-form">
+  <form method="dialog" style="display:contents">
+    <div class="modal-head">
+      <div>
+        <h2 id="h-modal-form" class="display">Crear nuevo curso</h2>
+        <p>Ingresá la información general para habilitar la materia.</p>
+      </div>
+      <button class="icon-btn sm" value="cancel" aria-label="Cerrar"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <label class="field full">
+          <span class="req">Nombre del curso</span>
+          <input class="control" type="text" placeholder="Ej. Algoritmos y Estructuras de Datos" required />
+        </label>
+        <label class="field">
+          <span class="req">Código de cátedra</span>
+          <input class="control" type="text" placeholder="Ej. AED-2026" required />
+        </label>
+        <label class="field">
+          <span class="req">Año lectivo</span>
+          <select class="control">
+            <option>2026</option>
+            <option>2027</option>
+          </select>
+        </label>
+        <label class="field full">
+          <span>Descripción para los alumnos</span>
+          <textarea class="control" placeholder="Contenido analítico, objetivos y modalidad de cursado..."></textarea>
+          <span class="hint">Hasta 500 caracteres.</span>
+        </label>
+        <label class="field">
+          <span>Profesor titular</span>
+          <input class="control" type="text" value="Ing. Manuel Sánchez" />
+        </label>
+        <label class="field">
+          <span>Cupo estimado</span>
+          <input class="control num" type="number" value="45" />
+        </label>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" checked />
+        <span>Habilitar matriculación automática con legajo UTN</span>
+      </label>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" value="cancel" type="button" onclick="this.closest('dialog').close()">Cancelar</button>
+      <button class="btn btn-primary" type="button" onclick="this.closest('dialog').close()"><svg class="icon icon-sm"><use href="#i-check"/></svg>Crear curso</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- 3. Modal Grande: Vista previa y tabla con scroll horizontal contenido -->
+<dialog class="modal modal-lg" id="modal-demo-table" aria-labelledby="h-modal-table">
+  <form method="dialog" style="display:contents">
+    <div class="modal-head">
+      <div>
+        <h2 id="h-modal-table" class="display">Alumnos inscriptos · Cohorte MSI</h2>
+        <p>Listado de regularidad y puntos acumulados en tiempo real.</p>
+      </div>
+      <button class="icon-btn sm" value="cancel" aria-label="Cerrar"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Alumno</th>
+              <th>Legajo</th>
+              <th>Desafíos</th>
+              <th>Puntaje</th>
+              <th>Estado</th>
+              <th class="r">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Lucas Benítez</b></td>
+              <td><code>84920</code></td>
+              <td>12 / 14</td>
+              <td><span style="color:var(--accent-gold); font-weight:700;">850 XP</span></td>
+              <td><span class="badge badge-success">Regular</span></td>
+              <td class="r"><button class="btn btn-ghost btn-sm" type="button">Detalle</button></td>
+            </tr>
+            <tr>
+              <td><b>Camila Morales</b></td>
+              <td><code>85104</code></td>
+              <td>14 / 14</td>
+              <td><span style="color:var(--accent-gold); font-weight:700;">1120 XP</span></td>
+              <td><span class="badge badge-gold">Promoción</span></td>
+              <td class="r"><button class="btn btn-ghost btn-sm" type="button">Detalle</button></td>
+            </tr>
+            <tr>
+              <td><b>Agustín Romero</b></td>
+              <td><code>84319</code></td>
+              <td>6 / 14</td>
+              <td><span style="color:var(--accent-gold); font-weight:700;">320 XP</span></td>
+              <td><span class="badge badge-danger">En riesgo</span></td>
+              <td class="r"><button class="btn btn-ghost btn-sm" type="button">Detalle</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" value="cancel" type="button" onclick="this.closest('dialog').close()">Cerrar</button>
+      <button class="btn btn-primary" type="button" onclick="this.closest('dialog').close()"><svg class="icon icon-sm"><use href="#i-download"/></svg>Exportar reporte CSV</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- ================= Drawer: crear cohorte ================= -->
+<dialog class="drawer" id="drawer-cohorte" aria-labelledby="h-dc">
+  <form method="dialog" style="display:contents" novalidate>
+    <div class="drawer-head">
+      <div><h2 id="h-dc" class="display">Crear cohorte</h2><p>Arranca como borrador hasta que la publiques.</p></div>
+      <button class="icon-btn sm" value="cancel" aria-label="Cerrar"><svg class="icon icon-sm"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="drawer-body">
+      <label class="field"><span class="req">Nombre</span><input class="control" placeholder="Por ejemplo: MSIII" /></label>
+      <div class="form-grid">
+        <label class="field"><span class="req">Inicio de inscripción</span><input class="control" type="date" /></label>
+        <label class="field"><span class="req">Fin de inscripción</span><input class="control" type="date" /></label>
+      </div>
+      <label class="field">Asignatura del roadmap<select class="control"><option>MSI</option><option>MSII</option></select></label>
+    </div>
+    <div class="drawer-foot">
+      <button class="btn btn-quiet" value="cancel">Cancelar</button>
+      <button class="btn btn-primary" value="ok">Crear borrador</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+/* ======================= data (synthetic) ======================= */
+const TODAY = new Date(2026, 8, 30);
+const DIFF = { 1: 'Básica', 2: 'Media', 3: 'Avanzada' };
+const DAYS = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
+const USERS = {
+  alumno:   { name: 'Manuel Sanchez', short: 'Manuel S.', initials: 'MS', email: 'manuel.sanchez@frc.utn.edu.ar', legajo: '40510', role: 'Alumno', level: 'Nivel 7' },
+  profesor: { name: 'Ana Torres', short: 'Ana T.', initials: 'AT', email: 'ana.torres@frc.utn.edu.ar', legajo: '12877', role: 'Profesora', level: 'Profesora' },
+  admin:    { name: 'Admin 2 Demo', short: 'Admin 2', initials: 'A2', email: 'admin2@frc.utn.edu.ar', legajo: '', role: 'Administrador', level: 'Administrador', since: '27/09/2026' },
+};
+const COURSES = {
+  MSI:  { name: 'MSI',  status: 'Activa', from: '01/03/2026', to: '31/07/2026', weeks: '5 meses (22 semanas)', teacher: 'Ana Torres', students: 32, level: 2, xp: 60, xpMax: 100, coins: 120, lives: 2, pending: 2, readOnly: true },
+  MSII: { name: 'MSII', status: 'Activa', from: '01/04/2026', to: '20/12/2026', weeks: '9 meses (38 semanas)', teacher: 'Ana Torres', students: 28, level: 1, xp: 40, xpMax: 100, coins: 35, lives: 3, pending: 1, readOnly: false },
+};
+const COHORTS = [
+  { ...COURSES.MSII }, { ...COURSES.MSI },
+  { name: 'MSIII', status: 'Borrador', from: '01/03/2027', to: '31/07/2027', weeks: '5 meses (22 semanas)', teacher: 'Sin asignar', students: 0, readOnly: false },
+  { name: 'MSI 2025', status: 'Archivada', from: '01/03/2025', to: '31/07/2025', weeks: '5 meses (22 semanas)', teacher: 'Ana Torres', students: 41, readOnly: true },
+];
+const T_ALG = 'Algoritmo con pruebas automáticas', T_REF = 'Refactorización', T_QUIZ = 'Cuestionario teórico';
+const CHALLENGES = [
+  { id: 1, title: 'Suma de dos números', course: 'MSI', type: T_ALG, diff: 1, status: 'progress', req: true, due: '2026-10-02', xp: 40, coins: 10, retries: 2, pass: 70, published: true, attempts: 29 },
+  { id: 2, title: 'Validar un CUIT', course: 'MSII', type: T_ALG, diff: 2, status: 'progress', req: false, due: null, xp: 60, coins: 15, retries: 3, pass: 70, published: true, attempts: 12 },
+  { id: 3, title: 'Recursión de Fibonacci', course: 'MSI', type: T_ALG, diff: 2, status: 'todo', req: true, due: '2026-10-04', xp: 60, coins: 15, retries: 2, pass: 80, published: true, attempts: 8 },
+  { id: 4, title: 'Separar un switch gigante en estrategias', course: 'MSII', type: T_REF, diff: 2, status: 'todo', req: true, due: '2026-10-06', xp: 80, coins: 20, retries: 1, pass: 70, published: true, attempts: 3 },
+  { id: 14, title: 'Tipado y protocolos', course: 'MSI', type: T_QUIZ, diff: 1, status: 'todo', req: false, due: '2026-10-08', xp: 50, coins: 10, retries: 1, pass: 60, published: true, attempts: 14 },
+  { id: 5, title: 'Sumar sin operadores aritméticos', course: 'MSI', type: T_ALG, diff: 3, status: 'todo', req: false, due: '2026-10-15', xp: 120, coins: 30, retries: 3, pass: 90, published: true, attempts: 2 },
+  { id: 6, title: 'Ordenar una lista', course: 'MSI', type: T_ALG, diff: 2, status: 'todo', req: false, due: '2026-10-20', xp: 60, coins: 15, retries: 2, pass: 70, published: false, attempts: 0 },
+  { id: 7, title: 'Detectar palíndromos', course: 'MSII', type: T_ALG, diff: 1, status: 'todo', req: false, due: null, xp: 40, coins: 10, retries: 2, pass: 70, published: true, attempts: 6 },
+  { id: 8, title: 'Hola mundo con pruebas', course: 'MSI', type: T_ALG, diff: 1, status: 'done', req: true, done: '2026-09-22', xp: 40, coins: 10, retries: 3, pass: 50, published: true, attempts: 32 },
+  { id: 9, title: 'Máximo de un arreglo', course: 'MSI', type: T_ALG, diff: 1, status: 'done', req: true, done: '2026-09-24', xp: 40, coins: 10, retries: 2, pass: 70, published: true, attempts: 30 },
+  { id: 10, title: 'Extraer métodos de un main', course: 'MSII', type: T_REF, diff: 2, status: 'done', req: false, done: '2026-09-25', xp: 80, coins: 20, retries: 1, pass: 70, published: true, attempts: 15 },
+  { id: 11, title: 'Contar vocales', course: 'MSII', type: T_ALG, diff: 1, status: 'done', req: false, done: '2026-09-26', xp: 40, coins: 10, retries: 2, pass: 70, published: true, attempts: 20 },
+  { id: 12, title: 'FizzBuzz', course: 'MSI', type: T_ALG, diff: 1, status: 'done', req: false, done: '2026-09-27', xp: 40, coins: 10, retries: 2, pass: 70, published: true, attempts: 27 },
+  { id: 13, title: 'Búsqueda binaria', course: 'MSI', type: T_ALG, diff: 2, status: 'done', req: true, done: '2026-09-29', xp: 60, coins: 15, retries: 2, pass: 70, published: true, attempts: 25 },
+];
+
+/* ======================= helpers ======================= */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const store = { get: k => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+const parse = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+const daysUntil = s => Math.round((parse(s) - TODAY) / 86400000);
+const short = s => { const d = parse(s); return `${DAYS[d.getDay()]} ${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}`; };
+const icon = (id, cls = 'icon') => `<svg class="${cls}" aria-hidden="true"><use href="#${id}"/></svg>`;
+const hearts = (n, max = 3) => `<span class="hearts" aria-label="${n} de ${max} vidas">${Array.from({ length: max }, (_, i) => `<svg class="icon ${i < n ? '' : 'lost'}" aria-hidden="true"><use href="#i-heart"/></svg>`).join('')}</span>`;
+
+/* Pixel art: rows of chars mapped to fills. Colors can be CSS vars. */
+function pixel(rows, pal, label = '') {
+  const h = rows.length, w = rows[0].length;
+  let rects = '';
+  rows.forEach((r, y) => [...r].forEach((ch, x) => { if (pal[ch]) rects += `<rect x="${x}" y="${y}" width="1.02" height="1.02" style="fill:${pal[ch]}"/>`; }));
+  return `<svg class="pixel" viewBox="0 0 ${w} ${h}" ${label ? `role="img" aria-label="${label}"` : 'aria-hidden="true"'}>${rects}</svg>`;
+}
+const shade = (c, p) => `color-mix(in srgb, ${c} ${p}%, #000)`;
+const tint = (c, p) => `color-mix(in srgb, ${c} ${p}%, #fff)`;
+
+/* ======================= challenge list (alumno) ======================= */
+function dueLabel(c) {
+  if (c.status === 'done') return { main: 'Completado', sub: short(c.done), urgent: false, ic: 'i-check' };
+  if (!c.due) return { main: 'Sin fecha límite', sub: '', urgent: false, ic: 'i-clock' };
+  const n = daysUntil(c.due);
+  if (n > 7) return { main: `Vence el ${short(c.due)}`, sub: '', urgent: false, ic: 'i-clock' };
+  const main = n <= 0 ? 'Vence hoy' : n === 1 ? 'Vence mañana' : `Vence en ${n} días`;
+  return { main, sub: short(c.due), urgent: n <= 3, ic: 'i-clock' };
+}
+function groupOf(c) {
+  if (c.status === 'done') return 'Completados';
+  if (c.status === 'progress') return 'En curso';
+  if (!c.due) return 'Sin fecha límite';
+  return daysUntil(c.due) <= 7 ? 'Vencen esta semana' : 'Más adelante';
+}
+const GROUP_ORDER = ['En curso', 'Vencen esta semana', 'Más adelante', 'Sin fecha límite', 'Completados'];
+const hrefFor = c => c.type === T_QUIZ ? '#quiz' : '#';
+
+function rowHTML(c, i, showCourse) {
+  const due = dueLabel(c);
+  const cls = c.status === 'progress' ? 'in-progress' : c.status === 'done' ? 'done' : '';
+  const st = c.status === 'progress' ? 'i-half' : c.status === 'done' ? 'i-check' : 'i-todo';
+  const stLabel = c.status === 'progress' ? 'En curso' : c.status === 'done' ? 'Completado' : 'Pendiente';
+  const action = c.status === 'progress'
+    ? `<a class="btn btn-primary" href="${hrefFor(c)}">Continuar<span class="sr-only"> ${c.title}</span></a>`
+    : c.status === 'done'
+      ? `<a class="btn btn-ghost" href="#">Ver entrega<span class="sr-only"> de ${c.title}</span></a>`
+      : `<a class="btn btn-secondary" href="${hrefFor(c)}">Empezar<span class="sr-only"> ${c.title}</span></a>`;
+  return `<li class="row studs ${cls}" style="--i:${i}">
+    <span class="st" title="${stLabel}">${icon(st)}<span class="sr-only">${stLabel}</span></span>
+    <div class="main">
+      <h3 class="title">${c.title}</h3>
+      <p class="meta">${showCourse ? `<span class="meta-course">${c.course}</span> · ` : ''}${c.type}</p>
+    </div>
+    <div class="info">
+      <div class="tags">
+        ${c.req ? '<span class="badge badge-required">Obligatorio</span>' : ''}
+        <span class="diff"><span class="pips" data-level="${c.diff}" aria-hidden="true"><i></i><i></i><i></i></span>${DIFF[c.diff]}</span>
+      </div>
+      <div class="due ${due.urgent ? 'urgent' : ''}">${icon(due.ic, 'icon icon-sm')}<span><b>${due.main}</b>${due.sub}</span></div>
+      <div class="rew num"><span class="xp">+${c.xp} XP</span><span class="coins">${icon('i-coin', 'icon icon-sm')}${c.coins} monedas</span></div>
+    </div>
+    <div class="act">${action}</div>
+  </li>`;
+}
+
+/* Search stays visible; the rest of the filters fold into a panel with an active-count badge. */
+function filterBar(id, placeholder, fields) {
+  return `<form class="filterbar" role="search" aria-label="Filtrar" onsubmit="return false">
+    <div class="filter-top">
+      <label class="search"><span class="sr-only">Buscar</span>${icon('i-search', 'icon icon-sm')}<input class="control" type="search" name="q" placeholder="${placeholder}" autocomplete="off" /></label>
+      <button class="btn btn-ghost" type="button" aria-expanded="false" aria-controls="${id}-fp" data-filter-toggle>${icon('i-sliders', 'icon icon-sm')}Filtros<span class="fcount num" data-fcount hidden></span>${icon('i-chevron', 'icon icon-sm chev')}</button>
+    </div>
+    <div class="filter-panel" id="${id}-fp" hidden>${fields}</div>
+  </form>`;
+}
+function syncFilterCount(root, n) {
+  const b = $('[data-fcount]', root);
+  b.hidden = !n; b.textContent = n;
+  $('[data-filter-toggle]', root).setAttribute('aria-label', n ? `Filtros, ${n} activos` : 'Filtros');
+}
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-filter-toggle]'); if (!t) return;
+  const open = t.getAttribute('aria-expanded') !== 'true';
+  t.setAttribute('aria-expanded', String(open));
+  $('#' + t.getAttribute('aria-controls')).hidden = !open;
+});
+
+const listInstances = [];
+function ChallengeList(root) {
+  const locked = root.hasAttribute('data-locked-course');
+  const uid = 'cl' + listInstances.length;
+  const st = { tab: 'todo', q: '', course: '', type: '', diff: '', req: false };
+  root.innerHTML = `
+    <div class="tabs" role="tablist" aria-label="Estado de los desafíos">
+      <button class="tab" role="tab" id="${uid}-todo" aria-selected="true" aria-controls="${uid}-res" data-tab="todo">Por hacer <span class="count num"></span></button>
+      <button class="tab" role="tab" id="${uid}-done" aria-selected="false" aria-controls="${uid}-res" data-tab="done">Completados <span class="count num"></span></button>
+    </div>
+    ${filterBar(uid, "Buscar por nombre del desafío", `
+      ${locked ? '' : '<label class="field">Curso<select class="control" name="course"><option value="">Todos</option><option>MSI</option><option>MSII</option></select></label>'}
+      <label class="field">Tipo<select class="control" name="type"><option value="">Todos</option><option>${T_ALG}</option><option>${T_REF}</option><option>${T_QUIZ}</option></select></label>
+      <label class="field">Dificultad<select class="control" name="diff"><option value="">Todas</option><option value="1">Básica</option><option value="2">Media</option><option value="3">Avanzada</option></select></label>
+      <label class="toggle"><input type="checkbox" name="req" /> Solo obligatorios</label>
+    `)}
+    <div class="results-bar"><span aria-live="polite" data-count></span><span class="quick-links"><button class="linkbtn" type="button" data-clear hidden>Limpiar filtros</button><span data-view-toggle="desafios"></span></span></div>
+    <div id="${uid}-res" role="tabpanel" aria-labelledby="${uid}-todo" data-res data-view-target="desafios"></div>`;
+  const form = $('form', root), res = $('[data-res]', root);
+  // Urgent groups start open; the rest start folded. The viewer's choice sticks across re-renders.
+  const closedGroups = new Set(['Más adelante', 'Sin fecha límite']);
+  res.addEventListener('toggle', e => {
+    const d = e.target; if (!d.matches?.('details.group') || active()) return;
+    d.open ? closedGroups.delete(d.dataset.g) : closedGroups.add(d.dataset.g);
+  }, true);
+
+  const matches = c => {
+    const q = st.q.trim().toLowerCase();
+    return (!q || c.title.toLowerCase().includes(q)) && (!st.course || c.course === st.course) && (!st.type || c.type === st.type)
+      && (!st.diff || c.diff === Number(st.diff)) && (!st.req || c.req);
+  };
+  const active = () => !!(st.q || (!locked && st.course) || st.type || st.diff || st.req);
+
+  function render(animate = true) {
+    const counts = $$('.tab .count', root);
+    counts[0].textContent = CHALLENGES.filter(c => c.status !== 'done' && matches(c)).length;
+    counts[1].textContent = CHALLENGES.filter(c => c.status === 'done' && matches(c)).length;
+    const list = CHALLENGES.filter(c => (st.tab === 'done' ? c.status === 'done' : c.status !== 'done') && matches(c));
+    const groups = new Map(); // group -> items: O(n) bucketing, then read in fixed GROUP_ORDER
+    for (const c of list) { const g = groupOf(c); (groups.get(g) || groups.set(g, []).get(g)).push(c); }
+    const noun = st.tab === 'done' ? 'completados' : 'por hacer';
+    $('[data-count]', root).textContent = `${list.length} ${list.length === 1 ? 'desafío' : 'desafíos'} ${noun}${active() ? ' con estos filtros' : ''}`;
+    $('[data-clear]', root).hidden = !active();
+    syncFilterCount(root, [!locked && st.course, st.type, st.diff, st.req].filter(Boolean).length);
+    if (!list.length) {
+      res.innerHTML = `<div class="empty">${icon('i-filter-off')}<p>${active() ? 'Ningún desafío coincide con estos filtros.' : st.tab === 'done' ? 'Todavía no completaste ningún desafío.' : 'No tenés desafíos pendientes. ¡Buen trabajo!'}</p>${active() ? '<button class="btn btn-ghost" type="button" data-clear>Limpiar filtros</button>' : ''}</div>`;
+      return;
+    }
+    let i = 0;
+    res.innerHTML = GROUP_ORDER.filter(g => groups.has(g)).map(g => {
+      const items = groups.get(g).sort((a, b) => (b.req - a.req) || ((a.due || '9') < (b.due || '9') ? -1 : 1));
+      if (g === 'Completados') items.sort((a, b) => (a.done < b.done ? 1 : -1));
+      // Searching or filtering opens every group so no match hides behind a fold.
+      const open = active() || !closedGroups.has(g);
+      const req = items.filter(c => c.req).length;
+      const next = items.find(c => c.due && c.status !== 'done');
+      const hint = [req ? `${req} ${req === 1 ? 'obligatorio' : 'obligatorios'}` : '', next ? `próximo: ${short(next.due)}` : ''].filter(Boolean).join(' · ');
+      return `<details class="group" data-g="${g}" ${open ? 'open' : ''}>
+        <summary class="group-head"><h2>${g}</h2><span class="num group-count">${items.length}</span>${hint ? `<span class="group-hint">${hint}</span>` : ''}</summary>
+        <ul class="list ${animate ? 'animate' : ''}">${items.map(c => rowHTML(c, i++, !locked)).join('')}</ul></details>`;
+    }).join('');
+  }
+  function clear() { form.reset(); Object.assign(st, { q: '', type: '', diff: '', req: false }); if (!locked) st.course = ''; render(); }
+  function selectTab(tab) {
+    st.tab = tab;
+    $$('.tab', root).forEach(t => t.setAttribute('aria-selected', String(t.dataset.tab === tab)));
+    res.setAttribute('aria-labelledby', `${uid}-${tab}`);
+    render();
+  }
+  form.addEventListener('input', e => { const { name, value, checked, type } = e.target; st[name] = type === 'checkbox' ? checked : value; render(); });
+  root.addEventListener('click', e => { if (e.target.closest('[data-clear]')) clear(); });
+  $$('.tab', root).forEach(t => t.addEventListener('click', () => selectTab(t.dataset.tab)));
+  $('.tabs', root).addEventListener('keydown', e => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    const next = st.tab === 'todo' ? 'done' : 'todo'; selectTab(next); $(`#${uid}-${next}`).focus();
+  });
+  const api = { render, setCourse(c, onlyReq = false) { st.course = c; if (onlyReq) { st.req = true; form.elements.req.checked = true; } render(false); } };
+  listInstances.push(api);
+  render(false);
+  return api;
+}
+
+/* ======================= catalog table (profesor) ======================= */
+const catalogInstances = [];
+function Catalog(root) {
+  const locked = root.hasAttribute('data-locked-course');
+  const st = { q: '', course: '', type: '', diff: '', state: '', req: false, page: 0 };
+  const SIZE = 8;
+  root.innerHTML = `
+    ${filterBar("cat" + catalogInstances.length, "Buscar por título del desafío", `
+      ${locked ? '' : '<label class="field">Cohorte<select class="control" name="course"><option value="">Todas</option><option>MSI</option><option>MSII</option></select></label>'}
+      <label class="field">Tipo<select class="control" name="type"><option value="">Todos</option><option>${T_ALG}</option><option>${T_REF}</option><option>${T_QUIZ}</option></select></label>
+      <label class="field">Dificultad<select class="control" name="diff"><option value="">Todas</option><option value="1">Básica</option><option value="2">Media</option><option value="3">Avanzada</option></select></label>
+      <label class="field">Estado<select class="control" name="state"><option value="">Todos</option><option value="pub">Publicado</option><option value="draft">Borrador</option></select></label>
+      <label class="toggle"><input type="checkbox" name="req" /> Solo obligatorios</label>
+    `)}
+    <div class="results-bar"><span aria-live="polite" data-count></span><span data-view-toggle="catalogo"></span></div>
+    <div data-res data-view-target="catalogo"></div>
+    <div class="pager" data-pager></div>`;
+  const form = $('form', root), res = $('[data-res]', root), pagerEl = $('[data-pager]', root);
+  function render() {
+    const q = st.q.trim().toLowerCase();
+    const list = CHALLENGES.filter(c => (!q || c.title.toLowerCase().includes(q)) && (!st.course || c.course === st.course) && (!st.type || c.type === st.type)
+      && (!st.diff || c.diff === Number(st.diff)) && (!st.state || (st.state === 'pub') === c.published) && (!st.req || c.req));
+    $('[data-count]', root).textContent = `${list.length} ${list.length === 1 ? 'desafío' : 'desafíos'}`;
+    syncFilterCount(root, [!locked && st.course, st.type, st.diff, st.state, st.req].filter(Boolean).length);
+    if (!list.length) { res.innerHTML = `<div class="empty">${icon('i-filter-off')}<p>Ningún desafío coincide con estos filtros.</p></div>`; pagerEl.innerHTML = ''; return; }
+    st.page = Math.min(st.page, Math.ceil(list.length / SIZE) - 1);
+    pagerEl.innerHTML = list.length > SIZE ? pagerHTML(st.page, SIZE, list.length) : '';
+    const pageItems = list.slice(st.page * SIZE, st.page * SIZE + SIZE);
+    res.innerHTML = `<div class="table-wrap"><table class="data">
+      <thead><tr><th>Desafío</th>${locked ? '' : '<th>Cohorte</th>'}<th>Dificultad</th><th>Vence</th><th>Evaluación</th><th>Recompensa</th><th>Estado</th><th><span class="sr-only">Acciones</span></th></tr></thead>
+      <tbody>${pageItems.map(c => `<tr>
+        <td class="cell-main"><div class="cell-title">${c.title}</div><div class="cell-sub">${c.req ? '<span class="badge badge-required">Obligatorio</span>' : ''}<span>${c.type}</span></div></td>
+        ${locked ? '' : `<td>${c.course}</td>`}
+        <td><span class="diff"><span class="pips" data-level="${c.diff}" aria-hidden="true"><i></i><i></i><i></i></span>${DIFF[c.diff]}</span></td>
+        <td class="num" style="white-space:nowrap">${c.due ? short(c.due) : c.done ? '—' : 'Sin fecha'}</td>
+        <td class="reward-cell"><span>${c.pass}% para aprobar</span><span>${c.retries} ${c.retries === 1 ? 'reintento' : 'reintentos'}</span></td><td class="reward-cell"><span class="xp-text">+${c.xp} XP</span><span>${c.coins} monedas</span></td>
+        <td>${c.published ? '<span class="badge badge-success">Publicado</span>' : '<span class="badge badge-outline">Borrador</span>'}</td>
+        <td><div class="row-actions"><button class="icon-btn sm" aria-label="Editar ${c.title}"><svg class="icon icon-sm"><use href="#i-pencil"/></svg></button><button class="icon-btn sm" aria-label="Vista previa de ${c.title}"><svg class="icon icon-sm"><use href="#i-eye"/></svg></button></div></td>
+      </tr>`).join('')}</tbody></table></div>`;
+  }
+  form.addEventListener('input', e => { const { name, value, checked, type } = e.target; st[name] = type === 'checkbox' ? checked : value; st.page = 0; render(); });
+  onPager(pagerEl, n => { st.page = n; render(); });
+  const api = { render, setCourse(c) { st.course = c; st.page = 0; render(); } };
+  catalogInstances.push(api);
+  render();
+  return api;
+}
+
+/* ======================= pagination ======================= */
+/* Numbered pages: first, last and the current ±1 stay visible; gaps collapse to "…". */
+function pageList(page, pages) {
+  const keep = new Set([0, pages - 1, page - 1, page, page + 1].filter(i => i >= 0 && i < pages));
+  const out = [];
+  [...keep].sort((a, b) => a - b).forEach((i, k, arr) => { if (k && i - arr[k - 1] > 1) out.push('…'); out.push(i); });
+  return out;
+}
+function pagerHTML(page, size, total, noun = 'registros') {
+  const pages = Math.max(1, Math.ceil(total / size));
+  const from = total ? page * size + 1 : 0, to = Math.min(total, (page + 1) * size);
+  return `<div class="pager-summary"><span>Mostrando <b>${from}–${to}</b> de <b>${total}</b> ${noun}</span></div>
+    <div class="pager-controls">
+      <nav class="pg" aria-label="Paginación de ${noun}">
+        <button class="pg-btn pg-arrow" type="button" data-pg-to="${page - 1}" aria-label="Página anterior" ${page === 0 ? 'disabled' : ''}>${icon('i-left', 'icon icon-sm')}</button>
+        ${pageList(page, pages).map(i => i === '…' ? '<span class="pg-gap" aria-hidden="true">…</span>'
+          : `<button class="pg-btn num" type="button" data-pg-to="${i}" ${i === page ? 'aria-current="page"' : ''} aria-label="Página ${i + 1}">${i + 1}</button>`).join('')}
+        <button class="pg-btn pg-arrow" type="button" data-pg-to="${page + 1}" aria-label="Página siguiente" ${page >= pages - 1 ? 'disabled' : ''}>${icon('i-right', 'icon icon-sm')}</button>
+      </nav>
+    </div>`;
+}
+/* One delegated handler for every pager: reads the target page, hands it to that pager's setter. */
+function onPager(el, set) {
+  el.addEventListener('click', e => { const b = e.target.closest('[data-pg-to]'); if (b && !b.disabled) { set(Number(b.dataset.pgTo)); el.querySelector('[aria-current="page"]')?.focus(); } });
+}
+
+/* ======================= cursos ======================= */
+function courseMeta(c) {
+  return `<span><span class="badge ${c.status === 'Activa' ? 'badge-success' : c.status === 'Borrador' ? 'badge-outline' : 'badge-secondary'}">${c.status}</span></span>
+    <span>${icon('i-calendar', 'icon icon-sm')}<span class="num">${c.from} – ${c.to}</span></span>
+    <span>${icon('i-user', 'icon icon-sm')}${c.teacher}</span>`;
+}
+function renderStudentCourses() {
+  $('#student-courses').innerHTML = Object.values(COURSES).map(c => `
+    <article class="card studs course">
+      <div class="course-top">
+        <div><h2>${c.name}</h2><div class="course-sub">${c.teacher} · <span class="num">${c.from} – ${c.to}</span></div></div>
+        <span class="badge badge-success">${c.status}</span>
+      </div>
+      <div class="progress-line"><span class="xp-text" style="color:var(--accent-gold)">Nivel ${c.level}</span><div class="bar" role="progressbar" aria-label="XP del nivel" aria-valuemin="0" aria-valuemax="${c.xpMax}" aria-valuenow="${c.xp}"><span style="width:${c.xp / c.xpMax * 100}%"></span></div><span class="num">${c.xp}/${c.xpMax} XP</span></div>
+      <dl class="facts">
+        <dt>${icon('i-flame', 'icon icon-sm')}Obligatorios</dt><dd class="num" style="${c.pending ? 'color:var(--urgent)' : ''}">${c.pending} ${c.pending === 1 ? 'pendiente' : 'pendientes'}</dd>
+        <dt>${icon('i-coin', 'icon icon-sm')}Monedas</dt><dd class="num">${c.coins}</dd>
+        <dt>${icon('i-heart', 'icon icon-sm')}Vidas</dt><dd>${hearts(c.lives)}</dd>
+      </dl>
+      <div class="course-foot"><span class="muted" style="font-size:13px">${c.weeks}</span><a class="btn btn-primary" href="#curso/${c.name}">Entrar<svg class="icon icon-sm"><use href="#i-right"/></svg></a></div>
+    </article>`).join('');
+}
+let cohortTab = 'Activa';
+function renderCohorts() {
+  const tabs = [['Activa', 'Activas'], ['Borrador', 'Borradores'], ['Archivada', 'Archivadas'], ['', 'Todas']];
+  $('#cohort-tabs').innerHTML = tabs.map(([v, l]) => `<button class="tab" role="tab" aria-selected="${v === cohortTab}" data-cohort="${v}">${l} <span class="count num">${COHORTS.filter(c => !v || c.status === v).length}</span></button>`).join('');
+  const list = COHORTS.filter(c => !cohortTab || c.status === cohortTab);
+  $('#cohort-grid').innerHTML = list.length ? list.map(c => `
+    <article class="card studs course">
+      <div class="course-top">
+        <div><h2>${c.name}</h2><div class="course-sub">${c.students} alumnos</div></div>
+        <span class="badge ${c.status === 'Activa' ? 'badge-success' : c.status === 'Borrador' ? 'badge-outline' : 'badge-secondary'}">${c.status}</span>
+      </div>
+      <dl class="facts">
+        <dt>${icon('i-calendar', 'icon icon-sm')}Inscripción</dt><dd class="num">${c.from} – ${c.to}<small>${c.weeks}</small></dd>
+        <dt>${icon('i-user', 'icon icon-sm')}Docentes</dt><dd>${c.teacher}</dd>
+      </dl>
+      <div class="course-foot">
+        ${c.readOnly ? `<span class="muted" style="font-size:13px; display:inline-flex; gap:6px; align-items:center">${icon('i-lock', 'icon icon-sm')}Solo lectura</span>` : '<span></span>'}
+        <a class="btn btn-secondary" href="#curso/${c.name}">Ver curso<svg class="icon icon-sm"><use href="#i-right"/></svg></a>
+      </div>
+    </article>`).join('') : `<div class="empty">${icon('i-book')}<p>No hay cohortes en este estado.</p></div>`;
+}
+document.addEventListener('click', e => { const t = e.target.closest('[data-cohort]'); if (t) { cohortTab = t.dataset.cohort; renderCohorts(); } });
+
+function fillCourseDetail(name) {
+  const c = COURSES[name] || COHORTS.find(x => x.name === name) || COURSES.MSI;
+  $$('[data-course-name]').forEach(el => el.textContent = c.name);
+  $$('[data-course-meta]').forEach(el => el.innerHTML = courseMeta(c) + (currentRole === 'alumno' ? '' :
+    `<span>${icon(c.readOnly ? 'i-lock' : 'i-key', 'icon icon-sm')}Tu permiso: <b>${c.readOnly ? 'Solo lectura' : 'Gestor'}</b></span>`));
+  if (currentRole !== 'alumno') renderCourseAdmin(c);
+  $$('[data-course-stats]').forEach(el => el.innerHTML = c.level ? `
+    <div><div class="k">Nivel en el curso</div><div class="v num">${c.level}</div></div>
+    <div><div class="k">XP</div><div class="v num">${c.xp}/${c.xpMax}</div></div>
+    <div><div class="k">Monedas</div><div class="v coin num">${c.coins}</div></div>
+    <div><div class="k">Vidas</div><div class="v heart">${hearts(c.lives)}</div></div>
+    <div><div class="k">Obligatorios pendientes</div><div class="v num" style="${c.pending ? 'color:var(--urgent)' : ''}">${c.pending}</div></div>` : '');
+  listInstances.filter((_, i) => $$('[data-challenge-list]')[i].hasAttribute('data-locked-course')).forEach(l => l.setCourse(c.name));
+  $$('[data-catalog]').forEach((el, i) => { if (el.hasAttribute('data-locked-course')) catalogInstances[i].setCourse(c.name); });
+}
+
+/* ======================= curso · profesor ======================= */
+const TEAM = [['Ana Torres', 'Gestor'], ['Martín Ríos', 'Profesor con escritura'], ['Laura Pérez', 'Profesor con escritura'], ['Diego Suárez', 'Gestor'],
+  ['Carla Méndez', 'Profesor con escritura'], ['Pablo Giménez', 'Profesor con escritura'], ['Sol Ferreyra', 'Profesor con escritura']];
+const SECTIONS = [
+  { title: 'Unidad 1 · Fundamentos', desc: 'Variables, tipos y entrada/salida.', visible: true, acts: 4 },
+  { title: 'Unidad 2 · Estructuras de control', desc: 'Condicionales y ciclos.', visible: true, acts: 3 },
+  { title: 'Unidad 3', desc: '', visible: false, acts: 0 },
+];
+let ROSTER; // built on first render: ranking data is declared further down
+const buildRoster = () => NAMES.map((n, i) => ({ name: n, legajo: String(40100 + i * 13), email: n.normalize('NFD').toLowerCase().replace(/[^a-z]/g, '') + '@frc.utn.edu.ar', xp: RANK[i][0], pend: RISK_ROWS.has(i) ? 2 : i % 5 === 0 ? 1 : 0 })).slice(0, 28);
+const ENROLL = [
+  { name: 'Joaquín Paredes', legajo: '41022', email: 'joaquin.paredes@frc.utn.edu.ar', date: '29/09/2026 18:40' },
+  { name: 'Brenda Ortiz', legajo: '41057', email: 'brenda.ortiz@frc.utn.edu.ar', date: '30/09/2026 09:12' },
+];
+const rosterState = { q: '', f: '', page: 0 };
+let teamOpen = false, currentCourse = null;
+const initials = n => n.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+function renderCourseAdmin(c) {
+  currentCourse = c;
+  const shown = teamOpen ? TEAM : TEAM.slice(0, 4);
+  $('#team-list').innerHTML = shown.map(([n, perm]) => `<li><span class="initials" aria-hidden="true">${initials(n)}</span><span class="pname">${n}</span><span class="badge ${perm === 'Gestor' ? 'badge-gold' : 'badge-outline'}">${perm}</span></li>`).join('')
+    + (TEAM.length > 4 ? `<li><button class="linkbtn" type="button" data-team-more aria-expanded="${teamOpen}">${teamOpen ? 'Mostrar menos' : `Ver todo el equipo (${TEAM.length})`}</button></li>` : '');
+  const due = CHALLENGES.filter(x => x.course === c.name && x.due && daysUntil(x.due) >= 0).sort((a, b) => a.due < b.due ? -1 : 1).slice(0, 4);
+  $('#next-due').innerHTML = due.length ? due.map(x => `<li><span class="pname">${x.title}${x.req ? ' <span class="badge badge-required">Obligatorio</span>' : ''}</span><span class="num muted">${short(x.due)}</span></li>`).join('') : '<li class="muted">Sin vencimientos próximos.</li>';
+  const mine = CHALLENGES.filter(x => x.course === c.name);
+  $$('[data-course-ch-count]').forEach(el => el.textContent = mine.length);
+  $$('[data-pub-count]').forEach(el => el.textContent = mine.filter(x => x.published).length);
+  renderSections(); renderRoster(); renderEnroll();
+  $('#cfg-fs').disabled = !!c.readOnly;
+}
+function renderSections() {
+  $$('[data-sec-visible]').forEach(el => el.textContent = `${SECTIONS.filter(x => x.visible).length} de ${SECTIONS.length}`);
+  $('#sec-list').innerHTML = SECTIONS.map((x, i) => `
+    <li class="sec-row ${x.visible ? '' : 'is-hidden'}" data-sec="${i}">
+      <span class="sec-move">
+        <button class="icon-btn sm" type="button" data-mv="-1" aria-label="Subir ${x.title}" ${i === 0 ? 'disabled' : ''}>${icon('i-up', 'icon icon-sm')}</button>
+        <button class="icon-btn sm" type="button" data-mv="1" aria-label="Bajar ${x.title}" ${i === SECTIONS.length - 1 ? 'disabled' : ''}>${icon('i-chevron', 'icon icon-sm')}</button>
+      </span>
+      <span class="sec-order num">${i + 1}</span>
+      <div class="sec-main"><a class="sec-title" href="#">${x.title}</a><div class="sec-sub">${x.desc || 'Sin descripción'} · <span class="num">${x.acts}</span> ${x.acts === 1 ? 'actividad activa' : 'actividades activas'}</div></div>
+      <span class="sec-vis badge ${x.visible ? 'badge-success' : 'badge-outline'}">${x.visible ? 'Visible' : 'Oculta'}</span>
+      <div class="row-actions">
+        <button class="icon-btn sm" type="button" data-vis aria-label="${x.visible ? 'Ocultar' : 'Mostrar'} ${x.title}" title="${x.visible ? 'Ocultar a los alumnos' : 'Mostrar a los alumnos'}">${icon(x.visible ? 'i-eye-off' : 'i-eye', 'icon icon-sm')}</button>
+        <button class="icon-btn sm" type="button" aria-label="Editar ${x.title}">${icon('i-pencil', 'icon icon-sm')}</button>
+        <button class="icon-btn sm" type="button" data-del aria-label="Dar de baja ${x.title}" style="color:var(--urgent)">${icon('i-trash', 'icon icon-sm')}</button>
+      </div>
+    </li>`).join('') || `<div class="empty">${icon('i-list')}<p>Todavía no hay secciones.</p></div>`;
+}
+$('#sec-list').addEventListener('click', e => {
+  const li = e.target.closest('[data-sec]'); if (!li) return;
+  const i = Number(li.dataset.sec);
+  const mv = e.target.closest('[data-mv]');
+  if (mv) { const j = i + Number(mv.dataset.mv); [SECTIONS[i], SECTIONS[j]] = [SECTIONS[j], SECTIONS[i]]; renderSections(); $(`[data-sec="${j}"] [data-mv="${mv.dataset.mv}"]`)?.focus(); return; }
+  if (e.target.closest('[data-vis]')) SECTIONS[i].visible = !SECTIONS[i].visible;
+  else if (e.target.closest('[data-del]')) { if (!confirm(`¿Dar de baja "${SECTIONS[i].title}"? Deja de mostrarse y sale del orden.`)) return; SECTIONS.splice(i, 1); }
+  else return;
+  renderSections();
+});
+$('#team-list').addEventListener('click', e => { if (e.target.closest('[data-team-more]')) { teamOpen = !teamOpen; renderCourseAdmin(currentCourse); } });
+$('#reorder-btn').addEventListener('click', e => {
+  const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+  e.currentTarget.lastChild.textContent = on ? 'Listo' : 'Ordenar';
+  $('#sec-list').classList.toggle('reordering', on);
+});
+function renderRoster() {
+  ROSTER ||= buildRoster();
+  const q = rosterState.q.trim().toLowerCase(), SIZE = 8;
+  const list = ROSTER.filter(r => (!q || (r.name + r.legajo + r.email).toLowerCase().includes(q)) && (!rosterState.f || r.pend >= 2));
+  rosterState.page = Math.min(rosterState.page, Math.max(0, Math.ceil(list.length / SIZE) - 1));
+  const slice = list.slice(rosterState.page * SIZE, rosterState.page * SIZE + SIZE);
+  $('#roster-table').innerHTML = `<thead><tr><th>Alumno</th><th>Legajo</th><th class="r">XP</th><th class="r">Obligatorios pendientes</th><th>Estado</th></tr></thead><tbody>${
+    slice.length ? slice.map(r => `<tr><td><div class="cell-title">${r.name}</div><div class="cell-sub">${r.email}</div></td><td class="num">${r.legajo}</td><td class="r num">${r.xp.toLocaleString('es-AR')}</td><td class="r num" style="${r.pend ? 'color:var(--urgent); font-weight:700' : ''}">${r.pend}</td><td>${r.pend >= 2 ? '<span class="status-risk">Riesgo</span>' : '<span class="muted">Regular</span>'}</td></tr>`).join('')
+    : '<tr><td colspan="5" class="muted">Ningún alumno coincide con la búsqueda.</td></tr>'}</tbody>`;
+  $('#roster-pager').innerHTML = list.length > SIZE ? pagerHTML(rosterState.page, SIZE, list.length, 'alumnos') : '';
+}
+$('#roster-q').addEventListener('input', e => { rosterState.q = e.target.value; rosterState.page = 0; renderRoster(); });
+$('#roster-filter').addEventListener('click', e => { const b = e.target.closest('[data-rf]'); if (!b) return; $$('[data-rf]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); rosterState.f = b.dataset.rf; rosterState.page = 0; renderRoster(); });
+onPager($('#roster-pager'), n => { rosterState.page = n; renderRoster(); });
+function renderEnroll() {
+  $$('[data-req-count]').forEach(el => { el.textContent = ENROLL.length; el.hidden = !ENROLL.length; });
+  $('#enroll-list').innerHTML = ENROLL.length ? ENROLL.map((r, i) => `
+    <li class="req-card" data-en="${i}">
+      <div><h3>${r.name}</h3><div class="req-meta"><span class="num">Legajo ${r.legajo}</span><span>${r.email}</span><span class="num">${r.date}</span></div></div>
+      <div class="req-actions"><button class="btn btn-ghost danger btn-sm" type="button" data-en-no>Rechazar</button><button class="btn btn-primary btn-sm" type="button" data-en-ok>${icon('i-tick', 'icon icon-sm')}Aceptar</button></div>
+    </li>`).join('') : `<div class="empty">${icon('i-check')}<p>No hay pedidos de inscripción pendientes.</p></div>`;
+}
+$('#enroll-list').addEventListener('click', e => {
+  const li = e.target.closest('[data-en]'); if (!li) return;
+  if (e.target.closest('[data-en-ok], [data-en-no]')) { ENROLL.splice(Number(li.dataset.en), 1); renderEnroll(); }
+});
+$('#invite-copy').addEventListener('click', () => {
+  const code = $('#invite-code').textContent;
+  try { navigator.clipboard?.writeText(code); } catch {}
+  $('#invite-status').textContent = 'Código copiado.';
+});
+$('#invite-regen').addEventListener('click', () => {
+  if (!confirm('¿Regenerar el código? El actual deja de servir para inscribirse.')) return;
+  $('#invite-code').textContent = Array.from({ length: 10 }, () => 'ABCDEFGHJKLMNPQRSTUVWXYZ'[Math.floor(Math.random() * 24)]).join('');
+  $('#invite-status').textContent = 'Código nuevo generado. El anterior ya no funciona.';
+});
+const cfgForm = $('#cfg-form');
+let cfgSnapshot = null;
+cfgForm.addEventListener('input', () => { $('#save-bar').hidden = false; });
+$('#cfg-discard').addEventListener('click', () => { cfgForm.reset(); $('#save-bar').hidden = true; });
+$('#cfg-save').addEventListener('click', () => {
+  const btn = $('#cfg-save');
+  btn.classList.add('is-loading');
+  btn.innerHTML = `<span class="spinner spinner-sm"></span><span class="btn-text">Guardando...</span>`;
+  setTimeout(() => {
+    btn.classList.remove('is-loading');
+    btn.textContent = 'Guardar cambios';
+    $('#save-bar').hidden = true;
+  }, 650);
+});
+
+/* ======================= inventario ======================= */
+let invCourse = 'MSI';
+const BACKPACK = ['..bbbb..', '.b....b.', 'bbbbbbbb', 'baaaaaab', 'baccccab', 'bacddcab', 'baccccab', 'baaaaaab', 'bbbbbbbb'];
+function renderInventory() {
+  const c = COURSES[invCourse];
+  $('#inv-tabs').innerHTML = Object.keys(COURSES).map(k => `<button class="tab" role="tab" aria-selected="${k === invCourse}" data-inv="${k}">${k}</button>`).join('');
+  $('#inv-stats').innerHTML = `
+    <div><div class="k">${icon('i-heart', 'icon icon-sm')}Vidas</div><div class="v heart">${hearts(c.lives)} <span class="num" style="font-size:14px; margin-left:4px">${c.lives}/3</span></div></div>
+    <div><div class="k">${icon('i-coin', 'icon icon-sm')}Monedas</div><div class="v coin num">${c.coins}</div></div>
+    <div><div class="k">${icon('i-star', 'icon icon-sm')}Nivel</div><div class="v num">${c.level}</div></div>
+    <div style="flex-basis:260px"><div class="k">XP hacia el nivel ${c.level + 1}</div><div class="progress-line" style="margin-top:8px"><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${c.xpMax}" aria-valuenow="${c.xp}" aria-label="XP"><span style="width:${c.xp / c.xpMax * 100}%"></span></div><span class="num">${c.xp}/${c.xpMax}</span></div></div>`;
+  const pc = avatarState.pack;
+  $('#inv-backpack').innerHTML = pixel(BACKPACK, { a: pc, b: shade(pc, 55), c: tint(pc, 70), d: shade(pc, 75) }, `Mochila de ${USERS.alumno.name}`);
+  const cats = [['Prácticos', 'var(--accent-primary-fill)'], ['Teóricos', 'var(--accent-secondary-fill)'], ['LLM', 'var(--accent-success-fill)']];
+  $('#inv-slots').innerHTML = cats.map(([n, col]) => `
+    <div class="slot-group"><div class="slot-head"><h3><span class="dot" style="background:${col}"></span>${n}</h3><span class="num">0 de 3</span></div>
+    <div class="slots">${'<div class="slot" aria-label="Ranura vacía">' + icon('i-plus') + '</div>'}${'<div class="slot" aria-label="Ranura vacía">' + icon('i-plus') + '</div>'}${'<div class="slot" aria-label="Ranura vacía">' + icon('i-plus') + '</div>'}</div></div>`).join('');
+}
+document.addEventListener('click', e => { const t = e.target.closest('[data-inv]'); if (t) { invCourse = t.dataset.inv; renderInventory(); } });
+
+/* ======================= personaje ======================= */
+const SWATCHES = {
+  hair: ['#f5f1e8', '#241a2b', '#6b4226', '#e2b86f', '#c75b2e', '#cfc9d6'],
+  skin: ['#f6d7bd', '#e7b48f', '#b97a50', '#8a5431', '#5a3620', '#cfc9d6'],
+  shoes: ['#f5f1e8', '#222222', '#d62828', '#2563eb', '#16a34a', '#eab308'],
+  pack: ['#2563eb', '#dc2626', '#1f2937', '#16a34a', '#7c3aed', '#ea580c'],
+};
+const avatarState = { hair: '#e2b86f', skin: '#e7b48f', shoes: '#f5f1e8', pack: '#dc2626' };
+const HERO = [
+  '....hhhhhh....',
+  '...hhhhhhhh...',
+  '..ohhhhhhhho..',
+  '..ossssssssoo.',
+  '...sseesees...',
+  '...ssssssss...',
+  '....ssmmss....',
+  '.....ssss.....',
+  '.k.tttttttt.k.',
+  'kkttttttttttkk',
+  'k.sttttttts.k.',
+  '..s.tttttt.s..',
+  '..s.pppppp.s..',
+  '....pppppp....',
+  '....ppp.ppp...',
+  '....ppp.ppp...',
+  '...zzzz.zzzz..',
+];
+function renderHero() {
+  const a = avatarState;
+  $('#avatar-stage').querySelector('.pixel')?.remove();
+  $('#avatar-stage').insertAdjacentHTML('afterbegin', pixel(HERO, {
+    h: a.hair, s: a.skin, e: '#1b1b1b', m: shade(a.skin, 75), t: 'var(--accent-secondary-fill)', p: '#3b4252', z: a.shoes, k: a.pack, o: '#1f2937',
+  }, 'Vista previa de tu personaje'));
+}
+$$('[data-swatches]').forEach(fs => {
+  const key = fs.dataset.swatches;
+  fs.insertAdjacentHTML('beforeend', SWATCHES[key].map((col, i) =>
+    `<label class="swatch"><input type="radio" name="sw-${key}" value="${col}" ${col === avatarState[key] ? 'checked' : ''} aria-label="Color ${i + 1}"><span style="background:${col}"></span></label>`).join(''));
+});
+/* Closed sections summarize what is chosen inside them. */
+function renderAvatarSums() {
+  const f = $('#avatar-form').elements;
+  const v = n => f[n].value.replace(/ \(.*\)$/, '');
+  const sw = k => `<span class="dot" style="background:${avatarState[k]}" aria-hidden="true"></span>`;
+  const sums = {
+    cuerpo: `<span>${v('arquetipo')}</span>·<span>${v('cabello')}</span>${sw('hair')}${sw('skin')}`,
+    ropa: `<span>${v('top')}</span>·<span>${v('pantalon')}</span>·<span>${v('zapatos')}</span>${sw('shoes')}·<span>${v('espalda')}</span>${sw('pack')}`,
+    acc: `<span>${v('cabezaItem')}</span>·<span>${v('mascota')}</span>·<span>${v('manoDer')}</span>·<span>${v('manoIzq')}</span>`,
+  };
+  $$('details[data-sum]').forEach(d => $('.disc-sum', d).innerHTML = sums[d.dataset.sum]);
+}
+renderAvatarSums();
+let saveTimer;
+$('#avatar-form').addEventListener('change', e => {
+  const m = e.target.name.match(/^sw-(\w+)/);
+  if (m) avatarState[m[1]] = e.target.value;
+  renderHero(); renderInventory(); renderAvatarSums();
+  const s = $('#avatar-save');
+  s.innerHTML = `${icon('i-refresh', 'icon icon-sm')}Guardando…`; s.style.color = 'var(--text-muted)';
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => { s.innerHTML = `${icon('i-tick', 'icon icon-sm')}Guardado`; s.style.color = ''; }, 700);
+});
+
+/* ======================= ranking ======================= */
+const RANK_N = 32;
+// [xp, level, percentile]: synthetic, strictly descending XP
+const RANK = Array.from({ length: RANK_N }, (_, i) => { const xp = Math.round(4820 - i * 142 - i * i * 0.5); return [xp, Math.max(1, Math.round(xp / 265)), Math.round(100 - i * (100 / RANK_N))]; });
+const NAMES = ['Valentina R.', 'Bruno S.', 'Camila G.', 'Tomás L.', 'Lucía M.', 'Joaquín P.', 'Sofía D.', 'Mateo A.', 'Martina F.', 'Julián P.', 'Agustina B.',
+  'Franco V.', 'Micaela T.', 'Ignacio C.', 'Paula N.', 'Santiago H.', 'Florencia E.', 'Nicolás Q.', 'Abril K.', 'Lautaro Z.', 'Julieta O.', 'Benjamín I.',
+  'Catalina U.', 'Thiago W.', 'Renata J.', 'Felipe Y.', 'Emilia X.', 'Gonzalo R.', 'Delfina S.', 'Ramiro B.', 'Pilar M.', 'Manuel S.'];
+const RISK_ROWS = new Set([29, 30, 31]); // 0-based indexes with pending obligatorios
+const RANK_SIZE = 10;
+let rankPage = 0;
+const zoneOf = (i, pct) => RISK_ROWS.has(i) ? 'risk' : pct >= 90 ? 'promo' : 'reg';
+const ZONE_LABEL = { promo: ['promo', 'Zona de promoción · P90 o más'], reg: ['', 'Regulares'], risk: ['risk', 'Zona de riesgo · obligatorios pendientes'] };
+function face(seed) {
+  const hairs = ['#241a2b', '#6b4226', '#e2b86f', '#c75b2e', '#7c3aed', '#cfc9d6'];
+  const skins = ['#f6d7bd', '#e7b48f', '#b97a50', '#8a5431'];
+  const tops = [['.hhhhhh.', 'hhhhhhhh'], ['..hhhh..', '.hhhhhh.'], ['h.hhhh.h', 'hhhhhhhh']];
+  const t = tops[seed % 3];
+  return pixel([t[0], t[1], 'hssssssh', '.sesses.', '.ssssss.', '.ssmmss.', '..ssss..', '.cccccc.'],
+    { h: hairs[seed % hairs.length], s: skins[(seed * 7) % skins.length], e: '#1b1b1b', m: '#8a3b2e', c: ['var(--accent-primary-fill)', 'var(--accent-secondary-fill)', 'var(--accent-gold-fill)'][seed % 3] });
+}
+function renderRanking() {
+  const staff = currentRole !== 'alumno';
+  const meIdx = staff ? -1 : RANK_N - 1;
+  const you = $('#rank-you');
+  you.hidden = staff;
+  if (!staff) you.innerHTML = `
+    <div class="rank-pos num">${meIdx + 1}<small> / ${RANK_N}</small></div>
+    <div><div class="alert-title" style="color:var(--urgent); display:flex; gap:8px; align-items:center">${icon('i-alert', 'icon icon-sm')}Estás en zona de riesgo</div>
+      <div class="alert-body">Tenés 2 obligatorios sin cerrar en MSI: tu regularidad está en juego.</div>
+      <div class="quick-links" style="margin-top:10px"><a class="btn btn-secondary btn-sm" href="#curso/MSI">Ver qué me falta</a><button class="btn btn-ghost btn-sm" type="button" data-rank-me>Ir a mi posición</button></div></div>
+    <div class="rank-pct"><span class="muted" style="font-size:13px">Percentil</span><b class="num">P${RANK[meIdx][2]}</b><span class="muted xp-text">${RANK[meIdx][0]} XP · Nivel ${RANK[meIdx][1]}</span></div>`;
+  let body = '', prevZone = null;
+  const start = rankPage * RANK_SIZE;
+  RANK.slice(start, start + RANK_SIZE).forEach(([xp, lvl, pct], j) => {
+    const i = start + j;
+    const name = i === meIdx ? 'Vos' : staff ? (NAMES[i] || 'Manuel S.') : `Estudiante #${String(i + 1).padStart(2, '0')}`;
+    const status = RISK_ROWS.has(i) ? '<span class="status-risk">Riesgo</span>' : pct >= 90 ? '<span class="status-promo">Promoción</span>' : '<span class="muted">Regular</span>';
+    const z = zoneOf(i, pct);
+    if (z !== prevZone) { body += `<tr class="zone ${ZONE_LABEL[z][0]}"><td colspan="6">${ZONE_LABEL[z][1]}</td></tr>`; prevZone = z; }
+    body += `<tr class="${i === meIdx ? 'me' : ''}"><td class="num">${i + 1}</td><td><span class="rank-name">${face(i + 3)}${name}</span></td><td class="r num">P${pct}</td><td class="r num">${lvl}</td><td class="r num">${xp.toLocaleString('es-AR')}</td><td>${status}</td></tr>`;
+  });
+  $('#rank-pager').innerHTML = pagerHTML(rankPage, RANK_SIZE, RANK_N, 'posiciones');
+  $('#rank-table').innerHTML = `<thead><tr><th>#</th><th>${staff ? 'Alumno' : 'Estudiante'}</th><th class="r">Percentil</th><th class="r">Nivel</th><th class="r">XP</th><th>Estado</th></tr></thead><tbody>${body}</tbody>`;
+}
+$('#rank-course').addEventListener('change', () => { rankPage = 0; renderRanking(); });
+onPager($('#rank-pager'), n => { rankPage = n; renderRanking(); });
+$('#rank-you').addEventListener('click', e => { if (e.target.closest('[data-rank-me]')) { rankPage = Math.floor((RANK_N - 1) / RANK_SIZE); renderRanking(); $('#rank-table tr.me')?.scrollIntoView({ block: 'center', behavior: 'smooth' }); } });
+
+/* ======================= perfil ======================= */
+function renderProfile() {
+  const u = USERS[currentRole];
+  $$('[data-me-initials]').forEach(el => el.textContent = u.initials);
+  $$('[data-me-short]').forEach(el => el.textContent = u.short);
+  $$('[data-me-name]').forEach(el => el.textContent = u.name);
+  $$('[data-me-email]').forEach(el => el.textContent = u.email);
+  $$('[data-me-legajo]').forEach(el => el.textContent = u.legajo);
+  $$('[data-legajo-row]').forEach(el => el.hidden = !u.legajo);
+  $$('[data-me-since]').forEach(el => el.textContent = u.since || '28/09/2026');
+  $$('[data-me-level]').forEach(el => el.textContent = u.level);
+  $$('[data-admin-only]').forEach(el => el.hidden = currentRole !== 'admin');
+  $$('[data-alumno-only]').forEach(el => el.hidden = currentRole !== 'alumno');
+  $$('[data-me-role]').forEach(el => el.textContent = u.role);
+}
+
+/* ======================= quiz (alumno) ======================= */
+$('#quiz-form').addEventListener('change', () => {
+  const answered = ['q1', 'q2'].filter(n => $$(`[name="${n}"]:checked`).length).length;
+  $('#quiz-count').textContent = `${answered} de 2 respondidas`;
+  $('#quiz-bar').style.width = `${answered * 50}%`;
+  $('#quiz-save').textContent = 'Guardado';
+  $('#quiz-submit').disabled = answered < 2;
+  $('#quiz-hint').textContent = answered < 2 ? 'Respondé todas las preguntas para poder entregar. Se guarda solo mientras avanzás.' : 'Listo para entregar. Después de entregar no vas a poder cambiar las respuestas.';
+});
+
+/* ======================= cuestionario builder (profesor) ======================= */
+const questions = [
+  { text: '¿Cuál es la complejidad de la búsqueda binaria?', mode: 'Una correcta', options: ['O(log n)', 'O(n)', 'O(n log n)'], correct: [0], points: 40, penalty: false, open: false },
+  { text: '', mode: 'Una correcta', options: ['', ''], correct: [0], points: '', penalty: false, open: true },
+];
+function qIssues(q) {
+  const out = [];
+  if (!q.text.trim()) out.push('Falta el enunciado.');
+  const empty = q.options.map((o, i) => o.trim() ? null : i + 1).filter(Boolean);
+  if (empty.length) out.push(`${empty.length > 1 ? 'Las opciones' : 'La opción'} ${empty.join(' y ')} ${empty.length > 1 ? 'están vacías' : 'está vacía'}.`);
+  if (!Number(q.points)) out.push('Falta el puntaje.');
+  return out;
+}
+function renderBuilder() {
+  $('#q-list').innerHTML = questions.map((q, qi) => {
+    const issues = qIssues(q);
+    return `<article class="card studs q-card" data-q="${qi}">
+      <div class="q-head">
+        <span class="q-num">${qi + 1}</span>
+        <span class="q-title">${q.text || '<span class="muted">Pregunta sin enunciado</span>'}</span>
+        ${issues.length ? '<span class="badge badge-gold">Incompleta</span>' : '<span class="badge badge-success">Lista</span>'}
+        <label class="sr-only" for="pts-${qi}">Puntaje de la pregunta ${qi + 1}</label>
+        <input class="control num points" id="pts-${qi}" type="number" min="0" max="100" placeholder="Puntaje" value="${q.points}" data-field="points" ${!Number(q.points) ? 'aria-invalid="true"' : ''} />
+        <button class="icon-btn sm" type="button" data-toggle aria-expanded="${q.open}" aria-label="${q.open ? 'Contraer' : 'Editar'} pregunta ${qi + 1}">${icon(q.open ? 'i-x' : 'i-pencil', 'icon icon-sm')}</button>
+        <button class="icon-btn sm" type="button" data-del aria-label="Quitar pregunta ${qi + 1}" style="color:var(--urgent)">${icon('i-trash', 'icon icon-sm')}</button>
+      </div>
+      ${q.open ? `<div class="q-body">
+        ${issues.length ? `<ul class="q-issues">${issues.map(s => `<li>${s}</li>`).join('')}</ul>` : ''}
+        <label class="field"><span class="req">Enunciado</span><textarea class="control" data-field="text" placeholder="Escribí la consigna" ${!q.text ? 'aria-invalid="true"' : ''}>${q.text}</textarea></label>
+        <div class="form-grid">
+          <label class="field">Cómo se corrige<select class="control" data-field="mode"><option ${q.mode === 'Una correcta' ? 'selected' : ''}>Una correcta</option><option ${q.mode === 'Varias correctas' ? 'selected' : ''}>Varias correctas</option></select>
+            <span class="hint">${q.mode === 'Una correcta' ? 'El alumno elige una sola opción. Si es la correcta, suma el puntaje.' : 'El alumno puede marcar varias. Suma en proporción a las correctas.'}</span></label>
+          <label class="toggle" style="align-self:start; margin-top:22px"><input type="checkbox" data-field="penalty" ${q.penalty ? 'checked' : ''} />Resta si elige una incorrecta</label>
+        </div>
+        <div class="field"><span>Opciones</span>
+          ${q.options.map((o, oi) => `<div class="opt-row">
+            <button class="mark" type="button" data-mark="${oi}" aria-pressed="${q.correct.includes(oi)}">${icon('i-tick', 'icon icon-sm')}${q.correct.includes(oi) ? 'Correcta' : 'Marcar'}</button>
+            <input class="control" data-opt="${oi}" value="${o}" placeholder="Texto de la opción ${oi + 1}" aria-label="Opción ${oi + 1}" ${!o ? 'aria-invalid="true"' : ''} />
+          </div>`).join('')}
+          <div><button class="btn btn-quiet btn-sm" type="button" data-addopt>${icon('i-plus', 'icon icon-sm')}Agregar opción</button></div>
+        </div>
+      </div>` : ''}
+    </article>`;
+  }).join('') || `<div class="empty">${icon('i-list')}<p>Agregá una pregunta nueva o del banco para empezar.</p></div>`;
+  renderSum();
+}
+function renderSum() {
+  const sum = questions.reduce((s, q) => s + (Number(q.points) || 0), 0);
+  const firstBad = questions.findIndex(q => qIssues(q).length);
+  const cls = sum === 100 ? 'ok' : sum > 100 ? 'over' : '';
+  const msg = !questions.length ? 'Agregá al menos una pregunta.'
+    : firstBad >= 0 ? `Completá la pregunta ${firstBad + 1}: ${qIssues(questions[firstBad]).join(' ')}`
+    : sum !== 100 ? `Los puntajes tienen que sumar 100 (${sum > 100 ? 'sobran' : 'faltan'} ${Math.abs(100 - sum)}).` : 'Todo listo para guardar.';
+  const ok = questions.length && firstBad < 0 && sum === 100;
+  $('#sum-bar').innerHTML = `
+    <div class="meter ${cls}"><div class="sum-label"><span>Puntaje total</span><span class="num">${sum} / 100</span></div><div class="bar"><span style="width:${Math.min(sum, 100)}%"></span></div></div>
+    <button class="btn btn-ghost btn-sm" type="button" data-even ${questions.length ? '' : 'disabled'}>Repartir en partes iguales</button>
+    <button class="btn btn-primary" type="button" ${ok ? '' : 'disabled'}>Guardar cuestionario</button>
+    <p class="sum-msg ${ok ? 'ok' : ''}" role="status">${msg}</p>`;
+}
+$('#q-list').addEventListener('input', e => {
+  const card = e.target.closest('[data-q]'); if (!card) return;
+  const q = questions[card.dataset.q];
+  if (e.target.dataset.field === 'penalty') q.penalty = e.target.checked;
+  else if (e.target.dataset.field) q[e.target.dataset.field] = e.target.value;
+  if (e.target.dataset.opt) q.options[e.target.dataset.opt] = e.target.value;
+  const t = card.querySelector('.q-title'); if (t) t.innerHTML = q.text || '<span class="muted">Pregunta sin enunciado</span>';
+  renderSum();
+});
+$('#q-list').addEventListener('change', e => { if (e.target.dataset.field === 'mode') { questions[e.target.closest('[data-q]').dataset.q].mode = e.target.value; renderBuilder(); } });
+$('#q-list').addEventListener('focusout', e => { if (e.target.matches('[data-opt],[data-field="text"],[data-field="points"]')) setTimeout(renderBuilder, 0); });
+$('#q-list').addEventListener('click', e => {
+  const card = e.target.closest('[data-q]'); if (!card) return;
+  const qi = Number(card.dataset.q), q = questions[qi];
+  if (e.target.closest('[data-toggle]')) q.open = !q.open;
+  else if (e.target.closest('[data-del]')) questions.splice(qi, 1);
+  else if (e.target.closest('[data-addopt]')) q.options.push('');
+  else if (e.target.closest('[data-mark]')) {
+    const oi = Number(e.target.closest('[data-mark]').dataset.mark);
+    q.correct = q.mode === 'Una correcta' ? [oi] : q.correct.includes(oi) ? q.correct.filter(x => x !== oi) : [...q.correct, oi];
+  } else return;
+  renderBuilder();
+});
+$('#sum-bar').addEventListener('click', e => {
+  if (!e.target.closest('[data-even]') || !questions.length) return;
+  const base = Math.floor(100 / questions.length);
+  questions.forEach((q, i) => q.points = base + (i < 100 - base * questions.length ? 1 : 0));
+  renderBuilder();
+});
+$('#add-custom').addEventListener('click', () => { questions.forEach(q => q.open = false); questions.push({ text: '', mode: 'Una correcta', options: ['', ''], correct: [0], points: '', penalty: false, open: true }); renderBuilder(); });
+$('#bank-pick').addEventListener('change', e => { $('#add-bank').disabled = !e.target.value; });
+$('#add-bank').addEventListener('click', () => {
+  const v = $('#bank-pick').value; if (!v) return;
+  questions.push({ text: v, mode: 'Una correcta', options: ['Opción A', 'Opción B', 'Opción C'], correct: [0], points: '', penalty: false, open: false });
+  $('#bank-pick').value = ''; $('#add-bank').disabled = true; renderBuilder();
+});
+
+/* ======================= insignias ======================= */
+const BADGE_ART = {
+  shield: ['bbbbbbbb', 'baaaaaab', 'baaddaab', 'baddddab', 'baaddaab', '.baaaab.', '..baab..', '...bb...'],
+  target: ['..bbbb..', '.baaaab.', 'bacccab.', 'bacddcab', 'bacddcab', 'baccccab', '.baaaab.', '..bbbb..'],
+  heart:  ['.bb..bb.', 'baabbaab', 'baacaaab', 'baaaaaab', '.baaaab.', '..baab..', '...bb...', '........'],
+  trophy: ['bbbbbbbb', 'baaccaab', 'baaccaab', '.baaaab.', '..baab..', '...bb...', '..bbbb..', '.bddddb.'],
+  crown:  ['b..bb..b', 'bb.bb.bb', 'baabbaab', 'baaaaaab', 'bacdcdab', 'baaaaaab', 'bbbbbbbb', '........'],
+  flag:   ['bb......', 'baaaab..', 'baaaaab.', 'baaaab..', 'bb......', 'b.......', 'b.......', 'bbb.....'],
+  bolt:   ['....bbb.', '...bab..', '..bab...', '.baaaab.', '...bab..', '..bab...', '.bb.....', 'b.......'],
+  up:     ['...bb...', '..baab..', '.baaaab.', 'baaaaaab', '..baab..', '..baab..', '..baab..', '..bbbb..'],
+};
+const BADGES = [
+  ['Sección perfecta', 'Completaste una sección entera sin perder vidas.', 'shield', 'var(--accent-primary-fill)'],
+  ['A la primera', 'Superaste un nodo sin usar reintentos.', 'target', 'var(--accent-primary-fill)'],
+  ['Segunda oportunidad', 'Recuperaste una vida perdida.', 'heart', 'var(--accent-danger-fill)', true],
+  ['Hito de XP · Bronce', 'Alcanzaste el primer umbral de XP del curso.', 'trophy', '#b87333'],
+  ['Hito de XP · Plata', 'Alcanzaste el segundo umbral de XP del curso.', 'trophy', '#a8b2bd'],
+  ['Hito de XP · Oro', 'Alcanzaste el tercer umbral de XP del curso.', 'trophy', 'var(--accent-gold-fill)'],
+  ['Subiste de nivel', 'Llegaste a un nuevo nivel.', 'up', 'var(--accent-secondary-fill)', true],
+  ['Zona de élite', 'Entraste a la zona P90 del ranking de la cohorte.', 'crown', 'var(--accent-gold-fill)'],
+  ['Primeros pasos', 'Completaste tu primer nodo obligatorio.', 'flag', 'var(--accent-primary-fill)'],
+];
+const artFor = (kind, col, label) => pixel(BADGE_ART[kind], { a: col, b: shade(col, 50), c: tint(col, 55), d: 'var(--accent-gold-fill)' }, label);
+function renderBadges() {
+  $('#badge-grid').innerHTML = BADGES.map(([n, d, k, col, pending]) => `
+    <article class="card studs badge-tile">${artFor(k, col, '')}<h3>${n}</h3><p>${d}</p>
+      <div class="chips"><span class="badge badge-outline">Transversal</span><span class="badge badge-outline">Sistema</span>${pending ? '<span class="badge badge-gold">Ícono pendiente</span>' : ''}</div></article>`).join('');
+  const picks = Object.keys(BADGE_ART);
+  $('#nb-icons').insertAdjacentHTML('beforeend', picks.map((k, i) =>
+    `<label class="icon-opt"><input type="radio" name="nb-icon" value="${k}" aria-label="Ícono ${k}${i % 3 === 2 ? ', arte pendiente' : ''}"><span>${artFor(k, 'var(--accent-secondary-fill)', '')}${i % 3 === 2 ? '<small>pendiente</small>' : ''}</span></label>`).join(''));
+}
+const nbForm = $('#new-badge');
+function nbCheck() {
+  const ok = $('#nb-name').value.trim() && $('[name="nb-icon"]:checked') && $('#nb-crit').value;
+  $('#nb-create').disabled = !ok; $('#nb-hint').textContent = ok ? '' : 'Completá nombre, ícono y criterio.';
+}
+nbForm.addEventListener('input', nbCheck); nbForm.addEventListener('change', nbCheck);
+$('#new-badge-btn').addEventListener('click', () => { nbForm.hidden = !nbForm.hidden; $('#new-badge-btn').setAttribute('aria-expanded', String(!nbForm.hidden)); if (!nbForm.hidden) $('#nb-name').focus(); });
+$('#nb-cancel').addEventListener('click', () => { nbForm.reset(); nbForm.hidden = true; $('#new-badge-btn').setAttribute('aria-expanded', 'false'); nbCheck(); });
+
+/* ======================= drawers ======================= */
+document.addEventListener('click', e => { const t = e.target.closest('[data-open]'); if (t) $('#' + t.dataset.open).showModal(); });
+$('#dd-submit').addEventListener('click', () => {
+  const t = $('#form-desafio [name="titulo"]');
+  const bad = !t.value.trim();
+  t.setAttribute('aria-invalid', String(bad));
+  $('#t-hint').className = bad ? 'err' : 'hint';
+  $('#t-hint').textContent = bad ? 'Escribí un título para el desafío.' : 'Hasta 100 caracteres.';
+  if (bad) { t.focus(); return; }
+  $('#drawer-desafio').close();
+});
+
+/* ======================= sub-tabs (static panels) ======================= */
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-subtab]'); if (!t) return;
+  selectSubtab(t);
+});
+function selectSubtab(t) {
+  const scope = t.closest('.screen');
+  const group = t.closest('[data-tabgroup]')?.dataset.tabgroup;
+  const tabs = group ? $$(`[data-tabgroup="${group}"] [data-subtab]`, scope) : $$('[data-subtab]', scope);
+  tabs.forEach(b => b.setAttribute('aria-selected', String(b === t)));
+  const panels = group ? $$(`[data-subpanel][data-group="${group}"], [data-subpanel][data-group="${group}-actions"]`, scope) : $$('[data-subpanel]', scope);
+  panels.forEach(p => p.hidden = p.dataset.subpanel !== t.dataset.subtab);
+}
+document.addEventListener('click', e => {
+  const g = e.target.closest('[data-goto]'); if (!g) return;
+  const scope = g.closest('.screen');
+  selectSubtab($(`[data-subtab="${g.dataset.goto}"]`, scope));
+  if (g.dataset.gotoPill) selectSubtab($(`[data-subtab="${g.dataset.gotoPill}"]`, scope));
+});
+
+/* ======================= account menu ======================= */
+const accBtn = $('#account-btn'), accMenu = $('#account-menu');
+function setAccount(open) { accMenu.hidden = !open; accBtn.setAttribute('aria-expanded', String(open)); }
+accBtn.addEventListener('click', () => { const open = accMenu.hidden; setAccount(open); if (open) $('.nav-item', accMenu).focus(); });
+document.addEventListener('click', e => { if (!e.target.closest('.account')) setAccount(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !accMenu.hidden) { setAccount(false); accBtn.focus(); } });
+accMenu.addEventListener('click', e => { if (e.target.closest('a')) setAccount(false); });
+
+/* ======================= accesos (admin) ======================= */
+const REQUESTS = [
+  { email: 'alumno1.tpi@frc.utn.edu.ar', date: '27/09/2026 21:51', role: 'Profesor', reason: 'Designación de cátedra', state: 'pending' },
+];
+const ENABLED = [
+  ['gestor5@frc.utn.edu.ar', 'Gestor', '28/09/2026 21:11'], ['manuuusanchez@gmail.com', 'Gestor', '28/09/2026 20:10'],
+  ['gestor4.tpi@frc.utn.edu.ar', 'Gestor', '27/09/2026 14:54'], ['profesor4.tpi@frc.utn.edu.ar', 'Profesor', '27/09/2026 14:54'],
+  ['gestor3.tpi@frc.utn.edu.ar', 'Gestor', '27/09/2026 14:54'], ['profesor3.tpi@frc.utn.edu.ar', 'Profesor', '27/09/2026 14:54'],
+  ['gestor2.tpi@frc.utn.edu.ar', 'Gestor', '27/09/2026 14:54'], ['profesor2.tpi@frc.utn.edu.ar', 'Profesor', '27/09/2026 14:54'],
+  ['gestor1.tpi@frc.utn.edu.ar', 'Gestor', '27/09/2026 14:54'], ['profesor1.tpi@frc.utn.edu.ar', 'Profesor', '27/09/2026 14:54'],
+  ['gestor.tpi@frc.utn.edu.ar', 'Gestor', '24/09/2026 00:49'], ['profesor.tpi@frc.utn.edu.ar', 'Profesor', '24/09/2026 00:49'],
+];
+const PAGE = 6;
+const okState = { q: '', role: '', page: 0 };
+function renderRequests() {
+  const pending = REQUESTS.filter(r => r.state === 'pending').length;
+  $$('[data-pend-count]').forEach(el => el.textContent = pending);
+  $('#req-list').innerHTML = REQUESTS.length ? REQUESTS.map((r, i) => `
+    <li class="req-card" data-req="${i}">
+      <div>
+        <h3>${r.email}</h3>
+        <div class="req-meta"><span>Pide rol <b>${r.role}</b></span><span class="num">${r.date}</span></div>
+        <blockquote>${r.reason}</blockquote>
+      </div>
+      ${r.state === 'pending' ? `<div class="req-actions">
+        <button class="btn btn-ghost danger" type="button" data-reject aria-expanded="${!!r.rejecting}">Rechazar</button>
+        <button class="btn btn-primary" type="button" data-approve>${icon('i-tick', 'icon icon-sm')}Aprobar</button>
+      </div>` : `<span class="badge ${r.state === 'approved' ? 'badge-success' : 'badge-danger'}">${r.state === 'approved' ? 'Aprobada' : 'Rechazada'}</span>`}
+      ${r.state === 'pending' && r.rejecting ? `<div class="reject-box">
+        <label class="field"><span class="req">Motivo del rechazo</span><textarea class="control" rows="2" data-reason placeholder="Por ejemplo: el email no corresponde a la cátedra"></textarea><span class="hint" data-reason-hint>La persona lo va a ver en el email de respuesta.</span></label>
+        <button class="btn btn-danger" type="button" data-confirm-reject>Confirmar rechazo</button>
+      </div>` : ''}
+    </li>`).join('') : `<div class="empty">${icon('i-check')}<p>No hay solicitudes pendientes.</p></div>`;
+}
+$('#req-list').addEventListener('click', e => {
+  const li = e.target.closest('[data-req]'); if (!li) return;
+  const r = REQUESTS[li.dataset.req];
+  if (e.target.closest('[data-approve]')) { r.state = 'approved'; ENABLED.unshift([r.email, r.role, '30/09/2026 15:02']); renderEnabled(); }
+  else if (e.target.closest('[data-reject]')) r.rejecting = !r.rejecting;
+  else if (e.target.closest('[data-confirm-reject]')) {
+    const ta = $('[data-reason]', li);
+    if (!ta.value.trim()) { ta.setAttribute('aria-invalid', 'true'); const h = $('[data-reason-hint]', li); h.className = 'err'; h.textContent = 'Escribí el motivo para poder rechazar.'; ta.focus(); return; }
+    r.state = 'rejected';
+  } else return;
+  renderRequests();
+});
+function renderEnabled() {
+  const q = okState.q.trim().toLowerCase();
+  const list = ENABLED.filter(([m, role]) => (!q || m.includes(q)) && (!okState.role || role === okState.role));
+  const pages = Math.max(1, Math.ceil(list.length / PAGE));
+  okState.page = Math.min(okState.page, pages - 1);
+  const slice = list.slice(okState.page * PAGE, okState.page * PAGE + PAGE);
+  $$('[data-ok-count]').forEach(el => el.textContent = ENABLED.length);
+  $('#ok-table').innerHTML = `<thead><tr><th>Email</th><th>Rol</th><th>Habilitado</th><th><span class="sr-only">Acciones</span></th></tr></thead><tbody>${
+    slice.length ? slice.map(([m, role, d]) => `<tr><td class="cell-title">${m}</td><td><span class="badge ${role === 'Gestor' ? 'badge-gold' : 'badge-secondary'}">${role}</span></td><td class="num muted">${d}</td>
+      <td><div class="row-actions"><button class="btn btn-quiet btn-sm danger" type="button" data-remove="${m}">${icon('i-x', 'icon icon-sm')}Quitar<span class="sr-only"> ${m}</span></button></div></td></tr>`).join('')
+    : `<tr><td colspan="4" class="muted">Ningún email coincide con la búsqueda.</td></tr>`}</tbody>`;
+  $('#ok-pager').innerHTML = list.length > PAGE ? pagerHTML(okState.page, PAGE, list.length, 'cuentas') : '';
+}
+$('#ok-q').addEventListener('input', e => { okState.q = e.target.value; okState.page = 0; renderEnabled(); });
+$('#ok-role').addEventListener('click', e => {
+  const b = e.target.closest('[data-r]'); if (!b) return;
+  $$('[data-r]', $('#ok-role')).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  okState.role = b.dataset.r; okState.page = 0; renderEnabled();
+});
+onPager($('#ok-pager'), n => { okState.page = n; renderEnabled(); });
+$('#ok-table').addEventListener('click', e => {
+  const b = e.target.closest('[data-remove]'); if (!b) return;
+  const i = ENABLED.findIndex(([m]) => m === b.dataset.remove);
+  if (i >= 0 && confirm(`¿Quitar el acceso de ${b.dataset.remove}? Va a dejar de poder ingresar.`)) { ENABLED.splice(i, 1); renderEnabled(); }
+});
+$('#add-email').addEventListener('submit', () => {
+  const inp = $('#ae-email'), hint = $('#ae-hint'), v = inp.value.trim().toLowerCase();
+  const btn = $('#add-email button[type="submit"]');
+  const err = !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) ? 'Escribí un email válido.' : ENABLED.some(([m]) => m === v) ? 'Ese email ya está habilitado.' : '';
+  inp.setAttribute('aria-invalid', String(!!err));
+  hint.className = err ? 'err full' : 'hint full';
+  hint.textContent = err || `${v} quedó habilitado como ${$('#ae-role').value.toLowerCase()}.`;
+  if (err) { inp.focus(); return; }
+  btn.classList.add('is-loading');
+  btn.innerHTML = `<span class="spinner spinner-sm"></span><span class="btn-text">Habilitando...</span>`;
+  setTimeout(() => {
+    btn.classList.remove('is-loading');
+    btn.innerHTML = `<svg class="icon icon-sm"><use href="#i-plus"/></svg>Habilitar`;
+    ENABLED.unshift([v, $('#ae-role').value, '30/09/2026 15:05']);
+    inp.value = '';
+    okState.page = 0;
+    renderEnabled();
+  }, 500);
+});
+renderRequests(); renderEnabled();
+
+/* ======================= view toggle: cards | grilla ======================= */
+// Natural layout of each list; the viewer's choice per list is remembered.
+const VIEW_DEFAULTS = { cursos: 'cards', cohortes: 'cards', insignias: 'cards' };
+const views = JSON.parse(store.get('tpi-views') || '{}');
+const viewOf = key => views[key] || VIEW_DEFAULTS[key] || 'list';
+function viewToggleHTML(key) {
+  const v = viewOf(key);
+  return `<div class="seg view-toggle" role="group" aria-label="Cómo ver la lista" data-view-key="${key}">
+    <button type="button" data-v="cards" aria-pressed="${v === 'cards'}" title="Ver como cards">${icon('i-cards', 'icon icon-sm')}<span class="seg-label">Cards</span></button>
+    <button type="button" data-v="list" aria-pressed="${v === 'list'}" title="Ver como grilla">${icon('i-table', 'icon icon-sm')}<span class="seg-label">Grilla</span></button>
+  </div>`;
+}
+function applyViews() {
+  $$('[data-view-toggle]').forEach(el => { el.outerHTML = viewToggleHTML(el.dataset.viewToggle); });
+  $$('[data-view-target]').forEach(el => el.dataset.view = viewOf(el.dataset.viewTarget));
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.view-toggle [data-v]'); if (!b) return;
+  const key = b.closest('[data-view-key]').dataset.viewKey;
+  views[key] = b.dataset.v; store.set('tpi-views', JSON.stringify(views));
+  $$(`[data-view-key="${key}"] [data-v]`).forEach(x => x.setAttribute('aria-pressed', String(x.dataset.v === b.dataset.v)));
+  $$(`[data-view-target="${key}"]`).forEach(el => el.dataset.view = b.dataset.v);
+});
+/* Every table cell learns its column name, so the cards view can label each value. */
+function labelTables() {
+  $$('table.data').forEach(t => {
+    const heads = $$('thead th', t).map(th => th.querySelector('.sr-only') ? '' : th.textContent.trim());
+    $$('tbody tr', t).forEach(tr => [...tr.children].forEach((td, i) => { if (!td.hasAttribute('colspan') && td.dataset.label !== heads[i]) td.dataset.label = heads[i] ?? ''; }));
+  });
+}
+new MutationObserver(() => { labelTables(); if ($('[data-view-toggle]')) applyViews(); }).observe($('#main'), { childList: true, subtree: true });
+
+/* ======================= role / nav / routing ======================= */
+const NAV_TABS = {
+  alumno: [
+    ['desafios', 'i-flame', 'Desafíos', 3],
+    ['cursos', 'i-book', 'Mis cursos'],
+    ['roadmap', 'i-map', 'Roadmap'],
+    ['ranking', 'i-trophy', 'Ranking'],
+    ['tutor', 'i-bot', 'Tutor IA'],
+    ['chat', 'i-chat', 'Comunidad'],
+  ],
+  profesor: [
+    ['cursos', 'i-book', 'Cursos'],
+    ['desafios', 'i-flame', 'Desafíos'],
+    ['roadmap', 'i-map', 'Roadmap'],
+    ['ranking', 'i-trophy', 'Ranking'],
+    ['insignias', 'i-award', 'Insignias'],
+    ['chat', 'i-chat', 'Comunidad'],
+  ],
+  admin: [
+    ['accesos', 'i-key', 'Accesos', 1],
+    ['cursos', 'i-book', 'Cursos'],
+    ['desafios', 'i-flame', 'Desafíos'],
+    ['roadmap', 'i-map', 'Roadmap'],
+    ['backoffice', 'i-shield', 'Backoffice'],
+    ['insignias', 'i-award', 'Insignias'],
+  ],
+};
+
+const BOTTOM_NAV_ITEMS = {
+  alumno: [
+    ['desafios', 'i-flame', 'Desafíos'],
+    ['cursos', 'i-book', 'Cursos'],
+    ['roadmap', 'i-map', 'Roadmap'],
+    ['ranking', 'i-trophy', 'Ranking'],
+    ['perfil', 'i-user', 'Perfil'],
+  ],
+  profesor: [
+    ['cursos', 'i-book', 'Cursos'],
+    ['desafios', 'i-flame', 'Desafíos'],
+    ['roadmap', 'i-map', 'Roadmap'],
+    ['insignias', 'i-award', 'Insignias'],
+    ['perfil', 'i-user', 'Perfil'],
+  ],
+  admin: [
+    ['accesos', 'i-key', 'Accesos'],
+    ['cursos', 'i-book', 'Cursos'],
+    ['desafios', 'i-flame', 'Desafíos'],
+    ['backoffice', 'i-shield', 'Admin'],
+    ['perfil', 'i-user', 'Perfil'],
+  ],
+};
+
+const ACCOUNT_SCREENS = {
+  alumno: ['perfil', 'personaje', 'inventario', 'marketplace', 'notificaciones', 'encuestas', 'panel'],
+  profesor: ['perfil', 'encuestas', 'notificaciones', 'panel'],
+  admin: ['perfil', 'encuestas', 'notificaciones', 'panel'],
+};
+const PARENT = { curso: 'cursos', quiz: 'desafios', 'cuestionario-nuevo': 'desafios' };
+
+let currentRole = 'alumno', currentScreen = 'desafios';
+
+function renderNav() {
+  const sidebarNav = $('#sidebar-nav');
+  const bottomNav = $('#bottom-nav');
+  const hud = $('#student-hud');
+
+  // Solo mostramos el HUD del estudiante si el rol es alumno
+  if (hud) hud.hidden = (currentRole !== 'alumno');
+
+  if (sidebarNav) {
+    sidebarNav.innerHTML = NAV_TABS[currentRole].map(([id, ic, label, count]) => {
+      const tip = count ? `${label} (${count})` : label;
+      return `<a class="rail-item" href="#${id}" data-screen="${id}" data-tooltip="${tip}" aria-label="${tip}">
+        ${icon(ic)}
+        <span class="rail-label">${label}</span>
+        ${count ? `<span class="nav-count" title="${id === 'accesos' ? 'Solicitudes pendientes' : 'Obligatorios pendientes'}">${count}</span>` : ''}
+      </a>`;
+    }).join('');
+  }
+
+  if (bottomNav) {
+    bottomNav.innerHTML = BOTTOM_NAV_ITEMS[currentRole].map(([id, ic, label]) => `
+      <a class="bottom-nav-item" href="#${id}" data-screen="${id}">
+        ${icon(ic)}<span>${label}</span>
+      </a>
+    `).join('');
+  }
+}
+
+function screenEl(id) {
+  const rk = currentRole === 'admin' ? 'profesor' : currentRole;
+  return $(`#screen-${id}-${rk}`) || $(`#screen-${id}`);
+}
+
+function applyError(el) {
+  $$('.load-error').forEach(x => x.remove());
+  $$('.errored').forEach(x => x.classList.remove('errored'));
+  if (!$('#sim-error').checked || !el.dataset.error) return;
+  el.classList.add('errored');
+  const head = $('.page-head', el);
+  head.insertAdjacentHTML('afterend', `<div class="alert load-error" role="alert">${icon('i-alert')}<div><div class="alert-title">No se pudo cargar esta página</div><div class="alert-body">${el.dataset.error}</div></div><button class="btn btn-ghost" type="button" onclick="document.getElementById('sim-error').checked=false; route()">${icon('i-refresh', 'icon icon-sm')}Reintentar</button></div>`);
+}
+
+function route() {
+  const [id, arg] = (location.hash.slice(1) || 'desafios').split('/');
+  currentScreen = id;
+  const navId = PARENT[id] || id;
+
+  $$('.rail-item, .bottom-nav-item').forEach(a => {
+    if (a.dataset.screen === navId) {
+      a.setAttribute('aria-current', 'page');
+    } else {
+      a.removeAttribute('aria-current');
+    }
+  });
+
+  $$('.screen').forEach(s => s.hidden = true);
+  let el = screenEl(id);
+  if (id === 'curso') fillCourseDetail(decodeURIComponent(arg || 'MSI'));
+  if (id === 'ranking') renderRanking();
+  if (!el) {
+    el = $('#screen-pending');
+    const link = $(`.rail-item[data-screen="${id}"]`);
+    $('#pending-title').textContent = link ? link.getAttribute('data-tooltip') || link.textContent.trim() : 'Página';
+  }
+  el.hidden = false;
+  el.style.animation = 'none'; el.offsetHeight; el.style.animation = '';
+  applyError(el);
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+
+/* Cierre de modales/drawers al cliquear el backdrop oscuro */
+document.addEventListener('click', e => {
+  if (e.target.tagName === 'DIALOG' && (e.target.classList.contains('modal') || e.target.classList.contains('drawer'))) {
+    e.target.close();
+  }
+});
+
+/* Viewport change */
+const mq = matchMedia('(max-width: 860px)');
+mq.addEventListener('change', () => {
+  applyViews();
+  labelTables();
+});
+$('#sim-error').addEventListener('change', route);
+
+/* ---- theme / mode / role (persisted per viewer) ---- */
+const root = document.documentElement;
+function setTheme(t) {
+  root.dataset.theme = t; store.set('tpi-theme', t);
+  $$('[data-theme-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.themeBtn === t)));
+}
+const FONT_MAP = {
+  pixelify: "'Pixelify Sans', sans-serif",
+  pressstart: "'Press Start 2P', monospace",
+  chakra: "'Chakra Petch', sans-serif",
+  orbitron: "'Orbitron', sans-serif",
+  silkscreen: "'Silkscreen', sans-serif"
+};
+
+function setSkin(s) {
+  root.dataset.skin = s; store.set('tpi-skin', s);
+  $$('[data-skin-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.skinBtn === s)));
+  if (s === 'sobrio') {
+    root.style.setProperty('--font-display', "'IBM Plex Sans', sans-serif");
+  } else {
+    const f = store.get('tpi-font') || 'pixelify';
+    root.style.setProperty('--font-display', FONT_MAP[f] || FONT_MAP.pixelify);
+  }
+}
+function setPalette(p) {
+  root.dataset.palette = p; store.set('tpi-palette', p);
+  $$('[data-palette-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.paletteBtn === p)));
+}
+function setSidebarPinned(pinned) {
+  const isPinned = Boolean(pinned);
+  root.dataset.sidebarPinned = String(isPinned);
+  store.set('tpi-sidebar-pinned', String(isPinned));
+  $$('[data-sidebar-btn]').forEach(b => b.setAttribute('aria-pressed', String((b.dataset.sidebarBtn === 'pinned') === isPinned)));
+  const btn = $('#sidebar-toggle');
+  if (btn) {
+    btn.setAttribute('aria-expanded', String(isPinned));
+    btn.setAttribute('data-tooltip', isPinned ? 'Colapsar menú' : 'Fijar menú abierto');
+    btn.setAttribute('aria-label', isPinned ? 'Colapsar menú' : 'Fijar menú abierto');
+    const label = btn.querySelector('.rail-label');
+    if (label) label.textContent = isPinned ? 'Colapsar' : 'Fijar menú';
+    const use = btn.querySelector('use');
+    if (use) use.setAttribute('href', isPinned ? '#i-panel' : '#i-panel-open');
+  }
+}
+function setFont(f) {
+  root.dataset.font = f; store.set('tpi-font', f);
+  if (root.dataset.skin !== 'sobrio') {
+    const fontVal = FONT_MAP[f] || FONT_MAP.pixelify;
+    root.style.setProperty('--font-display', fontVal);
+  }
+  $$('[data-font-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.fontBtn === f)));
+}
+function setRole(r) {
+  currentRole = r; root.dataset.role = r; store.set('tpi-role', r);
+  $$('[data-role-btn]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.roleBtn === r)));
+  renderNav(); renderProfile();
+  const allowed = [...NAV_TABS[r].map(i => i[0]), ...ACCOUNT_SCREENS[r], 'uikit'];
+  const target = PARENT[currentScreen] || currentScreen;
+  if (!allowed.includes(target)) location.hash = allowed.includes('desafios') ? 'desafios' : 'perfil';
+  route();
+}
+$$('[data-theme-btn]').forEach(b => b.addEventListener('click', () => setTheme(b.dataset.themeBtn)));
+$$('[data-skin-btn]').forEach(b => b.addEventListener('click', () => setSkin(b.dataset.skinBtn)));
+$$('[data-palette-btn]').forEach(b => b.addEventListener('click', () => setPalette(b.dataset.paletteBtn)));
+$$('[data-font-btn]').forEach(b => b.addEventListener('click', () => setFont(b.dataset.fontBtn)));
+$$('[data-sidebar-btn]').forEach(b => b.addEventListener('click', () => setSidebarPinned(b.dataset.sidebarBtn === 'pinned')));
+$$('[data-role-btn]').forEach(b => b.addEventListener('click', () => setRole(b.dataset.roleBtn)));
+$('#sidebar-toggle')?.addEventListener('click', () => {
+  const current = root.dataset.sidebarPinned === 'true';
+  setSidebarPinned(!current);
+});
+
+/* ---- boot ---- */
+$$('[data-challenge-list]').forEach(el => ChallengeList(el));
+$$('[data-catalog]').forEach(el => Catalog(el));
+renderStudentCourses(); renderCohorts(); renderInventory(); renderHero(); renderBuilder(); renderBadges();
+setTheme(store.get('tpi-theme') || 'dark');
+setSkin(store.get('tpi-skin') || 'gamer');
+setPalette(store.get('tpi-palette') || 'electric');
+setFont(store.get('tpi-font') || 'pressstart');
+setSidebarPinned(store.get('tpi-sidebar-pinned') === 'true');
+setRole(store.get('tpi-role') || 'alumno');
+</script>
+</body>
+</html>

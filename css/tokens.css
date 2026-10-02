@@ -1,0 +1,265 @@
+/* =========================================================================
+   TOKENS — @2026-p4-fe/ui theme.css v0.3.2 (gamer = modo arcade) plus the
+   sobrio palette proposed in tpi-ui-mock.html (modo normal).
+   ========================================================================= */
+
+/* --- Gamer / Arcade (Light) · Paleta Eléctrica / Cyber Blue (Recomendada) --- */
+:root,
+:root[data-theme='light'],
+:root[data-theme='light'][data-skin='gamer'],
+:root[data-theme='light'][data-skin='gamer'][data-palette='electric'] {
+  --bg-app:#eaf0f6; --bg-surface:#f5f8fc; --bg-surface-alt:#dfe8f2;
+  --border-subtle:#94a3b8; --border-highlight:#0284c7;
+  --text-primary:#0f172a; --text-muted:#334155;
+  --accent-primary:#0284c7; --accent-primary-fill:#0284c7; --on-accent-primary:#ffffff;
+  --accent-secondary:#7c3aed; --accent-secondary-fill:#7c3aed; --on-accent-secondary:#ffffff;
+  --accent-gold:#b45309; --accent-gold-fill:#d97706; --on-accent-gold:#ffffff;
+  --accent-danger:#e11d48; --accent-danger-fill:#e11d48; --on-accent-danger:#ffffff;
+  --accent-success:#059669; --accent-success-fill:#059669; --on-accent-success:#ffffff;
+  --focus-glow:rgba(2,132,199,.45);
+  --radius-control:4px; --border-width:2px; --press-y:-2px;
+}
+
+/* --- Gamer / Arcade (Light) · Paleta Neón Magenta (Original) --- */
+:root[data-theme='light'][data-skin='gamer'][data-palette='neon'] {
+  --bg-app:#efe6d4; --bg-surface:#f7f1e4; --bg-surface-alt:#eadfc8;
+  --border-subtle:#a68f66; --border-highlight:#8a6a1a;
+  --text-primary:#16130f; --text-muted:#3a342c;
+  --accent-primary:#8f1f7c; --accent-primary-fill:#f275dc; --on-accent-primary:#1f0a1b;
+  --accent-secondary:#0b5f6c; --accent-secondary-fill:#29c9e0; --on-accent-secondary:#062127;
+  --accent-gold:#5f5500; --accent-gold-fill:#faf22f; --on-accent-gold:#221f00;
+  --accent-danger:#b3150f; --accent-danger-fill:#e62220; --on-accent-danger:#ffffff;
+  --accent-success:#1f6e10; --accent-success-fill:#4ce52b; --on-accent-success:#082303;
+  --focus-glow:rgba(242,117,220,.55);
+  --radius-control:4px; --border-width:2px; --press-y:-2px;
+}
+
+/* --- Gamer / Arcade (Light) · Paleta Late Night --- */
+:root[data-theme='light'][data-skin='gamer'][data-palette='latenight'] {
+  --bg-app:#e2e2ec; --bg-surface:#f0f0f8; --bg-surface-alt:#d6d6e6;
+  --border-subtle:#a0a0c8; --border-highlight:#4ef3c9;
+  --text-primary:#1b1b3a; --text-muted:#50507a;
+  --accent-primary:#4ef3c9; --accent-primary-fill:#4ef3c9; --on-accent-primary:#1b1b3a;
+  --accent-secondary:#ff2e88; --accent-secondary-fill:#ff2e88; --on-accent-secondary:#ffffff;
+  --accent-gold:#ffd166; --accent-gold-fill:#ffd166; --on-accent-gold:#1b1b3a;
+  --accent-danger:#ff2e88; --accent-danger-fill:#ff2e88; --on-accent-danger:#ffffff;
+  --accent-success:#4ef3c9; --accent-success-fill:#4ef3c9; --on-accent-success:#1b1b3a;
+  --focus-glow:rgba(78,243,201,.45);
+  --radius-control:4px; --border-width:2px; --press-y:-2px;
+}
+
+/* --- Gamer / Arcade (Dark) · Paleta Eléctrica / Cyber Cyan (Recomendada) --- */
+:root[data-theme='dark'],
+:root[data-theme='dark'][data-skin='gamer'],
+:root[data-theme='dark'][data-skin='gamer'][data-palette='electric'] {
+  --bg-app:#10141a; --bg-surface:#181d26; --bg-surface-alt:#13171f;
+  --border-subtle:#3b4758; --border-highlight:#00e5ff;
+  --text-primary:#f1f5f9; --text-muted:#94a3b8;
+  --accent-primary:#00e5ff; --accent-primary-fill:#00d2f0; --on-accent-primary:#031520;
+  --accent-secondary:#a855f7; --accent-secondary-fill:#9333ea; --on-accent-secondary:#ffffff;
+  --accent-gold:#ffd600; --accent-gold-fill:#facc15; --on-accent-gold:#221f00;
+  --accent-danger:#ff3366; --accent-danger-fill:#f43f5e; --on-accent-danger:#ffffff;
+  --accent-success:#00e676; --accent-success-fill:#10b981; --on-accent-success:#022c15;
+  --focus-glow:rgba(0,229,255,.55);
+  --radius-control:4px; --border-width:2px; --press-y:-2px;
+}
+
+/* --- Gamer / Arcade (Dark) · Paleta Neón Magenta (Original) --- */
+:root[data-theme='dark'][data-skin='gamer'][data-palette='neon'] {
+  --bg-app:#141516; --bg-surface:#1e1f21; --bg-surface-alt:#18191b;
+  --border-subtle:#5b5e63; --border-highlight:#29c9e0;
+  --text-primary:#e4e2dc; --text-muted:#a9aba8;
+  --accent-primary:#f275dc; --accent-primary-fill:#f275dc; --on-accent-primary:#1f0a1b;
+  --accent-secondary:#29c9e0; --accent-secondary-fill:#29c9e0; --on-accent-secondary:#062127;
+  --accent-gold:#faf22f; --accent-gold-fill:#faf22f; --on-accent-gold:#221f00;
+  --accent-danger:#ff5a52; --accent-danger-fill:#e62220; --on-accent-danger:#ffffff;
+  --accent-success:#4ce52b; --accent-success-fill:#4ce52b; --on-accent-success:#082303;
+  --focus-glow:rgba(242,117,220,.6);
+  --radius-control:4px; --border-width:2px; --press-y:-2px;
+}
+
+/* --- Gamer / Arcade (Dark) · Paleta Late Night --- */
+:root[data-theme='dark'][data-skin='gamer'][data-palette='latenight'] {
+  --bg-app:#1b1b3a; --bg-surface:#222244; --bg-surface-alt:#1a1a36;
+  --border-subtle:#3b3b6a; --border-highlight:#ff2e88;
+  --text-primary:#f7f7ff; --text-muted:#a0a0c8;
+  --accent-primary:#4ef3c9; --accent-primary-fill:#4ef3c9; --on-accent-primary:#1b1b3a;
+  --accent-secondary:#ff2e88; --accent-secondary-fill:#ff2e88; --on-accent-secondary:#1b1b3a;
+  --accent-gold:#ffd166; --accent-gold-fill:#ffd166; --on-accent-gold:#1b1b3a;
+  --accent-danger:#ff2e88; --accent-danger-fill:#ff2e88; --on-accent-danger:#1b1b3a;
+  --accent-success:#4ef3c9; --accent-success-fill:#4ef3c9; --on-accent-success:#1b1b3a;
+  --focus-glow:rgba(255,46,136,.6);
+  --radius-control:4px; --border-width:2px; --press-y:-2px;
+}
+
+/* --- Sobrio / Normal (Light - Modo Profesor / Institucional) --- */
+:root[data-theme='light'][data-skin='sobrio'] {
+  --bg-app:#f2f4f7; --bg-surface:#ffffff; --bg-surface-alt:#e8ecf1;
+  --border-subtle:#aab4c2; --border-highlight:#2f5fd0;
+  --text-primary:#161a21; --text-muted:#4b5563;
+  --accent-primary:#2f5fd0; --accent-primary-fill:#2f5fd0; --on-accent-primary:#ffffff;
+  --accent-secondary:#46586b; --accent-secondary-fill:#46586b; --on-accent-secondary:#ffffff;
+  --accent-gold:#8a5a06; --accent-gold-fill:#a86a0a; --on-accent-gold:#ffffff;
+  --accent-danger:#b3261e; --accent-danger-fill:#c1352b; --on-accent-danger:#ffffff;
+  --accent-success:#1c7a4d; --accent-success-fill:#1f7a4d; --on-accent-success:#ffffff;
+  --focus-glow:rgba(47,95,208,.35);
+  --radius-control:8px; --border-width:1px; --press-y:0px;
+}
+
+/* --- Sobrio / Normal (Dark - Modo Profesor / Institucional) --- */
+:root[data-theme='dark'][data-skin='sobrio'] {
+  --bg-app:#12161c; --bg-surface:#1a1f27; --bg-surface-alt:#151920;
+  --border-subtle:#3c4756; --border-highlight:#6f9bf0;
+  --text-primary:#eef1f5; --text-muted:#a7b0bd;
+  --accent-primary:#6f9bf0; --accent-primary-fill:#6f9bf0; --on-accent-primary:#0b1526;
+  --accent-secondary:#8aa0b8; --accent-secondary-fill:#7d93ac; --on-accent-secondary:#0b1526;
+  --accent-gold:#d9a441; --accent-gold-fill:#d9a441; --on-accent-gold:#241a04;
+  --accent-danger:#ef6a5d; --accent-danger-fill:#e2584c; --on-accent-danger:#2a0705;
+  --accent-success:#59c290; --accent-success-fill:#4caf7d; --on-accent-success:#04210f;
+  --focus-glow:rgba(111,155,240,.45);
+  --radius-control:8px; --border-width:1px; --press-y:0px;
+}
+
+/* Derived tokens: readable status text on any surface */
+:root {
+  --font-body:'IBM Plex Sans',sans-serif;
+  --font-display:'Press Start 2P',monospace;
+  --urgent: color-mix(in srgb, var(--accent-danger) 72%, var(--text-primary));
+  --good: color-mix(in srgb, var(--accent-success) 70%, var(--text-primary));
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --radius-card: calc(var(--radius-control) * 1.5);
+}
+[data-skin='gamer'] { --radius-card:2px; }
+[data-skin='sobrio'] { --font-display:'IBM Plex Sans',sans-serif; }
+
+/* --- Reemplazo dinámico de Silkscreen para Títulos / Logo / Display --- */
+:root[data-skin='gamer'][data-font='pixelify'], :root[data-font='pixelify'] { --font-display: 'Pixelify Sans', sans-serif; }
+:root[data-skin='gamer'][data-font='pressstart'], :root[data-font='pressstart'] { --font-display: 'Press Start 2P', monospace; }
+:root[data-skin='gamer'][data-font='chakra'], :root[data-font='chakra'] { --font-display: 'Chakra Petch', sans-serif; }
+:root[data-skin='gamer'][data-font='orbitron'], :root[data-font='orbitron'] { --font-display: 'Orbitron', sans-serif; }
+:root[data-skin='gamer'][data-font='silkscreen'], :root[data-font='silkscreen'] { --font-display: 'Silkscreen', sans-serif; }
+/* --- Paleta Playful Pop --- */
+:root[data-skin='gamer'][data-palette='playful'] {
+  --bg-app:#fdfdfd; --bg-surface:#ffffff; --bg-surface-alt:#f0f0f0;
+  --border-subtle:#1a1a1a; --border-highlight:#ff5bbd;
+  --text-primary:#1a1a1a; --text-muted:#555555;
+  --accent-primary:#ff5bbd; --accent-primary-fill:#ff5bbd; --on-accent-primary:#1a1a1a;
+  --accent-secondary:#2de2e6; --accent-secondary-fill:#2de2e6; --on-accent-secondary:#1a1a1a;
+  --accent-gold:#fff0a6; --accent-gold-fill:#fff0a6; --on-accent-gold:#1a1a1a;
+  --accent-danger:#ff5bbd; --accent-danger-fill:#ff5bbd; --on-accent-danger:#1a1a1a;
+  --accent-success:#7c4dff; --accent-success-fill:#7c4dff; --on-accent-success:#ffffff;
+  --focus-glow:rgba(255,91,189,.55);
+}
+:root[data-theme='dark'][data-skin='gamer'][data-palette='playful'] {
+  --bg-app:#1a1a1a; --bg-surface:#222222; --bg-surface-alt:#111111;
+  --border-subtle:#333333; --border-highlight:#ff5bbd;
+  --text-primary:#fdfdfd; --text-muted:#a0a0a0;
+  --accent-primary:#ff5bbd; --accent-primary-fill:#ff5bbd; --on-accent-primary:#1a1a1a;
+  --accent-secondary:#2de2e6; --accent-secondary-fill:#2de2e6; --on-accent-secondary:#1a1a1a;
+  --accent-gold:#fff0a6; --accent-gold-fill:#fff0a6; --on-accent-gold:#1a1a1a;
+  --accent-danger:#ff5bbd; --accent-danger-fill:#ff5bbd; --on-accent-danger:#1a1a1a;
+  --accent-success:#7c4dff; --accent-success-fill:#7c4dff; --on-accent-success:#ffffff;
+  --focus-glow:rgba(255,91,189,.55);
+}
+
+/* --- Paleta Cyber Moody --- */
+:root[data-skin='gamer'][data-palette='cyber'] {
+  --bg-app:#0b1026; --bg-surface:#2b2d42; --bg-surface-alt:#1c2136;
+  --border-subtle:#3c3e56; --border-highlight:#00f5d4;
+  --text-primary:#f0f0f0; --text-muted:#8b92a5;
+  --accent-primary:#00f5d4; --accent-primary-fill:#00f5d4; --on-accent-primary:#0b1026;
+  --accent-secondary:#9b5de5; --accent-secondary-fill:#9b5de5; --on-accent-secondary:#ffffff;
+  --accent-gold:#f15bb5; --accent-gold-fill:#f15bb5; --on-accent-gold:#ffffff;
+  --accent-danger:#f15bb5; --accent-danger-fill:#f15bb5; --on-accent-danger:#ffffff;
+  --accent-success:#00f5d4; --accent-success-fill:#00f5d4; --on-accent-success:#0b1026;
+  --focus-glow:rgba(0,245,212,.55);
+}
+
+/* --- Paleta Energetic Warm --- */
+:root[data-skin='gamer'][data-palette='energetic'] {
+  --bg-app:#0b1320; --bg-surface:#172033; --bg-surface-alt:#111a29;
+  --border-subtle:#303b52; --border-highlight:#ff9f1c;
+  --text-primary:#f0f0f0; --text-muted:#8a95a5;
+  --accent-primary:#ff9f1c; --accent-primary-fill:#ff9f1c; --on-accent-primary:#0b1320;
+  --accent-secondary:#ff4d6d; --accent-secondary-fill:#ff4d6d; --on-accent-secondary:#ffffff;
+  --accent-gold:#ff9f1c; --accent-gold-fill:#ff9f1c; --on-accent-gold:#0b1320;
+  --accent-danger:#ff4d6d; --accent-danger-fill:#ff4d6d; --on-accent-danger:#ffffff;
+  --accent-success:#2ec4b6; --accent-success-fill:#2ec4b6; --on-accent-success:#0b1320;
+  --focus-glow:rgba(255,159,28,.55);
+}
+
+/* --- Paleta Competitive Intense --- */
+:root[data-skin='gamer'][data-palette='competitive'] {
+  --bg-app:#edf2f4; --bg-surface:#ffffff; --bg-surface-alt:#e1e6e9;
+  --border-subtle:#8d99ae; --border-highlight:#ef233c;
+  --text-primary:#2b2d42; --text-muted:#5a6270;
+  --accent-primary:#ef233c; --accent-primary-fill:#ef233c; --on-accent-primary:#ffffff;
+  --accent-secondary:#ffb703; --accent-secondary-fill:#ffb703; --on-accent-secondary:#2b2d42;
+  --accent-gold:#ffb703; --accent-gold-fill:#ffb703; --on-accent-gold:#2b2d42;
+  --accent-danger:#ef233c; --accent-danger-fill:#ef233c; --on-accent-danger:#ffffff;
+  --accent-success:#ffb703; --accent-success-fill:#ffb703; --on-accent-success:#2b2d42;
+  --focus-glow:rgba(239,35,60,.55);
+}
+:root[data-theme='dark'][data-skin='gamer'][data-palette='competitive'] {
+  --bg-app:#2b2d42; --bg-surface:#3b3d52; --bg-surface-alt:#1a1c31;
+  --border-subtle:#8d99ae; --border-highlight:#ef233c;
+  --text-primary:#edf2f4; --text-muted:#b0b6c4;
+  --accent-primary:#ef233c; --accent-primary-fill:#ef233c; --on-accent-primary:#ffffff;
+  --accent-secondary:#ffb703; --accent-secondary-fill:#ffb703; --on-accent-secondary:#2b2d42;
+  --accent-gold:#ffb703; --accent-gold-fill:#ffb703; --on-accent-gold:#2b2d42;
+  --accent-danger:#ef233c; --accent-danger-fill:#ef233c; --on-accent-danger:#ffffff;
+  --accent-success:#ffb703; --accent-success-fill:#ffb703; --on-accent-success:#2b2d42;
+  --focus-glow:rgba(239,35,60,.55);
+}
+
+/* --- Paleta Sci-Fi Clean --- */
+:root[data-skin='gamer'][data-palette='scifi'] {
+  --bg-app:#0d1b2a; --bg-surface:#1b263b; --bg-surface-alt:#142032;
+  --border-subtle:#30415d; --border-highlight:#41ead4;
+  --text-primary:#e9ecef; --text-muted:#8b9db5;
+  --accent-primary:#41ead4; --accent-primary-fill:#41ead4; --on-accent-primary:#0d1b2a;
+  --accent-secondary:#c7f9cc; --accent-secondary-fill:#c7f9cc; --on-accent-secondary:#0d1b2a;
+  --accent-gold:#c7f9cc; --accent-gold-fill:#c7f9cc; --on-accent-gold:#0d1b2a;
+  --accent-danger:#41ead4; --accent-danger-fill:#41ead4; --on-accent-danger:#0d1b2a;
+  --accent-success:#c7f9cc; --accent-success-fill:#c7f9cc; --on-accent-success:#0d1b2a;
+  --focus-glow:rgba(65,234,212,.55);
+}
+
+/* --- Paleta Flashy Futuristic --- */
+:root[data-skin='gamer'][data-palette='flashy'] {
+  --bg-app:#0b0f2b; --bg-surface:#161b40; --bg-surface-alt:#111536;
+  --border-subtle:#31376b; --border-highlight:#ff3cac;
+  --text-primary:#f0f0f0; --text-muted:#8084a3;
+  --accent-primary:#ff3cac; --accent-primary-fill:#ff3cac; --on-accent-primary:#ffffff;
+  --accent-secondary:#2b86c5; --accent-secondary-fill:#2b86c5; --on-accent-secondary:#ffffff;
+  --accent-gold:#f9f871; --accent-gold-fill:#f9f871; --on-accent-gold:#0b0f2b;
+  --accent-danger:#ff3cac; --accent-danger-fill:#ff3cac; --on-accent-danger:#ffffff;
+  --accent-success:#f9f871; --accent-success-fill:#f9f871; --on-accent-success:#0b0f2b;
+  --focus-glow:rgba(255,60,172,.55);
+}
+
+/* --- Paleta Mystical Balanced --- */
+:root[data-skin='gamer'][data-palette='mystical'] {
+  --bg-app:#1f2041; --bg-surface:#4b3f72; --bg-surface-alt:#363259;
+  --border-subtle:#6c6096; --border-highlight:#ffc857;
+  --text-primary:#e6e8e6; --text-muted:#a4a0bf;
+  --accent-primary:#ffc857; --accent-primary-fill:#ffc857; --on-accent-primary:#1f2041;
+  --accent-secondary:#119da4; --accent-secondary-fill:#119da4; --on-accent-secondary:#ffffff;
+  --accent-gold:#ffc857; --accent-gold-fill:#ffc857; --on-accent-gold:#1f2041;
+  --accent-danger:#ffc857; --accent-danger-fill:#ffc857; --on-accent-danger:#1f2041;
+  --accent-success:#119da4; --accent-success-fill:#119da4; --on-accent-success:#ffffff;
+  --focus-glow:rgba(255,200,87,.55);
+}
+
+/* --- Paleta Urban Sleek --- */
+:root[data-skin='gamer'][data-palette='urban'] {
+  --bg-app:#0a0f1f; --bg-surface:#1f3c88; --bg-surface-alt:#142555;
+  --border-subtle:#3859b3; --border-highlight:#00bbf9;
+  --text-primary:#fef9ef; --text-muted:#9ab0e6;
+  --accent-primary:#00bbf9; --accent-primary-fill:#00bbf9; --on-accent-primary:#0a0f1f;
+  --accent-secondary:#f15bb5; --accent-secondary-fill:#f15bb5; --on-accent-secondary:#ffffff;
+  --accent-gold:#f15bb5; --accent-gold-fill:#f15bb5; --on-accent-gold:#ffffff;
+  --accent-danger:#f15bb5; --accent-danger-fill:#f15bb5; --on-accent-danger:#ffffff;
+  --accent-success:#00bbf9; --accent-success-fill:#00bbf9; --on-accent-success:#0a0f1f;
+  --focus-glow:rgba(0,187,249,.55);
+}
